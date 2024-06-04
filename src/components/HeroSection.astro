@@ -1,0 +1,33 @@
+---
+---
+
+<section class="flex flex-col container max-w-7xl mx-auto pb-12"> 
+  <div class="flex mb-20">
+    <a href="/" class="uppercase font-bold text-xl px-7 py-2 border-2 border-black">Logo</a>
+    <a href="/" class="uppercase ml-auto font-bold text-xl px-7 py-2">Donate</a>
+  </div>
+  
+  <h1 class="mx-auto uppercase text-8xl mb-16">Change that lasts</h1>
+  <h3 class="mx-auto uppercase text-5xl mb-52">40 years of impact</h3>
+  
+  <div class="flex w-full justify-between">
+    {["€140 million in funding", "160 countries", "7,460 grants"].map(
+      (text) => <div class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="52" height="52" preserveAspectRatio="xMidYMid meet">
+            <!-- Horizontal line -->
+            <line x1="5" y1="50%" x2="19" y2="50%" stroke="black" stroke-width="2" stroke-linecap="round"/>
+            <!-- Vertical line -->
+            <line x1="50%" y1="5" x2="50%" y2="19" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="self-center text-2xl">{text}</span>
+      </div>)}
+  </div>
+</section>
+
+<section class="container bg-[#D9D9D9] pt-14 pb-20">
+  <h3 class="max-w-[59ch] mx-auto text-3xl mb-20">Since 1983, Mama Cash has supported transformative change led by women, girls, and trans and intersex activists worldwide.</h3>
+
+  <p class="max-w-[79ch] mx-auto text-xl mb-20">Our 40 years of impact report “Change that lasts”, shines a light on how feminist movements worldwide leveraged funding and accompaniment from Mama Cash to change narratives, shift norms, secure rights, end impunity, increase inclusion, expand access, and bring about joy, healing, love, and liberation.</p>
+
+  <a class="uppercase block w-fit mx-auto text-3xl" href="/">download full report</a>
+</section>
