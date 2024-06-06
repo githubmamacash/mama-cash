@@ -1,0 +1,112 @@
+---
+
+---
+
+<section class="max-w-screen-[1620px] container mx-auto pb-28 pt-28">
+  <h1
+    class="mb-6 max-w-[35ch] font-display text-[55px] font-semibold leading-tight"
+  >
+    Mama Cash provided multidimensional support to intersectional feminist
+    movements globally
+  </h1>
+
+  <p class="mb-20 text-xl">
+    We look at ten of the key issues and communities that featured prominently
+    in feminist movements and Mama Cash’s grantmaking. Our support went beyond
+    the money: we influenced how donors thought about sharing their resources,
+    and how movements thought about their right to these resources.
+  </p>
+
+  <div class="isolate grid grid-cols-[11fr_19fr]">
+    <div
+      class="relative isolate flex h-fit flex-col gap-8 rounded-l-3xl bg-[#E91E78] p-11 pr-0"
+    >
+      {
+        [
+          "Lesbian, Bisexual and Queer Rights",
+          "Reproductive Justice",
+          "Countering Gender-Based Violence",
+          "Sex Workers’ Rights",
+          "Racial Justice",
+          "Economic Justice",
+          "Disability Justice",
+          "Environmental Justice",
+          "Relationships with Money",
+          "Strengthening Feminist Funding Architectures",
+        ].map((issue, index) => (
+          <article class="grid grid-cols-[auto_1fr]">
+            <div class="relative row-span-2 my-auto mr-4 aspect-square w-8 rounded-full border-2 border-[#FDB813] bg-white">
+              {index > 0 && (
+                <div class="absolute left-0 right-0 -z-10 mx-auto h-16 w-[2px] -translate-y-full bg-[#FDB813]" />
+              )}
+            </div>
+
+            <h2 class="col-start-2 mb-1 font-semibold uppercase leading-none text-[#FDB813]">
+              Issue {index + 1}
+            </h2>
+            <h3 class="col-start-2 text-xl leading-none text-white">{issue}</h3>
+          </article>
+        ))
+      }
+    </div>
+    <div class="rounded-r-3xl bg-[#FDB813] px-20 py-16">
+      <p class="mb-12 text-xl">
+        These changes were propelled by rapidly growing feminist activism
+        throughout the world, represented by increasing numbers of feminist
+        activist groups, funds, and networks. It has always prioritised lesbian
+        and Black woman’s leadership while also amplifying the voices of trans
+        and intersex individuals and sex workers in its funding and advocacy
+        efforts. Through short briefs, this study sheds light on ten of the many
+        key issues and communities that have been central to feminist movements
+        and Mama Cash’s grantmaking over the past four decades.
+      </p>
+
+      <article class="relative mb-24 isolate">
+        <img
+          class="absolute top-0 -right-12 -z-10"
+          src="../../public/worldmap-grid.svg"
+          alt=""
+        />
+        <h2 class="mb-3 font-display text-[150px] font-bold leading-[0.9em]">
+          €17 million
+        </h2>
+        <p
+          class="mb-6 max-w-[27ch] text-xl font-semibold uppercase tracking-[-1%]"
+        >
+          PROVIDED TO REPRODUCTIVE JUSTICE ACTIVISM GROUPS AND MOVEMENTS OVER 40
+          YEARS
+        </p>
+
+        <div
+          class="flex gap-14 font-display text-2xl font-medium text-[#141392]"
+        >
+          <h3 class="flex items-center">
+            <b class="mr-4 bg-[#E91E78] px-3 text-4xl text-white">922</b> Grants
+          </h3>
+          <h3 class="flex items-center">
+            <b class="mr-4 bg-[#E91E78] px-3 text-4xl text-white">100</b> Countries
+          </h3>
+        </div>
+      </article>
+
+      <p class="text-xl mb-14">
+        These changes were propelled by rapidly growing feminist activism
+        throughout the world, represented by increasing numbers of feminist
+        activist groups, funds, and networks. It has always prioritised lesbian
+        and Black woman’s leadership while also amplifying the voices of trans
+        and intersex individuals and sex workers in its funding and advocacy
+        efforts. Through short briefs, this study sheds light on ten of the many
+        key issues and communities that have been central to feminist movements
+        and Mama Cash’s grantmaking over the past four decades.
+      </p>
+
+      <div class="aspect-[860/270] overflow-hidden rounded-xl">
+        <img
+          class="h-full w-full object-cover object-[0%_70%]"
+          src="../../public/people.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>
