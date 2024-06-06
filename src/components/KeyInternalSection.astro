@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import Woman from "../assets/woman.png";
+import HorizontalScroller from "./client/HorizontalScroller";
+
+const data = [
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+  {
+    range: "1983-1993",
+    points: [
+      "Five lesbian feminist activists form Mama Cash with a ten-year loan of 2.5 million guilders (€1.125 million) from Marjan Sax. ",
+      "Funds include Guarantee Fund, Culture Fund, Fund for the Global South, Feminist Art Award. ",
+      "Women with Inherited Wealth Network politicised wealthy women to encourage individual giving.",
+    ],
+    image: "/rect.png",
+  },
+];
+---
+
+<section class="relative">
+  <div
+    class="cutoff-bg absolute left-0 top-0 z-[-1] h-full w-full bg-[#E91E78]"
+  >
+  </div>
+  <div class="mx-auto grid max-w-5xl grid-cols-2 gap-16 px-5 pt-8">
+    <div class="grid grid-cols-2 grid-rows-2 gap-10">
+      <Image
+        src={Woman}
+        alt="people"
+        class="row-span-2 aspect-[9/16] self-center"
+      />
+      <Image src={Woman} alt="people" class="aspect-[14/16] self-end" />
+      <Image src={Woman} alt="people" class="aspect-[12/16]" />
+    </div>
+    <div class="pt-16">
+      <h3 class="font-display text-4xl font-medium text-white">
+        Since 1983, Mama Cash has supported transformative change led by women,
+        girls, and trans and intersex activists worldwide.
+      </h3>
+      <p class="mt-10 font-display leading-6 text-white font-normal">
+        Our 40 years of impact report “Change that lasts”, shines a light on how
+        feminist movements worldwide leveraged funding and accompaniment from
+        Mama Cash to change narratives, shift norms, secure rights, end
+        impunity, increase inclusion, expand access, and bring about joy,
+        healing, love, and liberation
+      </p>
+      <button
+        class="mt-5 rounded-3xl bg-black px-8 py-3 font-body text-xs font-semibold uppercase text-white"
+        >Download full report</button
+      >
+    </div>
+  </div>
+</section>
+
+<section class="flex flex-col items-center pb-12 pt-16 font-bold">
+  <HorizontalScroller client:load>
+    <div class="key-section">
+      <div class="key-section-container mx-auto max-w-5xl">
+        <h3 class="text-center font-display text-6xl">
+          Key Internal Inflection Points
+        </h3>
+        <div
+          class="scroller mt-16 grid w-[max-content] grid-flow-col auto-cols-auto"
+        >
+          {
+            data.map((e) => (
+              <div class="scroller-item w-[400px] font-display">
+                <span class="text-3xl font-medium">{e.range}</span>
+                <div class="inner">
+                  <div class="circle"></div>
+                  <ul class="ml-4 mt-5 list-disc text-xs font-normal">
+                    {e.points.map((e) => (
+                      <li class="text-sm mt-2">{e}</li>
+                    ))}
+                  </ul>
+                  <Image
+                    alt="x"
+                    src={e.image}
+                    width={400}
+                    height={300}
+                    class="mt-5"
+                  />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </HorizontalScroller>
+</section>
+
+<style>
+  .cutoff-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 92%);
+  }
+  .scroller-item .inner {
+    @apply border-l border-l-black pl-4 pr-16 border-t-[1rem] border-t-[#FDB813] mt-5 relative;
+  }
+  .scroller-item .inner .circle {
+    @apply absolute -left-[1rem] -top-[1.5rem] bg-[#E91E78] w-8 h-8 border-[6px] border-white rounded-full;
+  }
+</style>
