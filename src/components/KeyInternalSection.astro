@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import PeopleImg from "../assets/people.png";
+import Woman from "../assets/woman.png";
 import HorizontalScroller from "./client/HorizontalScroller";
 
 const data = [
@@ -69,12 +69,12 @@ const data = [
   <div class="mx-auto grid max-w-5xl grid-cols-2 gap-16 px-5 pt-8">
     <div class="grid grid-cols-2 grid-rows-2 gap-10">
       <Image
-        src={PeopleImg}
+        src={Woman}
         alt="people"
         class="row-span-2 aspect-[9/16] self-center"
       />
-      <Image src={PeopleImg} alt="people" class="aspect-[14/16] self-end" />
-      <Image src={PeopleImg} alt="people" class="aspect-[12/16]" />
+      <Image src={Woman} alt="people" class="aspect-[14/16] self-end" />
+      <Image src={Woman} alt="people" class="aspect-[12/16]" />
     </div>
     <div class="pt-16">
       <h3 class="font-display text-4xl font-medium text-white">
