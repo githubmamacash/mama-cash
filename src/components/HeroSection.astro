@@ -1,33 +1,54 @@
 ---
+import { Image } from 'astro:assets'
+import Logo from '../assets/logo.svg'
+import Hands from '../assets/hands.svg';
 ---
 
-<section class="container flex flex-col pb-12 mx-auto max-w-7xl"> 
-  <div class="flex mb-20">
-    <a href="/" class="py-2 text-xl font-bold uppercase border-2 border-black px-7">Logo</a>
-    <a href="/" class="py-2 ml-auto text-xl font-bold uppercase px-7">Donate</a>
+<section class="container flex flex-col pb-16 mx-auto max-w-5xl pt-10 px-5">
+  <div class="flex items-center mb-5">
+    <a href="/" class="">
+        <Image alt='Logo' src={Logo} class='w-[120px]'></Image>
+    </a>
+    <!-- <a href="/" class="py-2 ml-auto text-xl font-bold uppercase px-7">Donate</a> -->
+    <button class="ml-auto font-body font-semibold uppercase bg-[#141392] text-white px-8 py-3 rounded-3xl text-xs">Donate</button>
   </div>
-  
-  <h1 class="mx-auto mb-16 uppercase text-8xl">Change that lasts</h1>
-  <h3 class="mx-auto text-5xl uppercase mb-52">40 years of impact</h3>
-  
-  <div class="flex justify-between w-full">
-    {["€140 million in funding", "160 countries", "7,460 grants"].map(
-      (text) => <div class="flex">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="52" height="52" preserveAspectRatio="xMidYMid meet">
-            <!-- Horizontal line -->
-            <line x1="5" y1="50%" x2="19" y2="50%" stroke="black" stroke-width="2" stroke-linecap="round"/>
-            <!-- Vertical line -->
-            <line x1="50%" y1="5" x2="50%" y2="19" stroke="black" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <span class="self-center text-2xl">{text}</span>
-      </div>)}
+
+  <div class="grid grid-cols-[1fr_2fr] gap-x-10">
+    <div class="flex flex-col items-start justify-center">
+      <h1 class="flex flex-col items-start">
+        <span class="font-display font-extrabold text-8xl uppercase text-[#141392]">Change</span>
+        <span class="font-display font-bold text-6xl text-white bg-[#E91E78] px-1">that lasts</span>
+        <span class="font-display font-bold text-3xl text-[#141392] mt-2">40 years of impact</span>
+      </h1>
+      <div class="grid grid-cols-2 grid-rows-2 gap-10 mt-10">
+        <div class="flex flex-col relative pl-4 before:left-0 before:absolute before:w-[2px] before:h-full before:bg-[#141392]">
+          <span class="text-[#1FAAAC] text-4xl font-extrabold">+€140</span>
+          <small class="uppercase text-[#141392] font-medium">million in funding</small>
+        </div>
+        <div class="flex flex-col relative pl-4 before:left-0 before:absolute before:w-[2px] before:h-full before:bg-[#141392]">
+          <span class="text-[#1FAAAC] text-4xl font-extrabold">+€140</span>
+          <small class="uppercase text-[#141392] font-medium">million in funding</small>
+        </div>
+        <div class="flex flex-col relative pl-4 before:left-0 before:absolute before:w-[2px] before:h-full before:bg-[#141392]">
+          <span class="text-[#1FAAAC] text-4xl font-extrabold">+€140</span>
+          <small class="uppercase text-[#141392] font-medium">million in funding</small>
+        </div>
+        <div class="flex flex-col relative pl-4 before:left-0 before:absolute before:w-[2px] before:h-full before:bg-[#141392]">
+          <span class="text-[#1FAAAC] text-4xl font-extrabold">+€140</span>
+          <small class="uppercase text-[#141392] font-medium">million in funding</small>
+        </div>  
+      </div>
+    </div>
+    <div>
+      <Image alt='hands' src={Hands}></Image>
+    </div>
   </div>
 </section>
 
-<section class="container bg-[#D9D9D9] pt-14 pb-20 mx-auto">
+<!-- <section class="container bg-[#D9D9D9] pt-14 pb-20 mx-auto">
   <h3 class="max-w-[59ch] mx-auto text-3xl mb-20">Since 1983, Mama Cash has supported transformative change led by women, girls, and trans and intersex activists worldwide.</h3>
 
   <p class="max-w-[79ch] mx-auto text-xl mb-20">Our 40 years of impact report “Change that lasts”, shines a light on how feminist movements worldwide leveraged funding and accompaniment from Mama Cash to change narratives, shift norms, secure rights, end impunity, increase inclusion, expand access, and bring about joy, healing, love, and liberation.</p>
 
   <a class="block mx-auto text-3xl uppercase w-fit" href="/">download full report</a>
-</section>
+</section> -->
