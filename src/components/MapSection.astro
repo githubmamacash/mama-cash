@@ -1,0 +1,111 @@
+---
+
+---
+
+<div class="flex min-h-[120svh] flex-col bg-[#FDB813]">
+  <div class="mx-auto flex h-full max-w-5xl flex-1 flex-col py-16">
+    <h3 class="text-center font-display text-6xl font-bold">
+      Mama Cash moved more and better money worldwide
+    </h3>
+    <div id="map" class="mt-10 flex-1"></div>
+  </div>
+</div>
+
+<script>
+  import * as echarts from "echarts";
+  const mapElem = document.getElementById("map");
+  const map = echarts.init(mapElem);
+  let option: echarts.EChartsOption = {};
+
+  map.showLoading();
+
+  import("../assets/continents_grouped.json").then(($map) => {
+    map.hideLoading();
+    echarts.registerMap("World", $map as any, {});
+    option = {
+      series: [
+        {
+          name: "World Data",
+          type: "map",
+          roam: false,
+          map: "World",
+          zoom: 1.2,
+          aspectScale: 3 / 4,
+
+          emphasis: {
+            label: {
+              show: true,
+            },
+          },
+
+          data: [
+            {
+              name: "South America",
+              value: 1,
+              itemStyle: {
+                areaColor: "#FED471",
+              },
+              emphasis: {
+                itemStyle: {
+                  areaColor: "#FED471",
+                },
+              },
+            },
+            {
+              name: "North America",
+              value: 2,
+              itemStyle: {
+                areaColor: "#E91E78",
+              },
+              emphasis: {
+                itemStyle: {
+                  areaColor: "#E91E78",
+                },
+              },
+            },
+            {
+              name: "Africa",
+              value: 3,
+              itemStyle: {
+                areaColor: "#1FAAAC",
+              },
+              emphasis: {
+                itemStyle: {
+                  areaColor: "#1FAAAC",
+                },
+              },
+            },
+            {
+              name: "Europe",
+              value: 4,
+              itemStyle: {
+                areaColor: "#FFFFFF",
+              },
+              emphasis: {
+                itemStyle: {
+                  areaColor: "#FFFFFF",
+                },
+              },
+            },
+            {
+              name: "Asia & Oceania",
+              value: 5,
+              itemStyle: {
+                areaColor: "#105556",
+              },
+              emphasis: {
+                itemStyle: {
+                  areaColor: "#105556",
+                },
+              },
+            },
+          ],
+        },
+      ],
+    };
+    map.setOption(option);
+    console.log("Map");
+  });
+
+  option && map.setOption(option);
+</script>
