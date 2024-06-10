@@ -4,6 +4,7 @@ import ImpactVideoSection from "../components/ImpactVideoSection.astro";
 import IssuesSection from "../components/IssuesSection.astro";
 import KeyInternalSection from "../components/KeyInternalSection.astro";
 import MapSection from "../components/MapSection.astro";
+import ReportSection from "../components/ReportSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -11,9 +12,12 @@ import Layout from "../layouts/Layout.astro";
   <main class="min-h-svh">
     <!-- Sections -->
     <Hero />
-    <KeyInternalSection />
-    <MapSection />
-    <ImpactVideoSection />
+    <ReportSection />
     <IssuesSection />
+    <MapSection />
+
+    <ImpactVideoSection />
+
+    <KeyInternalSection />
   </main>
 </Layout>
