@@ -1682,7 +1682,7 @@
   const textElems = wrapper.querySelectorAll(".region_popup");
 
   for (const region of regions) {
-    const textElem = region.querySelector(".region_popup");
+    const textElem = region.querySelector(".region_popup") as HTMLElement;
     const text = new SplitType(textElem, { types: "chars" });
     const chars = text.chars;
 
