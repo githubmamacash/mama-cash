@@ -1,0 +1,58 @@
+---
+import StellaImage from "../assets/Stella Nkhonya.png";
+import ArrowLink from "./ArrowSVG.astro";
+---
+
+<section
+  class="container mx-auto max-w-5xl rounded-3xl bg-[#1FAAAC] px-16 mb-14 py-14"
+>
+  <h1 class="mb-5 max-w-[30ch] font-display text-3xl font-semibold">
+    Mama Cash shared power with hundreds of grantee partners globally
+  </h1>
+  <p class="mb-16 max-w-[75ch] text-sm">
+    In 40 years, we put more than €91 million in the hands of individuals,
+    groups, and movements who organised on their own, and pushed for lasting
+    change. Our biggest learnings in four decades, come from our grantee
+    partners.
+  </p>
+
+  <article class="grid grid-cols-[1fr_2fr] gap-14">
+    <ul class="flex flex-col gap-2">
+      {
+        [
+          [
+            "Stella Nkhonya",
+            "Malawi Human Rights for Women and Girls with Disabilities",
+          ],
+          [
+            "Stella Nkhonya",
+            "We look at ten of the key issues and communities that featured prominently in feminist movements and Mama Cash’s grantmaking. ",
+          ],
+          [
+            "Stella Nkhonya",
+            "We look at ten of the key issues and communities that featured prominently in feminist movements and Mama Cash’s grantmaking. ",
+          ],
+        ].map(([header, paragraph]) => (
+          <li class="border-t-[1px] border-black pt-3 opacity-60 hover:-mt-[1.5px] hover:border-t-[3px] hover:border-[#FDB813] hover:opacity-100">
+            <a href="#" class="group flex flex-col">
+              <h3 class="mb-1 font-display font-semibold">{header}</h3>
+              <p class="text-xs">{paragraph}</p>
+              <div class="ml-auto w-fit">
+                <ArrowLink
+                  width="24"
+                  height="24"
+                  circleClassName="group-hover:fill-[#FDB813] group-hover:stroke-[#FDB813] transition-[stroke]"
+                  arrowClassName="group-hover:stroke-black transition-[stroke]"
+                />
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <img
+      class="h-full rounded-xl object-cover object-center"
+      src={StellaImage.src}
+    />
+  </article>
+</section>
