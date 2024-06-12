@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Logo from "../assets/logo.svg";
 import Woman1 from "../assets/woman1.png";
 import Woman2 from "../assets/woman2.png";
+import Counter from "./client/Counter";
 ---
 
 <section id="hero-section" class="relative flex min-h-svh flex-col">
@@ -25,7 +26,7 @@ import Woman2 from "../assets/woman2.png";
       <h1
         data-animate-words="Love,Justice,Change"
         id="animated-heading"
-        class="bg-[#141392] px-3 text-right font-display text-8xl font-extrabold uppercase text-white"
+        class="bg-[#E91E78] px-3 text-right font-display text-8xl font-extrabold uppercase text-white"
       >
         Change
       </h1>
@@ -35,7 +36,7 @@ import Woman2 from "../assets/woman2.png";
       >
     </div>
     <span
-      class="mt-4 font-display text-2xl font-medium uppercase text-[#141392]"
+      class="mt-4 font-display text-2xl font-semibold uppercase text-[#141392]"
       >40 years of impact</span
     >
   </div>
@@ -51,22 +52,29 @@ import Woman2 from "../assets/woman2.png";
         alt="woman"
         class="absolute bottom-0 right-0 z-[0] w-[80%] object-cover"
       />
-      <div class="relative z-10 mt-10 flex items-center justify-center gap-14">
+      <div class="relative z-10 mt-10 flex items-center justify-center gap-24">
         <div class="flex flex-col items-center">
-          <span class="text-6xl font-extrabold text-white">+€140M</span>
+          <!-- <span class="font-display text-6xl font-extrabold text-white"
+            >+€140m
+          </span> -->
+          <Counter append="+€" prepend="m" client:load>140</Counter>
           <small class="font-medium uppercase text-white"
             >million in funding</small
           >
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-6xl font-extrabold text-white">+160</span>
+          <!-- <span class="font-display text-6xl font-extrabold text-white"
+            >+160</span
+          > -->
+          <Counter append="+" prepend="" client:load>160</Counter>
           <small class="font-medium uppercase text-white">countries</small>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-6xl font-extrabold text-white">+€140M</span>
-          <small class="font-medium uppercase text-white"
-            >million in funding</small
-          >
+          <!-- <span class="font-display text-6xl font-extrabold text-white"
+            >+7,460</span
+          > -->
+          <Counter append="+" prepend="" client:load>7460</Counter>
+          <small class="font-medium uppercase text-white">grants</small>
         </div>
       </div>
     </div>
