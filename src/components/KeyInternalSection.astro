@@ -61,21 +61,21 @@ const data = [
 ---
 
 <section
-  class="flex flex-col items-center overflow-hidden pb-12 pt-16 font-bold"
+  class="flex flex-col items-center overflow-hidden pb-12 pt-10 font-bold lg:pt-16"
 >
   <HorizontalScroller client:load>
     <div class="key-section">
       <div class="key-section-container mx-auto max-w-5xl">
-        <h3 class="text-center font-display text-6xl">
+        <h3 class="text-center font-display text-3xl lg:text-6xl">
           Key Internal Inflection Points
         </h3>
         <div
-          class="scroller mt-16 grid w-[max-content] auto-cols-auto grid-flow-col"
+          class="scroller mt-10 grid w-[max-content] auto-cols-auto grid-flow-col lg:mt-16"
         >
           {
             data.map((e) => (
-              <div class="scroller-item w-[400px] font-display">
-                <span class="text-3xl font-medium">{e.range}</span>
+              <div class="scroller-item w-[100vw] font-display lg:w-[400px]">
+                <span class="text-2xl font-medium lg:text-3xl">{e.range}</span>
                 <div class="inner">
                   <div class="circle" />
                   <ul class="ml-4 mt-5 list-disc text-xs font-normal">
@@ -99,7 +99,6 @@ const data = [
     </div>
   </HorizontalScroller>
 </section>
-
 <style>
   .scroller-item .inner {
     @apply relative mt-5 border-l border-t-[1rem] border-l-black border-t-[#FDB813] pl-4 pr-16;

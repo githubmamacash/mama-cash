@@ -16,9 +16,9 @@ export default () => {
       onSwiper={(swiper) => setSwiper(swiper)}
     >
       <SwiperSlide>
-        <div className="grid grid-cols-[300px_1fr] gap-10 rounded-3xl bg-[#FDB813] p-10">
+        <div className="grid gap-10 rounded-3xl bg-[#FDB813] p-10 lg:grid-cols-[300px_1fr]">
           <img
-            className="h-[300px] w-full rounded-full object-cover"
+            className="hidden h-[300px] w-full rounded-full object-cover lg:block"
             alt=""
             src={Avatar.src}
           />
@@ -43,21 +43,28 @@ export default () => {
               to increase its funding for women’s rights. We think that’s a
               powerful combination!
             </p>
-            <div className="mt-auto flex flex-col">
-              <span className="font-display font-medium uppercase">
-                Rini Banerjee
-              </span>
-              <small className="uppercase">
-                Director, Foundation for A Just Society
-              </small>
+            <div className="mt-10 flex items-center gap-4 lg:mt-auto">
+              <img
+                className="h-[75px] w-[75px] rounded-full object-cover lg:hidden"
+                alt=""
+                src={Avatar.src}
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-medium uppercase">
+                  Rini Banerjee
+                </span>
+                <small className="uppercase">
+                  Director, Foundation for A Just Society
+                </small>
+              </div>
             </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="grid grid-cols-[300px_1fr] gap-10 rounded-3xl bg-[#FDB813] p-10">
+        <div className="grid gap-10 rounded-3xl bg-[#FDB813] p-10 lg:grid-cols-[300px_1fr]">
           <img
-            className="h-[300px] w-full rounded-full object-cover"
+            className="hidden h-[300px] w-full rounded-full object-cover lg:block"
             alt=""
             src={Avatar.src}
           />
@@ -82,13 +89,20 @@ export default () => {
               to increase its funding for women’s rights. We think that’s a
               powerful combination!
             </p>
-            <div className="mt-auto flex flex-col">
-              <span className="font-display font-medium uppercase">
-                Rini Banerjee
-              </span>
-              <small className="uppercase">
-                Director, Foundation for A Just Society
-              </small>
+            <div className="mt-10 flex items-center gap-4 lg:mt-auto">
+              <img
+                className="h-[75px] w-[75px] rounded-full object-cover lg:hidden"
+                alt=""
+                src={Avatar.src}
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-medium uppercase">
+                  Rini Banerjee
+                </span>
+                <small className="uppercase">
+                  Director, Foundation for A Just Society
+                </small>
+              </div>
             </div>
           </div>
         </div>

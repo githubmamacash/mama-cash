@@ -4,7 +4,7 @@ import ArrowLink from "./ArrowSVG.astro";
 ---
 
 <section
-  class="container mx-auto max-w-5xl rounded-3xl bg-[#1FAAAC] px-16 mb-14 py-14"
+  class="container mx-auto mb-14 max-w-5xl bg-[#1FAAAC] px-5 py-14 lg:rounded-3xl lg:px-16"
 >
   <h1 class="mb-5 max-w-[30ch] font-display text-3xl font-semibold">
     Mama Cash shared power with hundreds of grantee partners globally
@@ -16,7 +16,7 @@ import ArrowLink from "./ArrowSVG.astro";
     partners.
   </p>
 
-  <article class="grid grid-cols-[1fr_2fr] gap-14">
+  <article class="grid gap-14 lg:grid-cols-[1fr_2fr]">
     <ul class="flex flex-col gap-2">
       {
         [
@@ -37,6 +37,10 @@ import ArrowLink from "./ArrowSVG.astro";
             <a href="#" class="group flex flex-col">
               <h3 class="mb-1 font-display font-semibold">{header}</h3>
               <p class="text-xs">{paragraph}</p>
+              <img
+                class="mt-5 h-full rounded-xl object-cover object-center lg:hidden"
+                src={StellaImage.src}
+              />
               <div class="ml-auto w-fit">
                 <ArrowLink
                   width="24"
@@ -51,7 +55,7 @@ import ArrowLink from "./ArrowSVG.astro";
       }
     </ul>
     <img
-      class="h-full rounded-xl object-cover object-center"
+      class="hidden h-full rounded-xl object-cover object-center lg:block"
       src={StellaImage.src}
     />
   </article>
