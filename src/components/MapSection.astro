@@ -1826,9 +1826,6 @@
 
           const regionPaths = region.querySelectorAll("path");
           regionPaths.forEach((p) => {
-            p.addEventListener("click", () => {
-              setActiveRegion(region.id);
-            });
             p.addEventListener("mouseover", () => {
               tl.play();
             });
