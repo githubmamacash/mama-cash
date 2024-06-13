@@ -42,5 +42,9 @@ export default function HorizontalScroller({ children }) {
     };
   }, []);
 
-  return <div ref={wrapperRef}>{children}</div>;
+  return (
+    <div className="w-full px-5" ref={wrapperRef}>
+      {children}
+    </div>
+  );
 }

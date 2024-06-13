@@ -1,5 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import Avatar from "../../assets/avatar.png";
+// import Avatar from "../../assets/avatar.png";
+import Testimonial1 from "../../assets/testimonial1.jpg";
+import Testimonial2 from "../../assets/testimonial2.jpg";
+import Testimonial3 from "../../assets/testimonial3.jpg";
+
 import "swiper/css";
 import { useState } from "react";
 import type { Swiper as TypeSwiper } from "swiper/types";
@@ -10,17 +14,17 @@ export default () => {
   return (
     <Swiper
       className="relative mt-10"
-      height={300}
+      // height={300}
       spaceBetween={15}
       slidesPerView={1}
       onSwiper={(swiper) => setSwiper(swiper)}
     >
-      <SwiperSlide>
-        <div className="grid grid-cols-[300px_1fr] gap-10 rounded-3xl bg-[#FDB813] p-10">
+      <SwiperSlide className="">
+        <div className="grid min-h-svh gap-10 rounded-3xl bg-[#FDB813] p-10 lg:min-h-full lg:grid-cols-[300px_1fr]">
           <img
-            className="h-[300px] w-full rounded-full object-cover"
+            className="hidden h-[300px] w-full rounded-full object-cover lg:block"
             alt=""
-            src={Avatar.src}
+            src={Testimonial1.src}
           />
           <div className="flex flex-col">
             <svg
@@ -35,7 +39,7 @@ export default () => {
                 fill="black"
               />
             </svg>
-            <p className="mt-5 font-display text-xl font-medium italic">
+            <p className="mt-5 font-display text-lg font-medium italic lg:text-xl">
               We support Mama Cash because we know Mama Cash is strategic, has
               deep knowledge, and has networks to reach groups that otherwise
               have a hard time accessing funding. But beyond being a funder,
@@ -43,23 +47,74 @@ export default () => {
               to increase its funding for women’s rights. We think that’s a
               powerful combination!
             </p>
-            <div className="mt-auto flex flex-col">
-              <span className="font-display font-medium uppercase">
-                Rini Banerjee
-              </span>
-              <small className="uppercase">
-                Director, Foundation for A Just Society
-              </small>
+            <div className="mt-10 flex items-center gap-4 lg:mt-auto">
+              <img
+                className="h-[75px] w-[75px] rounded-full object-cover lg:hidden"
+                alt=""
+                src={Testimonial1.src}
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-medium uppercase">
+                  Rini Banerjee
+                </span>
+                <small className="uppercase">
+                  Director, Foundation for A Just Society
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide className="">
+        <div className="grid min-h-svh gap-10 rounded-3xl bg-[#FDB813] p-10 lg:min-h-full lg:grid-cols-[300px_1fr]">
+          <img
+            className="hidden h-[300px] w-full rounded-full object-cover lg:block"
+            alt=""
+            src={Testimonial2.src}
+          />
+          <div className="flex flex-col">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.8071 15.22C25.6107 15.22 27.5 17.2055 27.5 20.1473C27.5 22.7945 25.3286 25 22.3875 25C19.1661 25 16.7857 22.3527 16.7857 18.3091C16.7857 9.11818 23.3679 5.44182 27.5 5V9.04364C24.6982 9.55818 21.5482 12.4255 21.4071 15.5891C21.5482 15.5164 22.1071 15.22 22.8071 15.22ZM8.52321 15.22C11.3232 15.22 13.2143 17.2055 13.2143 20.1473C13.2143 22.7945 11.0429 25 8.10179 25C4.88036 25 2.5 22.3527 2.5 18.3091C2.5 9.11818 9.08214 5.44182 13.2143 5V9.04364C10.4125 9.55818 7.2625 12.4255 7.12143 15.5891C7.2625 15.5164 7.82143 15.22 8.52321 15.22Z"
+                fill="black"
+              />
+            </svg>
+            <p className="mt-5 font-display text-lg font-medium italic lg:text-xl">
+              By leaving my inheritance to Mama Cash, I feel like I am
+              sustaining our family heritage, not through offspring, but by
+              contributing to a better world for women and girls. I have no
+              doubt that my inheritance will contribute to change for women and
+              girls. I trust Mama Cash completely, she puts her money where her
+              mouth is.
+            </p>
+            <div className="mt-10 flex items-center gap-4 lg:mt-auto">
+              <img
+                className="h-[75px] w-[75px] rounded-full object-cover lg:hidden"
+                alt=""
+                src={Testimonial2.src}
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-medium uppercase">
+                  Sandrine Ulemberg
+                </span>
+                <small className="uppercase">Mama Cash individual donor</small>
+              </div>
             </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="grid grid-cols-[300px_1fr] gap-10 rounded-3xl bg-[#FDB813] p-10">
+        <div className="grid min-h-svh gap-10 rounded-3xl bg-[#FDB813] p-10 lg:min-h-full lg:grid-cols-[300px_1fr]">
           <img
-            className="h-[300px] w-full rounded-full object-cover"
+            className="hidden h-[300px] w-full rounded-full object-cover lg:block"
             alt=""
-            src={Avatar.src}
+            src={Testimonial3.src}
           />
           <div className="flex flex-col">
             <svg
@@ -74,21 +129,24 @@ export default () => {
                 fill="black"
               />
             </svg>
-            <p className="mt-5 font-display text-xl font-medium italic">
-              We support Mama Cash because we know Mama Cash is strategic, has
-              deep knowledge, and has networks to reach groups that otherwise
-              have a hard time accessing funding. But beyond being a funder,
-              Mama Cash embraces a role in influencing the philanthropic sector
-              to increase its funding for women’s rights. We think that’s a
-              powerful combination!
+            <p className="mt-5 font-display text-lg font-medium italic lg:text-xl">
+              I am convinced that greater equality between men and women will
+              mean fewer wars. This requires women worldwide to gain control
+              over their own lives. Maybe it will take decades, but it’s the
+              only way.
             </p>
-            <div className="mt-auto flex flex-col">
-              <span className="font-display font-medium uppercase">
-                Rini Banerjee
-              </span>
-              <small className="uppercase">
-                Director, Foundation for A Just Society
-              </small>
+            <div className="mt-10 flex items-center gap-4 lg:mt-auto">
+              <img
+                className="h-[75px] w-[75px] rounded-full object-cover lg:hidden"
+                alt=""
+                src={Testimonial3.src}
+              />
+              <div className="flex flex-col">
+                <span className="font-display font-medium uppercase">
+                  Nico Spanjer
+                </span>
+                <small className="uppercase">Mama Cash individual donorr</small>
+              </div>
             </div>
           </div>
         </div>
@@ -97,11 +155,9 @@ export default () => {
       <div className="absolute bottom-4 right-4 z-10 flex gap-2">
         <button
           onClick={() => swiper.slidePrev()}
-          className="rounded-full border-2 border-[#141392] p-2"
+          className="h-[40px] w-[40px] rounded-full border-2 border-[#141392] p-2"
         >
           <svg
-            width="34"
-            height="34"
             viewBox="0 0 34 38"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -116,11 +172,9 @@ export default () => {
         </button>
         <button
           onClick={() => swiper.slideNext()}
-          className="rounded-full border-2 border-[#141392] bg-[#141392] p-2"
+          className="h-[40px] w-[40px] rounded-full border-2 border-[#141392] bg-[#141392] p-2"
         >
           <svg
-            width="34"
-            height="34"
             viewBox="0 0 34 38"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

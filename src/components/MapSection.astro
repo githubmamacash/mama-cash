@@ -1,15 +1,14 @@
----
-
----
-
-<div class="mt-10 flex min-h-[100svh] flex-col">
-  <div class="mx-auto flex h-full max-w-5xl flex-1 flex-col py-16">
-    <h3 class="text-center font-display text-4xl font-bold">
+<div class="mx-5 mt-10 flex min-h-[100svh] flex-col lg:mx-0">
+  <div
+    class="relative mx-auto flex h-full max-w-5xl flex-1 flex-col py-5 lg:py-16"
+  >
+    <h3 class="text-center font-display text-3xl font-bold lg:text-4xl">
       Mama Cash supported international, regional, and national feminist
       partnerships and networks
     </h3>
-    <span class="mt-5 text-center">
-      Mama Cash also provided €4.4 million in 147 grants to international <br />
+    <span class="absolute bottom-[200px] mt-5 hidden text-xs lg:block">
+      Mama Cash also provided <br /> €4.4 million in 147 grants to international
+      <br />
       and cross-regional organisations.</span
     >
     <div id="map" class="mt-10 flex-1">
@@ -1611,6 +1610,66 @@
         </defs>
       </svg>
     </div>
+    <div class="regions_mobile relative mt-5 min-h-[150px] lg:hidden">
+      <div
+        class="north_america region_popup absolute flex flex-col items-start"
+      >
+        <span>North America</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >€67.8k to movements <br /> in the Region</span
+        >
+        <span class="px-3 text-xl font-medium">6 Grants</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >2 Countries</span
+        >
+      </div>
+      <div
+        class="south_america region_popup absolute flex flex-col items-start"
+      >
+        <span>Latin America & Caribbean</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >€17.9 million to movements <br /> in the Region
+        </span>
+        <span class="px-3 text-xl font-medium">1262 Grants</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >30 Countries
+        </span>
+      </div>
+      <div class="asia_oceania region_popup absolute flex flex-col items-start">
+        <span>East, South, & Southeast Asia & Oceania</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >€20 million to movements <br /> in the Region</span
+        >
+        <span class="px-3 text-xl font-medium">1010 Grants</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >29 Countries</span
+        >
+      </div>
+      <div class="africa region_popup absolute flex flex-col items-start">
+        <span>Africa & West Asia</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >€23.7 million to movements <br /> in the Region
+        </span>
+        <span class="px-3 text-xl font-medium">1,402 Grants</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >44 Countries</span
+        >
+      </div>
+      <div class="europe region_popup absolute flex flex-col items-start">
+        <span>Europe, North & Central Asia</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >€22.8 million to movements <br /> in the Region
+        </span>
+        <span class="px-3 text-xl font-medium">3543 Grants</span>
+        <span class="bg-[#141392] px-3 text-xl font-medium text-white"
+          >43 Countries</span
+        >
+      </div>
+    </div>
+    <span class="mt-5 text-center text-xs lg:hidden">
+      Mama Cash also provided €4.4 million in 147 grants to international and
+      cross-regional organisations.</span
+    >
   </div>
 </div>
 
@@ -1671,6 +1730,12 @@
     align-items: end;
     /* text-align: right; */
   }
+  .regions_mobile .region_popup {
+    opacity: 0;
+  }
+  .regions_mobile .region_popup.north_america {
+    opacity: 1;
+  }
 </style>
 
 <script>
@@ -1679,55 +1744,97 @@
 
   const wrapper = document.getElementById("map");
   const regions = wrapper.querySelectorAll(".region");
-  // const textElems = wrapper.querySelectorAll(".region_popup");
 
-  for (const region of regions) {
-    const textElem = region.querySelector(".region_popup") as HTMLElement;
-    const text = new SplitType(textElem, { types: "chars" });
-    const chars = text.chars;
+  let mm = gsap.matchMedia();
+  let breakpoint = 1024;
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakpoint}px)`,
+      isMobile: `(max-width: ${breakpoint - 1}px)`,
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
 
-    const tl = gsap.timeline({ paused: true });
+      if (isMobile) {
+        const regionMobile = document.querySelector(".regions_mobile");
 
-    tl.fromTo(
-      textElem,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power4.out",
-      },
-    );
+        const showRegion = (region, show) => {
+          const popup = regionMobile.querySelector(`.${region}`);
+          gsap.to(popup, {
+            opacity: show ? 1 : 0,
+            duration: show ? 0.2 : 0.1,
+          });
+        };
 
-    tl.fromTo(
-      chars,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.01,
-        duration: 0.3,
-        ease: "power4.out",
-      },
-      "<",
-    );
+        let activeRegion = "north_america";
 
-    const regionPaths = region.querySelectorAll("path");
-    regionPaths.forEach((p) => {
-      p.addEventListener("mouseover", () => {
-        tl.play();
-      });
-      p.addEventListener("mouseout", () => {
-        tl.reverse();
-      });
-    });
+        showRegion(activeRegion, true);
 
-    // region.addEventListener("mouseleave", () => {
-    //   tl.reverse();
-    // });
-  }
+        for (const region of regions) {
+          const regionPaths = region.querySelectorAll("path");
+          regionPaths.forEach((p) => {
+            p.addEventListener("click", () => {
+              if (region.id !== activeRegion) {
+                regions.forEach((_r) => {
+                  if (_r.id !== region.id) {
+                    showRegion(_r.id, false);
+                  }
+                });
+                showRegion(region.id, true);
+                activeRegion = region.id;
+              }
+            });
+          });
+        }
+      }
+
+      if (isDesktop) {
+        for (const region of regions) {
+          const textElem = region.querySelector(".region_popup") as HTMLElement;
+          const text = new SplitType(textElem, { types: "chars" });
+          const chars = text.chars;
+
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo(
+            textElem,
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              duration: 0.3,
+              ease: "power4.out",
+            },
+          );
+
+          tl.fromTo(
+            chars,
+            {
+              y: 50,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              stagger: 0.01,
+              duration: 0.3,
+              ease: "power4.out",
+            },
+            "<",
+          );
+
+          const regionPaths = region.querySelectorAll("path");
+          regionPaths.forEach((p) => {
+            p.addEventListener("mouseover", () => {
+              tl.play();
+            });
+            p.addEventListener("mouseout", () => {
+              tl.reverse();
+            });
+          });
+        }
+      }
+    },
+  );
 </script>
