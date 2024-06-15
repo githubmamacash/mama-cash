@@ -5,7 +5,7 @@ export default function IssuesNav() {
 
   const issuesNavItem = (issue: string, index: number) => {
     return (
-      <article className="grid grid-cols-[auto_1fr] items-center">
+      <article className="grid grid-cols-[auto_1fr] items-center" key={issue}>
         <button
           className={`relative my-auto mr-4 aspect-square w-8 rounded-full border-2 ${index < currentIssue ? "bg-[#750F3C] transition-[background-color] delay-150 duration-150" : "bg-white"} ${index <= currentIssue ? "border-[#750F3C]" : "border-[#FDB813]"}`}
           onClick={() => {
@@ -26,8 +26,8 @@ export default function IssuesNav() {
           <figure
             className={
               index > 0 &&
-              index !== 8 &&
-              `absolute left-0 right-0 transition-colors -z-10 mx-auto h-16 w-[2px] -translate-y-full ${index <= currentIssue ? "bg-[#750F3C]" : "bg-[#FDB813]"}`
+              index !== 8 ?
+              `absolute left-0 right-0 transition-colors -z-10 mx-auto h-16 w-[2px] -translate-y-full ${index <= currentIssue ? "bg-[#750F3C]" : "bg-[#FDB813]"}` : undefined
             }
           />
         </button>
