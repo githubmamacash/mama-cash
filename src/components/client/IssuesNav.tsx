@@ -1,16 +1,30 @@
-import { useState, type ReactElement } from "react";
+import { useRef, useState, type ReactElement } from "react";
 
 export default function IssuesNav() {
   const [currentIssue, setCurrentIssue] = useState(0);
+  const [isNavExpanded, setIsNavExpanded] = useState(true);
+
+  const navMenu = useRef(null);
+  const [translateValue, setTranslateValue] = useState(0);
 
   const issuesNavItem = (issue: string, index: number) => {
     return (
-      <article className="grid grid-cols-[auto_1fr] items-center" key={issue}>
-        <button
+      <button
+        className="mb-[14px] grid grid-cols-[auto_1fr] items-center justify-start md:mb-8"
+        key={issue}
+        onClick={(event) => {
+          setTranslateValue(
+            navMenu.current.getBoundingClientRect().top -
+              event.currentTarget.getBoundingClientRect().top +
+              8,
+          );
+
+          setIsNavExpanded(!isNavExpanded);
+          setCurrentIssue(index);
+        }}
+      >
+        <div
           className={`relative my-auto mr-4 aspect-square w-8 rounded-full border-2 ${index < currentIssue ? "bg-[#750F3C] transition-[background-color] delay-150 duration-150" : "bg-white"} ${index <= currentIssue ? "border-[#750F3C]" : "border-[#FDB813]"}`}
-          onClick={() => {
-            setCurrentIssue(index);
-          }}
         >
           <figure className="flex h-full w-full items-center justify-center">
             <div
@@ -25,51 +39,79 @@ export default function IssuesNav() {
           </figure>
           <figure
             className={
-              index > 0 &&
-              index !== 8 ?
-              `absolute left-0 right-0 transition-colors -z-10 mx-auto h-16 w-[2px] -translate-y-full ${index <= currentIssue ? "bg-[#750F3C]" : "bg-[#FDB813]"}` : undefined
+              index > 0 && index !== 8
+                ? `absolute left-0 right-0 -z-10 mx-auto h-16 w-[2px] -translate-y-full transition-colors ${index <= currentIssue ? "md:bg-[#750F3C]" : "md:bg-[#FDB813]"}`
+                : undefined
             }
           />
-        </button>
+        </div>
 
         <h3
           className={`leading-none text-white ${currentIssue === index ? "font-extrabold" : "font-normal"}`}
         >
           {issue}
         </h3>
-      </article>
+      </button>
     );
   };
 
   return (
-    <div className="isolate grid h-svh max-h-fit grid-cols-[12fr_19fr]">
-      <div className="relative isolate flex h-full flex-col gap-8 overflow-scroll rounded-l-3xl bg-[#E91E78] p-11 pr-2">
-        <h2 className="max-w-[39ch] text-sm font-medium italic text-white">
-          <b className="font-semibold">
-            Responding to the world’s interconnected crises
-          </b>{" "}
-          (8 of many issues)
-        </h2>
-        {[
-          "Lesbian, Bisexual and Queer Rights",
-          "Reproductive Justice",
-          "Countering Gender-Based Violence",
-          "Sex Workers’ Rights",
-          "Racial Justice",
-          "Economic Justice",
-          "Disability Justice",
-          "Environmental Justice",
-        ].map((issue, index) => issuesNavItem(issue, index))}
+    <div className="isolate grid md:h-svh md:max-h-fit md:grid-cols-[12fr_19fr]">
+      <div className={`relative h-12 md:max-h-full`}>
+        <div
+          className={`relative h-svh overflow-hidden transition-[max-height] duration-500 ${isNavExpanded ? "max-h-svh" : "max-h-12"} md:max-h-svh`}
+        >
+          <div
+            ref={navMenu}
+            className={`absolute isolate z-40 w-full translate-y-[var(--translate-y-value)] bg-[#E91E78] px-5 py-8 transition-transform duration-500 md:h-full md:translate-y-0 md:overflow-scroll md:rounded-l-3xl md:p-11 md:pr-2`}
+            style={
+              {
+                "--translate-y-value": isNavExpanded
+                  ? "0px"
+                  : translateValue + "px",
+              } as React.CSSProperties
+            }
+          >
+            <h2 className="mb-5 max-w-[39ch] text-sm font-medium italic text-white">
+              <b className="font-semibold">
+                Responding to the world’s interconnected crises
+              </b>{" "}
+              (8 of many issues)
+            </h2>
+            {[
+              "Lesbian, Bisexual and Queer Rights",
+              "Reproductive Justice",
+              "Countering Gender-Based Violence",
+              "Sex Workers’ Rights",
+              "Racial Justice",
+              "Economic Justice",
+              "Disability Justice",
+              "Environmental Justice",
+            ].map((issue, index) => issuesNavItem(issue, index))}
 
-        <h2 className="mt-3 text-sm font-semibold italic text-white">
-          Advocating for improved support to feminist funds
-        </h2>
-        {[
-          "Relationships with Money",
-          "Strengthening Feminist Funding Architectures",
-        ].map((issue, index) => issuesNavItem(issue, index + 8))}
+            <h2 className="mb-5 mt-8 text-sm font-semibold italic text-white md:mt-3">
+              Advocating for improved support to feminist funds
+            </h2>
+            {[
+              "Relationships with Money",
+              "Strengthening Feminist Funding Architectures",
+            ].map((issue, index) => issuesNavItem(issue, index + 8))}
+          </div>
+        </div>
+
+        <button
+          className={`absolute right-3 top-3 z-40 transition-transform md:hidden ${isNavExpanded ? "hidden" : ""}`}
+          onClick={() => {
+            if (currentIssue !== -1) {
+              setIsNavExpanded(!isNavExpanded);
+            }
+          }}
+        >
+          <img src="/src/assets/Chevron down.svg" alt="" />
+        </button>
       </div>
-      <div className="overflow-scroll rounded-r-3xl bg-[#FDB813] px-12 py-12">
+
+      <div className="bg-[#FDB813] px-5 py-8 md:overflow-scroll md:rounded-r-3xl md:px-12 md:py-12">
         <p className="mb-12">
           These changes were propelled by rapidly growing feminist activism
           throughout the world, represented by increasing numbers of feminist
@@ -84,11 +126,11 @@ export default function IssuesNav() {
 
         <article className="relative isolate mb-16">
           <img
-            className="absolute -right-8 top-0 -z-10 w-96"
+            className="invisible absolute -right-8 top-0 -z-10 w-96 md:visible"
             src="/worldmap-grid.svg"
             alt=""
           />
-          <h2 className="mb-4 font-display text-[95px] font-bold leading-[0.9em]">
+          <h2 className="mb-4 font-display text-6xl font-bold leading-[0.9em] md:text-[95px]">
             €17 million
           </h2>
           <p className="mb-7 max-w-[27ch] text-lg font-semibold uppercase tracking-[-1%]">
