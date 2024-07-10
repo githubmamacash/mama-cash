@@ -1,18 +1,18 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { useIsomorphicLayoutEffect } from "../hooks/useIsomorphicLayoutEffect";
 
 export default function HorizontalScroller({ children }) {
   const wrapperRef = useRef<HTMLDivElement | null>();
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const wrapper = wrapperRef.current.querySelector(
-        ".key-section",
+        ".scroller-section",
       ) as HTMLElement;
       const container = wrapperRef.current.querySelector(
-        ".key-section-container",
+        ".scroller-section-container",
       ) as HTMLElement;
       const scroller = wrapperRef.current.querySelector(
         ".scroller",
@@ -23,17 +23,17 @@ export default function HorizontalScroller({ children }) {
         x: () =>
           wrapper?.offsetWidth -
           scroller?.offsetWidth -
-          container?.offsetLeft * 2 -
-          32,
+          container.offsetLeft - (window.innerWidth < 1200 ? 100 : 200),
         scrollTrigger: {
-          trigger: ".key-section-container",
+          trigger: container,
           pin: true,
           invalidateOnRefresh: true,
-          anticipatePin: 0,
+
           start: "-50 top",
           end: "bottom top",
-          // markers: true,
+          markers: true,
           scrub: true,
+          preventOverlaps: true
         },
       });
     });
@@ -43,7 +43,7 @@ export default function HorizontalScroller({ children }) {
   }, []);
 
   return (
-    <div className="w-full px-5" ref={wrapperRef}>
+    <div className="px-5 w-full" ref={wrapperRef}>
       {children}
     </div>
   );

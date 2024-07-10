@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import Bg from "../assets/quote/bg.png";
+import Quote from "../assets/quote/quote.png";
+---
+
+<section id="quote-section" class="relative overflow-hidden">
+    <Image src={Bg} alt="" class="absolute left-0 top-0" />
+    <div
+        class="container relative mx-auto flex max-w-5xl flex-col items-center py-10"
+    >
+        <div
+            class="absolute left-0 flex h-[80px] w-[80px] items-center justify-center rounded-full bg-white"
+        >
+            <Image src={Quote} alt="quote" class="w-[50px]" />
+        </div>
+        <div
+            class="absolute bottom-10 right-0 flex h-[80px] w-[80px] items-center justify-center rounded-full bg-white"
+        >
+            <Image src={Quote} alt="quote" class="w-[50px]" />
+        </div>
+        <blockquote
+            class="max-w-[40ch] text-center font-display text-3xl font-medium text-[#141392]"
+        >
+            By leaving my inheritance to Mama Cash, I feel like I am sustaining
+            our family heritage, not through offspring, but by contributing to a
+            better world for women and girls. I have no doubt that my
+            inheritance will contribute to change for women and girls. I trust
+            Mama Cash completely, she puts her money where her mouth is.
+        </blockquote>
+        <span class="mt-5 font-display text-2xl font-bold text-[#E91E78]"
+            >Sandrine Ulemberg</span
+        >
+        <small class="uppercase text-[#141392]"
+            >Mama Cash individual donor</small
+        >
+    </div>
+</section>

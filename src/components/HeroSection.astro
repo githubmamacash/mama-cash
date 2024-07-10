@@ -1,154 +1,131 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../assets/logo.svg";
-import Woman1 from "../assets/woman1.png";
-import Woman2 from "../assets/woman2.png";
-import Counter from "./client/Counter";
+import Woman1 from "../assets/hero/woman1.png";
+import Woman2 from "../assets/hero/woman2.png";
+import Woman3 from "../assets/hero/woman3.png";
+import Group from "../assets/hero/group.png";
+import Layer1 from "../assets/hero/layer1.png";
+import Layer2 from "../assets/hero/layer2.png";
+import Hand from "../assets/hero/hand.png";
+import Escala from "../assets/hero/escala.png";
+import Megaphone from "../assets/hero/megaphone.png";
 ---
 
-<section id="hero-section" class="relative flex min-h-svh flex-col">
-  <div class="hero-bg absolute left-0 top-0 z-[-1] h-full w-full bg-[#FDB813]">
-  </div>
-  <div
-    class="mx-auto flex w-full max-w-5xl items-center px-5 pb-10 pt-5 lg:pb-16 lg:pt-10"
+<section
+  id="hero-section"
+  class="relative flex min-h-svh flex-col items-center"
+>
+  <h1
+    class="mt-5 text-center font-display text-7xl font-bold text-[#141392] lg:text-8xl"
   >
-    <div class="mb-5 flex items-center">
-      <a href="/" class="">
-        <img alt="Logo" src={Logo.src} class="w-[120px]" /></a
+    <span class="block">Change</span>
+    <span class="block">that lasts</span>
+  </h1>
+  <span class="mt-5 font-display text-xl text-[#E91E78]"
+    >40 YEARS OF IMPACT</span
+  >
+  <div class="mx-auto mt-20 w-full max-w-4xl px-10 lg:px-0">
+    <div class="wrapper relative mx-auto max-w-[90%] lg:max-w-[80%]">
+      <div
+        class="absolute left-[-5%] top-[-30%] hidden h-[90px] w-[90px] rounded-full bg-[#E91E78] lg:block"
       >
-    </div>
-    <!-- <a href="/" class="py-2 ml-auto text-xl font-bold uppercase px-7">Donate</a> -->
-    <button
-      class="ml-auto rounded-3xl bg-[#E91E78] px-8 py-3 font-body text-xs font-semibold uppercase text-white"
-      >Donate</button
-    >
-  </div>
-  <div class="flex w-full flex-col items-center justify-center px-5 lg:px-0">
-    <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
-      <h1
-        data-animate-words="Love,Justice,Change"
-        id="animated-heading"
-        class="bg-[#E91E78] px-3 text-center font-display text-7xl font-extrabold uppercase text-white lg:text-right lg:text-8xl"
+        <Image src={Hand} alt="" class="absolute bottom-0 left-0 w-[70px]" />
+      </div>
+      <div class="absolute right-[-5%] top-0 z-20 hidden w-[100px] lg:block">
+        <Image src={Escala} alt="" class="absolute bottom-3" />
+        <div class="mx-auto h-[80px] w-[80px] rounded-full bg-[#141392]"></div>
+      </div>
+      <svg
+        class="relative z-10"
+        viewBox="0 0 950 475"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Change
-      </h1>
+        <path
+          d="M949.207 475C949.207 737.059 736.766 949.5 474.707 949.5C212.648 949.5 0.207031 737.059 0.207031 475C0.207031 212.941 212.648 0.5 474.707 0.5C736.766 0.5 949.207 212.941 949.207 475Z"
+          fill="#FDB813"></path>
+      </svg>
+      <svg
+        class="absolute bottom-[80%] right-[-15%] z-0 hidden w-[300px] lg:block"
+        viewBox="0 0 470 379"
+        fill="none"
+      >
+        <path
+          d="M2.40628 378.49C1.30719 378.6 0.326996 377.798 0.216949 376.699C0.106903 375.6 0.908661 374.62 2.00772 374.51L2.40628 378.49ZM149.874 11C149.874 16.891 145.098 21.6667 139.207 21.6667C133.316 21.6667 128.54 16.891 128.54 11C128.54 5.10896 133.316 0.333333 139.207 0.333333C145.098 0.333333 149.874 5.10896 149.874 11ZM2.00772 374.51C192.931 355.393 314.404 323.017 384.867 285.353C420.091 266.526 442.411 246.459 454.357 226.219C466.262 206.047 467.938 185.586 461.656 165.664C455.351 145.67 440.987 126.103 420.611 107.97C400.247 89.8476 373.976 73.2447 344.037 59.1613C284.15 30.9904 209.8 13 139.207 13V9C210.421 9 285.35 27.1346 345.74 55.5418C375.939 69.7475 402.555 86.5469 423.27 104.982C443.972 123.405 458.876 143.549 465.471 164.461C472.088 185.445 470.294 207.085 457.801 228.252C445.349 249.35 422.343 269.857 386.753 288.881C315.588 326.92 193.484 359.357 2.40628 378.49L2.00772 374.51Z"
+          fill="#E91E78"></path>
+      </svg>
 
-      <span
-        class="px-1 text-center font-display text-6xl font-bold text-[#141392] lg:text-8xl"
-        >that lasts</span
-      >
-    </div>
-    <span
-      class="mt-4 font-display text-2xl font-semibold uppercase text-[#141392]"
-      >40 years of impact</span
-    >
-  </div>
-  <div class="mx-auto mt-10 w-full max-w-5xl px-5 lg:mt-auto lg:px-5">
-    <div
-      id="woman2"
-      class="relative mb-5 rounded-xl bg-cover bg-center bg-no-repeat pb-8 pt-10"
-      style={`background-image: url(${Woman2.src});`}
-    >
       <Image
-        id="woman1"
-        src={Woman1}
-        alt="woman"
-        class="absolute bottom-0 right-0 z-[0] object-cover lg:w-[80%]"
+        class="absolute left-[14%] top-[10px] z-10 w-[100px] lg:w-[200px]"
+        src={Layer1}
+        alt=""
+      />
+      <Image
+        class="absolute bottom-[15%] right-[18%] z-10 w-[130px] lg:w-[300px]"
+        src={Layer2}
+        alt=""
+      />
+      <Image
+        class="absolute bottom-0 right-[-25px] z-10 w-[170px] lg:right-[-50px] lg:w-[370px]"
+        src={Group}
+        alt=""
       />
       <div
-        class="relative z-10 flex flex-col items-center justify-center gap-10 pb-28 lg:mt-10 lg:flex-row lg:gap-24 lg:pb-0"
+        class="absolute bottom-[35%] left-3 z-10 hidden h-[80px] w-[80px] rounded-full bg-[#1FAAAC] lg:block"
       >
-        <div class="flex flex-col items-center">
-          <!-- <span class="font-display text-6xl font-extrabold text-white"
-            >+€140m
-          </span> -->
-          <Counter append="+€" prepend="m" client:load>140</Counter>
-          <small class="font-medium uppercase text-white"
-            >million in funding</small
-          >
-        </div>
-        <div class="flex flex-col items-center">
-          <!-- <span class="font-display text-6xl font-extrabold text-white"
-            >+160</span
-          > -->
-          <Counter append="+" prepend="" client:load>160</Counter>
-          <small class="font-medium uppercase text-white">countries</small>
-        </div>
-        <div class="flex flex-col items-center">
-          <!-- <span class="font-display text-6xl font-extrabold text-white"
-            >+7,460</span
-          > -->
-          <Counter append="+" prepend="" client:load>7460</Counter>
-          <small class="font-medium uppercase text-white">grants</small>
+      </div>
+      <Image
+        class="absolute bottom-[-4px] left-0 z-10 w-[125px] lg:bottom-[-9px] lg:w-[250px]"
+        src={Woman2}
+        alt=""
+      />
+
+      <Image
+        class="absolute bottom-0 left-0 right-0 z-10 mx-auto w-[200px] lg:w-[400px]"
+        src={Woman1}
+        alt=""
+      />
+      <Image
+        class="absolute bottom-[-30px] left-[25%] z-10 w-[110px] lg:bottom-[-60px] lg:w-[220px]"
+        src={Woman3}
+        alt=""
+      />
+    </div>
+    <div
+      class="after::absolute relative h-[2px] w-full bg-[#141392] before:absolute before:top-[-3px] before:h-2 before:w-2 before:rounded-full before:bg-[#141392] after:absolute after:right-0 after:top-[-3px] after:h-2 after:w-2 after:rounded-full after:bg-[#141392]"
+    >
+    </div>
+    <div class="relative mt-20 flex flex-col items-center justify-center">
+      <div class="absolute bottom-[25%] left-[-50px] hidden lg:block">
+        <Image
+          src={Megaphone}
+          alt="Megaphone"
+          class="absolute bottom-[-20px] left-[10px] max-w-[150px]"
+        />
+        <div class="bottom-0 h-[100px] w-[100px] rounded-full bg-[#1FAAAC]">
         </div>
       </div>
+      <h2
+        class="text-center font-display text-3xl font-bold text-[#141392] lg:text-7xl"
+      >
+        Mama Cash began <br />
+        with a visionary idea
+      </h2>
+      <span class="mt-5 font-display text-xl text-[#E91E78]">SOUND BOLD?</span>
+      <p
+        class="mt-5 max-w-prose text-center font-display leading-tight text-[#141392]"
+      >
+        Well, in 1983 a group of women got together and decided to make bold
+        action the new normal. It wasn’t always easy, it wasn’t always popular.
+        But here we are four decades later, Mama Cash is a pioneering force for
+        gender equality, at the forefront of supporting women, girls, and trans
+        and intersex people around the world, pushing past barriers and clearing
+        the way for future generations.
+      </p>
     </div>
   </div>
 </section>
 
-<style>
-  .hero-bg {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
-  }
-</style>
+<style></style>
 
-<script>
-  import { gsap } from "gsap";
-  import { TextPlugin } from "gsap/TextPlugin";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(TextPlugin, ScrollTrigger);
-
-  let animText = document.getElementById("animated-heading");
-  let words: string[] = animText.dataset.animateWords?.split(",");
-
-  let timeline = gsap.timeline({
-    repeat: -1,
-    repeatDelay: 1,
-    // smoothChildTiming: true,
-    // yoyo: true,
-  });
-
-  for (const word of words) {
-    timeline.to(animText, {
-      duration: 1.5,
-      text: {
-        value: word,
-        delimiter: "",
-        padSpace: false,
-        type: "diff",
-        preserveSpaces: true,
-        rtl: true,
-        // speed: 0.2,
-      },
-      ease: "sine",
-    });
-  }
-
-  let heroSection = document.getElementById("hero-section");
-  // let womanImg = document.getElementById("woman1");
-  let womanBg = document.getElementById("woman2");
-
-  gsap.to(womanBg, {
-    scrollTrigger: {
-      trigger: heroSection,
-      start: "top top",
-      end: "bottom top",
-      // markers: true,
-      scrub: true,
-    },
-    backgroundPositionY: 1,
-    ease: "none",
-  });
-
-  // gsap.to(womanImg, {
-  //   scrollTrigger: {
-  //     trigger: heroSection,
-  //     start: "top top",
-  //     end: "+=500",
-  //     markers: true,
-  //     scrub: 1,
-  //   },
-  //   yPercent: 10,
-  // });
-</script>
+<script></script>

@@ -1,0 +1,67 @@
+---
+import HorizontalScroller from "./client/HorizontalScroller";
+import Overlayed from "../assets/overlayed.png";
+import { Image } from "astro:assets";
+
+const data = [
+    {
+        id: 1,
+        title: "Community Impact",
+        color: "#1FAAAC",
+        text: "We revolutionised how money flows, transforming relationships with money, and reshaping funding practices toward power, equality, and resources. By nurturing a culture of individual giving in the Netherlands and pioneering changes in Dutch banking for women entrepreneurs, Mama Cash set global financial standards and increased and improved funding for feminist movements.We spearhead collaborative efforts to transform funding streams in support of feminist causes worldwide and reshape funding practices to address power and equality.",
+    },
+    {
+        id: 2,
+        title: "Thematic Impact",
+        color: "#FDB813",
+        text: "At Mama Cash, our strategic funding choices bring fresh, diverse voices to the forefront. We support self-led initiatives, prioritise historically excluded groups, and partner with women's and feminist funds around the globe. By sharing resources and empowering Global South feminist leaders, we’re helping activists build relationships, spark collaborations, and take on leadership roles, creating vibrant new networks and coalitions and a whole new healthy, flourishing feminist landscape.",
+    },
+    {
+        id: 3,
+        title: "Funding for Change",
+        color: "#E91E78",
+        text: "Mama Cash proudly fuels bold feminist activism by taking smart risks. Our long-term, core, and seed funding keeps movements thriving and growing. We empower grantees from the start, helping them build coalitions and networks. They, in turn, pay it forward by uplifting excluded communities, creating unstoppable feminist movements for lasting change.",
+    },
+];
+---
+
+<section id="" class="mt-20">
+    <div class="mx-auto mb-12 max-w-5xl text-[#141392]">
+        <h3 class="text-5xl font-semibold">
+            We Champion Intersectional <br /> Funding Worldwide
+        </h3>
+    </div>
+    <HorizontalScroller client:load>
+        <div class="scroller-section">
+            <div class="scroller-section-container mx-auto max-w-5xl">
+                <div
+                    class="scroller grid w-[max-content] auto-cols-auto grid-flow-col gap-12"
+                >
+                    {
+                        data.map((e) => (
+                            <div class="scroller-item container mx-auto max-w-4xl font-display lg:max-w-5xl">
+                                <div
+                                    style={`background: ${e.color}`}
+                                    class="min-h-[80svh] rounded-2xl p-10"
+                                >
+                                    <div class="grid grid-cols-2 gap-10">
+                                        <div class="flex flex-col">
+                                            <h4 class="text-7xl font-black text-black">
+                                                {e.title}
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <p class="text-xl font-normal">
+                                                {e.text}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </HorizontalScroller>
+</section>

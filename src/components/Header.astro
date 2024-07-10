@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.svg";
+---
+
+<header>
+    <nav
+        class="hidden items-center justify-center gap-14 py-6 font-display font-medium text-[#141392] lg:flex"
+    >
+        <a href="">Intersectional Impact</a>
+        <a href="">Grantee Partners</a>
+        <a href="">
+            <Image width={100} src={Logo} alt="Mama cash logo" />
+        </a>
+        <a href=""> Worldwide support </a>
+        <a href=""> Mama Cash Effect </a>
+    </nav>
+    <nav class="flex items-center px-5 py-4 lg:hidden">
+        <a href="" class="flex-1">
+            <Image width={80} src={Logo} alt="Mama cash logo" loading="eager" />
+        </a>
+        <button>
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 6.00005C3.60156 5.33731 4.13882 4.80005 4.80156 4.80005H19.2016C19.8643 4.80005 20.4016 5.33731 20.4016 6.00005C20.4016 6.66279 19.8643 7.20005 19.2016 7.20005H4.80156C4.13882 7.20005 3.60156 6.66279 3.60156 6.00005Z"
+                    fill="#141392"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 12C3.60156 11.3373 4.13882 10.8 4.80156 10.8H19.2016C19.8643 10.8 20.4016 11.3373 20.4016 12C20.4016 12.6628 19.8643 13.2 19.2016 13.2H4.80156C4.13882 13.2 3.60156 12.6628 3.60156 12Z"
+                    fill="#141392"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 18C3.60156 17.3373 4.13882 16.8 4.80156 16.8H12.0016C12.6643 16.8 13.2016 17.3373 13.2016 18C13.2016 18.6628 12.6643 19.2 12.0016 19.2H4.80156C4.13882 19.2 3.60156 18.6628 3.60156 18Z"
+                    fill="#141392"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
