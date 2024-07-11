@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import TestimonyPicture1 from "../assets/testimony-1.png";
 import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
+import BackgroundNotebook from "../assets/quote/bg.png";
+import Quote from "../assets/quote/quote.png";
 
 const testimonies: [ImageMetadata, string, string][] = [
   [
@@ -16,9 +18,13 @@ const testimonies: [ImageMetadata, string, string][] = [
 ---
 
 <section
-  class="font-display mx-auto mb-12 mt-24 flex max-w-5xl flex-col items-center text-[#141392]"
+  class="mx-auto mb-12 mt-24 flex flex-col items-center font-display text-[#141392]"
 >
-  <h2 class="text-4xl text-center max-w-[13ch] lg:max-w-full lg:text-left lg:text-7xl font-semibold">Shared Power, Global Impact</h2>
+  <h2
+    class="max-w-[13ch] text-center text-4xl font-semibold lg:max-w-5xl lg:text-left lg:text-7xl"
+  >
+    Shared Power, Global Impact
+  </h2>
   <p class="mt-4 max-w-[92ch] text-center leading-tight">
     For 40 years, Mama Cash has teamed up with hundreds of grantee partners
     worldwide, channelling over €91 million into the hands of individuals,
@@ -26,16 +32,21 @@ const testimonies: [ImageMetadata, string, string][] = [
     incredible grantee partners.
   </p>
 
-  <div class="mt-20 lg:grid lg:grid-cols-3 lg:gap-[60px] lg:px-8">
+  <div class="mt-20 max-w-5xl lg:grid lg:grid-cols-3 lg:gap-[60px] lg:px-8">
     {
       testimonies.map(([img, name, role]) => (
-        <article class="flex flex-col items-center mb-20 lg:mb-0">
+        <article class="mb-20 flex flex-col items-center lg:mb-0">
           <Image alt="" src={img} />
           <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
-          <p class="mt-1 text-sm w-full text-center" style={`max-width: ${role.length * 3/4}ch`}>{role}</p>
+          <p
+            class="mt-1 w-full text-center text-sm"
+            style={`max-width: ${(role.length * 3) / 4}ch`}
+          >
+            {role}
+          </p>
 
           <a
-            class="flex items-center rounded-full bg-[#FDB813] pl-4 pr-[4px] py-[6px] font-semibold text-black text-xs mt-4 gap-4"
+            class="mt-4 flex items-center gap-4 rounded-full bg-[#FDB813] py-[6px] pl-4 pr-[4px] text-xs font-semibold text-black"
             href="#"
           >
             Watch testimony
@@ -71,4 +82,39 @@ const testimonies: [ImageMetadata, string, string][] = [
       ))
     }
   </div>
+
+  <article
+    class="relative isolate mt-24 grid w-full grid-cols-[1fr_auto_1fr] gap-x-16 overflow-hidden"
+  >
+    <Image class="absolute -z-10" alt="" src={BackgroundNotebook} />
+
+    <div
+      class="ml-auto mt-14 flex aspect-square h-24 items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)]"
+    >
+      <Image alt="" class="aspect-[68/45] w-3/5" src={Quote} />
+    </div>
+
+    <p class="mx-auto mt-20 max-w-[38ch] text-center text-4xl font-medium">
+      By leaving my inheritance to Mama Cash, I feel like I am sustaining our
+      family heritage, not through offspring, but by contributing to a better
+      world for women and girls. I have no doubt that my inheritance will
+      contribute to change for women and girls. I trust Mama Cash completely,
+      she puts her money where her mouth is.
+    </p>
+
+    <h3
+      class="col-start-2 mx-auto mt-9 text-center text-3xl font-semibold text-[#E91E78]"
+    >
+      Sandrine Ulemberg
+    </h3>
+    <p class="col-start-2 mx-auto mb-20 text-center font-medium uppercase">
+      Mama Cash individual donor
+    </p>
+
+    <div
+      class="row-start-2 col-start-3 row-span-2 aspect-square h-24 flex items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)]"
+    >
+      <Image class="-scale-100 aspect-[68/45] w-3/5" alt="" src={Quote} />
+    </div>
+  </article>
 </section>
