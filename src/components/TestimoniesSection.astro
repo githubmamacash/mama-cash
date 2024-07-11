@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import TestimonyPicture1 from "../assets/testimony-1.png";
+import TestimonyPicture2 from "../assets/testimony-2.png";
+import TestimonyPicture3 from "../assets/testimony-3.png";
+
+const testimonies: [ImageMetadata, string, string][] = [
+  [
+    TestimonyPicture1,
+    "Ida LeBlanc",
+    "National Union of Domestic Employees, Trinidad and Tobago",
+  ],
+  [TestimonyPicture2, "Koyel Ghosh", "Sapho for Equality, India"],
+  [TestimonyPicture3, "Rajni Lallah", "Muvman Liberasyon Fam, Mauritius"],
+];
+---
+
+<section
+  class="font-display mx-auto mb-12 mt-24 flex max-w-5xl flex-col items-center text-[#141392]"
+>
+  <h2 class="text-7xl font-semibold">Shared Power, Global Impact</h2>
+  <p class="mt-4 max-w-[92ch] text-center leading-tight">
+    For 40 years, Mama Cash has teamed up with hundreds of grantee partners
+    worldwide, channelling over €91 million into the hands of individuals,
+    groups, and movements driving lasting change. The real lessons come from our
+    incredible grantee partners.
+  </p>
+
+  <div class="mt-20 grid grid-cols-3 gap-[60px] px-8">
+    {
+      testimonies.map(([img, name, role]) => (
+        <article class="flex flex-col items-center">
+          <Image alt="" src={img} />
+          <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
+          <p class="mt-1 text-sm w-full text-center" style={`max-width: ${role.length * 3/4}ch`}>{role}</p>
+
+          <a
+            class="flex items-center rounded-full bg-[#FDB813] pl-4 pr-[4px] py-[6px] font-semibold text-black text-xs mt-4 gap-4"
+            href="#"
+          >
+            Watch testimony
+            <svg
+              width="37"
+              height="36"
+              viewBox="0 0 37 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="18.207"
+                cy="18"
+                r="17"
+                stroke="black"
+                stroke-width="2"
+              />
+              <path
+                d="M9 18H25"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M17.5 10.5L26.5 18L17.5 26"
+                stroke="black"
+                stroke-width="2"
+                stroke-miterlimit="10"
+              />
+            </svg>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>
