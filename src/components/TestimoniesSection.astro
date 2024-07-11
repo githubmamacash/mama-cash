@@ -3,9 +3,6 @@ import { Image } from "astro:assets";
 import TestimonyPicture1 from "../assets/testimony-1.png";
 import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
-import BackgroundNotebook from "../assets/quote/bg.png";
-import Quote from "../assets/quote/quote.png";
-import Guide from "../assets/testimony-guide.svg";
 
 const testimonies: [ImageMetadata, string, string][] = [
   [
@@ -83,50 +80,4 @@ const testimonies: [ImageMetadata, string, string][] = [
       ))
     }
   </div>
-
-  <article
-    class="relative isolate mt-24 flex w-full flex-col items-center lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-start lg:gap-x-20"
-  >
-    <Image
-      class="absolute left-0 right-0 -z-10 mx-auto h-full object-cover"
-      alt=""
-      src={BackgroundNotebook}
-    />
-
-    <div
-      class="mt-14 flex aspect-square h-24 items-center justify-center rounded-full bg-[hsl(0,0%,95%)] lg:ml-auto"
-    >
-      <Image alt="" class="aspect-[68/45] w-3/5" src={Quote} />
-    </div>
-
-    <p
-      class="mx-auto mt-10 max-w-[38ch] px-6 text-center text-2xl font-medium lg:mt-20 lg:text-4xl"
-    >
-      By leaving my inheritance to Mama Cash, I feel like I am sustaining our
-      family heritage, not through offspring, but by contributing to a better
-      world for women and girls. I have no doubt that my inheritance will
-      contribute to change for women and girls. I trust Mama Cash completely,
-      she puts her money where her mouth is.
-    </p>
-
-    <h3
-      class="col-start-2 mx-auto mt-9 text-center text-2xl font-semibold text-[#E91E78] lg:text-3xl"
-    >
-      Sandrine Ulemberg
-    </h3>
-    <p class="col-start-2 mx-auto mb-20 text-center font-medium uppercase">
-      Mama Cash individual donor
-    </p>
-
-    <div
-      class="relative col-start-3 row-span-2 row-start-2 hidden aspect-square h-24 items-center justify-center rounded-full bg-[hsl(0,0%,95%)] lg:flex"
-    >
-      <Image
-        class="invisible h-[1687px] -z-10 left-7 max-w-[867px] absolute lg:visible"
-        alt=""
-        src={Guide}
-      />
-      <Image class="aspect-[68/45] w-3/5 -scale-100" alt="" src={Quote} />
-    </div>
-  </article>
 </section>
