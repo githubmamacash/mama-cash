@@ -84,17 +84,23 @@ const testimonies: [ImageMetadata, string, string][] = [
   </div>
 
   <article
-    class="relative isolate mt-24 grid w-full grid-cols-[1fr_auto_1fr] gap-x-16 overflow-hidden"
+    class="relative isolate mt-24 flex w-full flex-col items-center overflow-hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-start lg:gap-x-16"
   >
-    <Image class="absolute -z-10" alt="" src={BackgroundNotebook} />
+    <Image
+      class="absolute -z-10 h-full object-cover"
+      alt=""
+      src={BackgroundNotebook}
+    />
 
     <div
-      class="ml-auto mt-14 flex aspect-square h-24 items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)]"
+      class="mt-14 flex aspect-square h-24 items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)] lg:ml-auto"
     >
       <Image alt="" class="aspect-[68/45] w-3/5" src={Quote} />
     </div>
 
-    <p class="mx-auto mt-20 max-w-[38ch] text-center text-4xl font-medium">
+    <p
+      class="mx-auto mt-10 max-w-[38ch] px-6 text-center text-2xl font-medium lg:mt-20 lg:text-4xl"
+    >
       By leaving my inheritance to Mama Cash, I feel like I am sustaining our
       family heritage, not through offspring, but by contributing to a better
       world for women and girls. I have no doubt that my inheritance will
@@ -103,7 +109,7 @@ const testimonies: [ImageMetadata, string, string][] = [
     </p>
 
     <h3
-      class="col-start-2 mx-auto mt-9 text-center text-3xl font-semibold text-[#E91E78]"
+      class="col-start-2 mx-auto mt-9 text-center text-2xl font-semibold text-[#E91E78] lg:text-3xl"
     >
       Sandrine Ulemberg
     </h3>
@@ -112,9 +118,9 @@ const testimonies: [ImageMetadata, string, string][] = [
     </p>
 
     <div
-      class="row-start-2 col-start-3 row-span-2 aspect-square h-24 flex items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)]"
+      class="col-start-3 row-span-2 row-start-2 hidden aspect-square h-24 items-center justify-center rounded-full bg-[rgb(255,255,255,0.6)] lg:flex"
     >
-      <Image class="-scale-100 aspect-[68/45] w-3/5" alt="" src={Quote} />
+      <Image class="aspect-[68/45] w-3/5 -scale-100" alt="" src={Quote} />
     </div>
   </article>
 </section>
