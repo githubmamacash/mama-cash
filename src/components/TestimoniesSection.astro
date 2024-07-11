@@ -5,7 +5,7 @@ import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
 import BackgroundNotebook from "../assets/quote/bg.png";
 import Quote from "../assets/quote/quote.png";
-import Guide from "../assets/testimony-guide.svg"
+import Guide from "../assets/testimony-guide.svg";
 
 const testimonies: [ImageMetadata, string, string][] = [
   [
@@ -21,7 +21,11 @@ const testimonies: [ImageMetadata, string, string][] = [
 <section
   class="relative mx-auto mb-12 mt-24 flex flex-col items-center font-display text-[#141392]"
 >
-  <Image class="invisible lg:visible absolute top-[30%] left-[79%] h-full object-contain" alt="" src={Guide}/>
+  <Image
+    class="invisible absolute left-[79%] top-[30%] h-full object-contain lg:visible"
+    alt=""
+    src={Guide}
+  />
 
   <h2
     class="max-w-[13ch] text-center text-4xl font-semibold lg:max-w-5xl lg:text-left lg:text-7xl"

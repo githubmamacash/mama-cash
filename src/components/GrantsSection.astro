@@ -1,19 +1,79 @@
 ---
 import { Image } from "astro:assets";
 import Bg from "../assets/grants/bg.png";
+import Mask1 from "../assets/grants/mask1.png";
+import Mask2 from "../assets/grants/mask2.png";
 ---
 
 <section id="grants-section" class="relative mt-20">
-    <!-- <Image src={Bg} alt="" class="absolute left-0 top-0" /> -->
+    <Image
+        src={Bg}
+        alt=""
+        class="absolute left-0 top-0 h-full w-full object-cover"
+    />
     <div class="container mx-auto flex max-w-5xl flex-col items-center py-20">
-        <h3 class="font-display text-7xl font-bold text-[#141392]">
+        <h3 class="font-display text-8xl font-bold text-[#141392]">
             +140 million
         </h3>
-        <span class="mt-5 font-display text-xl uppercase text-[#E91E78]">
-            provided to feminist movements around the world</span
+        <span
+            class="mt-5 text-center font-display text-xl uppercase text-[#E91E78]"
         >
-        <a class="mt-10 rounded-3xl bg-[#141392] px-5 py-2 text-sm text-white">
-            More data
-        </a>
+            provided to feminist movements <br /> around the world</span
+        >
+        <div class="grid grid-cols-[1fr_200px_1fr] items-start">
+            <div
+                class="relative mt-16 flex h-80 w-80 items-center justify-center overflow-hidden rounded-full bg-[#E91E78] text-white"
+            >
+                <Image
+                    src={Mask1}
+                    alt=""
+                    class="absolute left-0 top-0 h-full w-full"
+                />
+                <h3
+                    class="relative flex flex-col items-center text-8xl font-bold"
+                >
+                    160
+                    <small class="mt-2 text-xl font-normal uppercase"
+                        >countries</small
+                    >
+                </h3>
+            </div>
+            <div class="flex justify-center">
+                <a
+                    class="mt-10 flex items-center gap-3 rounded-3xl bg-[#141392] py-2 pl-4 pr-2 text-xs text-white"
+                >
+                    More data
+                    <svg
+                        fill="white"
+                        width="24"
+                        height="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                    >
+                        <path
+                            d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+            <div
+                class="relative mt-16 flex h-80 w-80 items-center justify-center overflow-hidden rounded-full bg-[#1FAAAC] text-white"
+            >
+                <Image
+                    src={Mask2}
+                    alt=""
+                    class="absolute left-0 top-0 h-full w-full"
+                />
+                <h3
+                    class="relative flex flex-col items-center text-8xl font-bold"
+                >
+                    7,460
+                    <small class="mt-2 text-xl font-normal uppercase"
+                        >direct grants</small
+                    >
+                </h3>
+            </div>
+        </div>
     </div>
 </section>

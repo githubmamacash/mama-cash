@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'display': ['Roboto', 'system-ui', 'serif'],
-				'body': ["Inter", 'system-ui', 'sans-serif']
+				// 'display': ['Roboto', 'system-ui', 'serif'],
+				'body': ['Roboto', 'system-ui', 'serif']
 			},
 		},
 	},

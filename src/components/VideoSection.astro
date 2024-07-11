@@ -1,7 +1,35 @@
 ---
-import Video from "./client/Video";
+
 ---
 
-<section id="video-section">
-    <Video client:load />
+<section id="video-section" class="relative w-full">
+    <video
+        muted
+        id="videoElem"
+        class="mx-auto max-w-5xl rounded-3xl"
+        src="/videoplayback.webm"></video>
 </section>
+
+<script>
+    import gsap from "gsap";
+
+    const video = document.getElementById("videoElem") as HTMLVideoElement;
+
+    video.addEventListener("loadeddata", () => {
+        ScrollTrigger.refresh(true);
+    });
+
+    gsap.to(video, {
+        scrollTrigger: {
+            refreshPriority: 0,
+            trigger: "#video-section",
+            start: "top 40%",
+            markers: true,
+        },
+        onComplete: () => {
+            video.play().catch(() => {
+                video.controls = true;
+            });
+        },
+    });
+</script>

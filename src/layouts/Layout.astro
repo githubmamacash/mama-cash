@@ -1,6 +1,10 @@
 ---
-import "@fontsource/inter";
-import "@fontsource/roboto";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/900.css";
+
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Footer from "../components/Footer.astro";
 import { SEO } from "astro-seo";
@@ -68,6 +72,7 @@ const { title } = Astro.props;
           url("/635934446d2865655d814bb0_noise.webp"),
           linear-gradient(180deg, #f3f3f3, #f3f3f3);
         background-size: auto, 128px, auto;
+        overflow-x: hidden;
       }
     </style>
   </body>

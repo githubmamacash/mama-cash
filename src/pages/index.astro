@@ -4,7 +4,6 @@ import VideoSection from "../components/VideoSection.astro";
 import IssuesSection from "../components/IssuesSection.astro";
 import PartnersSection from "../components/PartnersSection.astro";
 import KeyInternalSection from "../components/KeyInternalSection.astro";
-import MapSection from "../components/MapSection.astro";
 import ReportSection from "../components/ReportSection.astro";
 import Layout from "../layouts/Layout.astro";
 import TestimonialSection from "../components/TestimonialSection.astro";
@@ -33,7 +32,7 @@ import TestimoniesSection from "../components/TestimoniesSection.astro";
     <GrantsSection />
     <InternationalFundingSection1 />
     <TestimoniesSection />
-    <!-- <VideoSection /> -->
+    <VideoSection />
     <!-- <QuoteSection /> -->
 
     <InternationalFundingSection2 />
@@ -54,8 +53,14 @@ import TestimoniesSection from "../components/TestimoniesSection.astro";
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.refresh();
+  gsap.registerPlugin(ScrollTrigger);
+
+  const body = document.body;
+
+  const obv = new ResizeObserver(() => {
+    ScrollTrigger.refresh(true);
+    console.log("[ScrollTrigger] refresh");
   });
+
+  obv.observe(body);
 </script>
