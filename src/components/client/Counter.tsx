@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 
-export default function Counter({ append, children, prepend }) {
+export default function Counter({ children }) {
   const wrapper = useRef<HTMLDivElement | null>(null);
   // const [count, setCount] = useState(start);
 
-  function numberWithCommas(x) {
+  function numberWithCommas(x: number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
@@ -57,11 +57,9 @@ export default function Counter({ append, children, prepend }) {
   return (
     <div
       ref={wrapper}
-      className="flex items-center font-display text-6xl font-extrabold text-white"
+      className="flex items-center font-display font-extrabold text-white"
     >
-      <div>{append}</div>
       <div id="numbers">{children}</div>
-      <div>{prepend}</div>
     </div>
   );
 }

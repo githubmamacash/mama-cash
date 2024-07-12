@@ -12,6 +12,7 @@
 
 <script>
     import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
     const video = document.getElementById("videoElem") as HTMLVideoElement;
 
@@ -24,7 +25,6 @@
             refreshPriority: 0,
             trigger: "#video-section",
             start: "top 40%",
-            markers: true,
         },
         onComplete: () => {
             video.play().catch(() => {

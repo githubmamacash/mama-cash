@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import Bg from "../assets/grants/bg.png";
 import Mask1 from "../assets/grants/mask1.png";
 import Mask2 from "../assets/grants/mask2.png";
+import Hands from "../assets/grants/hands.png";
+import Counter from "./client/Counter";
 ---
 
 <section id="grants-section" class="relative mt-20">
@@ -11,7 +13,14 @@ import Mask2 from "../assets/grants/mask2.png";
         alt=""
         class="absolute left-0 top-0 h-full w-full object-cover"
     />
-    <div class="container mx-auto flex max-w-5xl flex-col items-center py-20">
+    <div
+        class="container relative mx-auto flex max-w-5xl flex-col items-center py-20"
+    >
+        <div
+            class="absolute right-0 top-[-60px] h-32 w-32 rounded-full bg-[#FDB813]"
+        >
+            <Image src={Hands} alt="" class="absolute" />
+        </div>
         <h3 class="font-display text-8xl font-bold text-[#141392]">
             +140 million
         </h3>
@@ -32,7 +41,7 @@ import Mask2 from "../assets/grants/mask2.png";
                 <h3
                     class="relative flex flex-col items-center text-8xl font-bold"
                 >
-                    160
+                    <Counter client:load>160</Counter>
                     <small class="mt-2 text-xl font-normal uppercase"
                         >countries</small
                     >
@@ -68,7 +77,7 @@ import Mask2 from "../assets/grants/mask2.png";
                 <h3
                     class="relative flex flex-col items-center text-8xl font-bold"
                 >
-                    7,460
+                    <Counter client:load>7460</Counter>
                     <small class="mt-2 text-xl font-normal uppercase"
                         >direct grants</small
                     >

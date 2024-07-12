@@ -36,6 +36,7 @@ import Megaphone from "../assets/hero/megaphone.png";
         <div class="mx-auto h-[80px] w-[80px] rounded-full bg-[#141392]"></div>
       </div>
       <svg
+        id="sun"
         class="relative z-10"
         viewBox="0 0 950 475"
         fill="none"
@@ -128,4 +129,21 @@ import Megaphone from "../assets/hero/megaphone.png";
 
 <style></style>
 
-<script></script>
+<script>
+  import gsap from "gsap";
+
+  const container = document.getElementById("hero-section");
+  const sun = container.querySelector("#sun");
+
+  gsap.to(sun, {
+    scrollTrigger: {
+      trigger: sun,
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+      // markers: true,
+    },
+    scale: 1.2,
+    yPercent: -10,
+  });
+</script>
