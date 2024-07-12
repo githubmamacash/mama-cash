@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 
-export default function Counter({ children }) {
+export default function Counter({ children, trigger }) {
   const wrapper = useRef<HTMLDivElement | null>(null);
   // const [count, setCount] = useState(start);
 
@@ -14,7 +14,12 @@ export default function Counter({ children }) {
     const elem = wrapper.current;
     if (elem) {
       const elems = elem.querySelectorAll("div");
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: trigger,
+          markers: false
+        }
+      });
 
       tl.fromTo(
         elems,

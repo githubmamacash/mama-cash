@@ -3,15 +3,17 @@ import Africa from "../assets/map/africa.png";
 ---
 
 <section id="map-section" class="pt-20">
-  <div class="mx-auto max-w-5xl text-[#141392]">
-    <h3 class="mb-12 text-5xl font-semibold">
-      We strengthen feminist causes <br /> around the world
+  <div class="mx-auto max-w-5xl px-5 text-[#141392] lg:px-0">
+    <h3
+      class="mb-0 text-center text-3xl font-semibold lg:mb-12 lg:text-left lg:text-5xl"
+    >
+      We strengthen feminist causes <br class="hidden lg:inline" /> around the world
     </h3>
     <div>
-      <div class="grid grid-cols-2 gap-10">
+      <div class="grid gap-10 lg:grid-cols-2">
         <div
           id="image"
-          class="relative min-h-[80svh] self-start overflow-hidden rounded-2xl bg-[pink]"
+          class="relative hidden min-h-[80svh] self-start overflow-hidden rounded-2xl bg-[pink] lg:block"
         >
           <img class="absolute h-full w-full" src={Africa.src} alt="" />
           <img
@@ -46,8 +48,13 @@ import Africa from "../assets/map/africa.png";
             data-color="#E91E78"
             data-image={Africa.src}
           >
-            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              Africa & <br /> West Asia
+            <div class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78]">
+              <img src={Africa.src} alt="" />
+            </div>
+            <h4
+              class="mb-5 text-3xl font-bold uppercase text-[#E91E78] lg:mb-8 lg:text-4xl"
+            >
+              Africa & <br class="hidden lg:inline" /> West Asia
             </h4>
             <p class="mb-2">
               Mama Cash provided €23.8 million to feminist movements in 44
@@ -247,45 +254,49 @@ import Africa from "../assets/map/africa.png";
   const images = image.querySelectorAll("img");
   const regions = container.querySelectorAll(".region");
 
-  let regionsHeight = 0;
-  regions.forEach((region) => {
-    regionsHeight += region.clientHeight;
-  });
+  let mm = gsap.matchMedia();
 
-  ScrollTrigger.create({
-    trigger: image,
-    start: "top 10%",
-    end: () => `+=${regionsHeight}px 90%`,
-    pin: true,
-  });
+  mm.add("(min-width: 1024px)", () => {
+    let regionsHeight = 0;
+    regions.forEach((region) => {
+      regionsHeight += region.clientHeight;
+    });
 
-  gsap.utils.toArray(regions).forEach((e: HTMLElement, index) => {
-    const color = e.dataset.color;
     ScrollTrigger.create({
-      trigger: e,
-      start: "top 25%",
-      // markers: true,
-      onEnter: () => {
-        gsap.to(image, {
-          backgroundColor: color,
-        });
-        gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
-          gsap.to(img, {
-            opacity: i == index ? 1 : 0,
+      trigger: image,
+      start: "top 10%",
+      end: () => `+=${regionsHeight}px 90%`,
+      pin: true,
+    });
+
+    gsap.utils.toArray(regions).forEach((e: HTMLElement, index) => {
+      const color = e.dataset.color;
+      ScrollTrigger.create({
+        trigger: e,
+        start: "top 25%",
+        // markers: true,
+        onEnter: () => {
+          gsap.to(image, {
+            backgroundColor: color,
           });
-        });
-      },
-      onEnterBack: () => {
-        gsap.to(image, {
-          backgroundColor: color,
-        });
-        gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
-          gsap.to(img, {
-            opacity: i == index ? 1 : 0,
+          gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
+            gsap.to(img, {
+              opacity: i == index ? 1 : 0,
+            });
           });
-        });
-      },
-      scrub: 1,
+        },
+        onEnterBack: () => {
+          gsap.to(image, {
+            backgroundColor: color,
+          });
+          gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
+            gsap.to(img, {
+              opacity: i == index ? 1 : 0,
+            });
+          });
+        },
+        scrub: 1,
+      });
     });
   });
 </script>

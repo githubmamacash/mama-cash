@@ -28,21 +28,21 @@ const testimonies: [ImageMetadata, string, string][] = [
   />
 
   <h2
-    class="max-w-[13ch] text-center text-4xl font-semibold lg:max-w-5xl lg:text-left lg:text-7xl"
+    class="max-w-5xl px-5 text-center text-4xl font-semibold lg:px-0 lg:text-left lg:text-7xl"
   >
     Shared Power, Global Impact
   </h2>
-  <p class="mt-4 max-w-[92ch] text-center leading-tight">
+  <p class="mt-4 max-w-5xl px-5 text-center leading-tight lg:px-0">
     For 40 years, Mama Cash has teamed up with hundreds of grantee partners
     worldwide, channelling over €91 million into the hands of individuals,
     groups, and movements driving lasting change. The real lessons come from our
     incredible grantee partners.
   </p>
 
-  <div class="mt-20 max-w-5xl lg:grid lg:grid-cols-3 lg:gap-[60px] lg:px-8">
+  <div class="mt-20 max-w-5xl px-8 lg:grid lg:grid-cols-3 lg:gap-[60px]">
     {
       testimonies.map(([img, name, role]) => (
-        <article class="mb-20 flex flex-col items-center lg:mb-0">
+        <article class="mb-20 flex flex-col items-center last:mb-0 lg:mb-0">
           <Image alt="" src={img} />
           <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
           <p

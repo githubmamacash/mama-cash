@@ -14,14 +14,14 @@ import Counter from "./client/Counter";
         class="absolute left-0 top-0 h-full w-full object-cover"
     />
     <div
-        class="container relative mx-auto flex max-w-5xl flex-col items-center py-20"
+        class="container relative mx-auto flex max-w-5xl flex-col items-center px-10 py-20 lg:px-0"
     >
         <div
-            class="absolute right-0 top-[-60px] h-32 w-32 rounded-full bg-[#FDB813]"
+            class="absolute right-0 top-[-60px] hidden h-32 w-32 rounded-full bg-[#FDB813] lg:block"
         >
             <Image src={Hands} alt="" class="absolute" />
         </div>
-        <h3 class="font-display text-8xl font-bold text-[#141392]">
+        <h3 class="font-display text-5xl font-bold text-[#141392] lg:text-8xl">
             +140 million
         </h3>
         <span
@@ -29,25 +29,8 @@ import Counter from "./client/Counter";
         >
             provided to feminist movements <br /> around the world</span
         >
-        <div class="grid grid-cols-[1fr_200px_1fr] items-start">
-            <div
-                class="relative mt-16 flex h-80 w-80 items-center justify-center overflow-hidden rounded-full bg-[#E91E78] text-white"
-            >
-                <Image
-                    src={Mask1}
-                    alt=""
-                    class="absolute left-0 top-0 h-full w-full"
-                />
-                <h3
-                    class="relative flex flex-col items-center text-8xl font-bold"
-                >
-                    <Counter client:load>160</Counter>
-                    <small class="mt-2 text-xl font-normal uppercase"
-                        >countries</small
-                    >
-                </h3>
-            </div>
-            <div class="flex justify-center">
+        <div class="grid items-start lg:grid-cols-[1fr_200px_1fr]">
+            <div class="flex justify-center lg:hidden">
                 <a
                     class="mt-10 flex items-center gap-3 rounded-3xl bg-[#141392] py-2 pl-4 pr-2 text-xs text-white"
                 >
@@ -67,7 +50,43 @@ import Counter from "./client/Counter";
                 </a>
             </div>
             <div
-                class="relative mt-16 flex h-80 w-80 items-center justify-center overflow-hidden rounded-full bg-[#1FAAAC] text-white"
+                class="relative mx-auto mt-16 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#E91E78] text-white lg:h-80 lg:w-80"
+            >
+                <Image
+                    src={Mask1}
+                    alt=""
+                    class="absolute left-0 top-0 h-full w-full"
+                />
+                <h3
+                    class="relative flex flex-col items-center text-6xl font-bold lg:text-8xl"
+                >
+                    <Counter trigger="#grants-section" client:load>160</Counter>
+                    <small class="mt-2 text-xl font-normal uppercase"
+                        >countries</small
+                    >
+                </h3>
+            </div>
+            <div class="hidden justify-center lg:flex">
+                <a
+                    class="mt-10 flex items-center gap-3 rounded-3xl bg-[#141392] py-2 pl-4 pr-2 text-xs text-white"
+                >
+                    More data
+                    <svg
+                        fill="white"
+                        width="24"
+                        height="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                    >
+                        <path
+                            d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+            <div
+                class="relative mx-auto mt-16 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#1FAAAC] text-white lg:h-80 lg:w-80"
             >
                 <Image
                     src={Mask2}
@@ -75,9 +94,10 @@ import Counter from "./client/Counter";
                     class="absolute left-0 top-0 h-full w-full"
                 />
                 <h3
-                    class="relative flex flex-col items-center text-8xl font-bold"
+                    class="relative flex flex-col items-center text-6xl font-bold lg:text-8xl"
                 >
-                    <Counter client:load>7460</Counter>
+                    <Counter trigger="#grants-section" client:load>7460</Counter
+                    >
                     <small class="mt-2 text-xl font-normal uppercase"
                         >direct grants</small
                     >
