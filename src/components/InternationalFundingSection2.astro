@@ -1,100 +1,94 @@
 ---
 const data = [
-    {
-        id: 1,
-        title: "Community Impact",
-        color: "#1FAAAC",
-        text: "We revolutionised how money flows, transforming relationships with money, and reshaping funding practices toward power, equality, and resources. By nurturing a culture of individual giving in the Netherlands and pioneering changes in Dutch banking for women entrepreneurs, Mama Cash set global financial standards and increased and improved funding for feminist movements.We spearhead collaborative efforts to transform funding streams in support of feminist causes worldwide and reshape funding practices to address power and equality.",
-    },
-    {
-        id: 2,
-        title: "Thematic Impact",
-        color: "#FDB813",
-        text: "At Mama Cash, our strategic funding choices bring fresh, diverse voices to the forefront. We support self-led initiatives, prioritise historically excluded groups, and partner with women's and feminist funds around the globe. By sharing resources and empowering Global South feminist leaders, we’re helping activists build relationships, spark collaborations, and take on leadership roles, creating vibrant new networks and coalitions and a whole new healthy, flourishing feminist landscape.",
-    },
-    {
-        id: 3,
-        title: "Funding for Change",
-        color: "#E91E78",
-        text: "Mama Cash proudly fuels bold feminist activism by taking smart risks. Our long-term, core, and seed funding keeps movements thriving and growing. We empower grantees from the start, helping them build coalitions and networks. They, in turn, pay it forward by uplifting excluded communities, creating unstoppable feminist movements for lasting change.",
-    },
+  {
+    id: 1,
+    title: "Community Impact",
+    color: "#1FAAAC",
+    text: "We revolutionised how money flows, transforming relationships with money, and reshaping funding practices toward power, equality, and resources. By nurturing a culture of individual giving in the Netherlands and pioneering changes in Dutch banking for women entrepreneurs, Mama Cash set global financial standards and increased and improved funding for feminist movements.We spearhead collaborative efforts to transform funding streams in support of feminist causes worldwide and reshape funding practices to address power and equality.",
+  },
+  {
+    id: 2,
+    title: "Thematic Impact",
+    color: "#FDB813",
+    text: "At Mama Cash, our strategic funding choices bring fresh, diverse voices to the forefront. We support self-led initiatives, prioritise historically excluded groups, and partner with women's and feminist funds around the globe. By sharing resources and empowering Global South feminist leaders, we’re helping activists build relationships, spark collaborations, and take on leadership roles, creating vibrant new networks and coalitions and a whole new healthy, flourishing feminist landscape.",
+  },
+  {
+    id: 3,
+    title: "Funding for Change",
+    color: "#E91E78",
+    text: "Mama Cash proudly fuels bold feminist activism by taking smart risks. Our long-term, core, and seed funding keeps movements thriving and growing. We empower grantees from the start, helping them build coalitions and networks. They, in turn, pay it forward by uplifting excluded communities, creating unstoppable feminist movements for lasting change.",
+  },
 ];
 ---
 
 <section id="" class="mt-10 lg:mt-20">
-    <div class="mx-auto mb-12 max-w-5xl text-[#141392]">
-        <h3 class="text-center text-3xl font-semibold lg:text-left lg:text-5xl">
-            We Champion Intersectional <br /> Funding Worldwide
-        </h3>
-    </div>
-    <div id="funding2">
-        <div class="scroller-section">
-            <div
-                class="scroller-section-container mx-auto max-w-5xl px-5 lg:px-0"
-            >
+  <div class="mx-auto mb-12 max-w-5xl text-[#141392]">
+    <h3 class="text-center text-3xl font-semibold lg:text-left lg:text-5xl">
+      We Champion Intersectional <br /> Funding Worldwide
+    </h3>
+  </div>
+  <div id="funding2">
+    <div class="scroller-section">
+      <div class="scroller-section-container mx-auto max-w-5xl px-5 lg:px-0">
+        <div
+          class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
+        >
+          {
+            data.map((e) => (
+              <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
                 <div
-                    class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
+                  style={`background: ${e.color}`}
+                  class="min-h-[80svh] rounded-2xl p-10 xl:min-h-[60svh]"
                 >
-                    {
-                        data.map((e) => (
-                            <div class="scroller-item container mx-auto max-w-4xl font-display lg:max-w-5xl">
-                                <div
-                                    style={`background: ${e.color}`}
-                                    class="min-h-[80svh] rounded-2xl p-10"
-                                >
-                                    <div class="grid gap-5 lg:grid-cols-2 lg:gap-10">
-                                        <div class="flex flex-col">
-                                            <h4 class="text-4xl font-black text-black lg:text-7xl">
-                                                {e.title}
-                                            </h4>
-                                        </div>
-                                        <div>
-                                            <p class="font-normal lg:text-xl">
-                                                {e.text}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
+                  <div class="grid gap-5 lg:grid-cols-2 lg:gap-10">
+                    <div class="flex flex-col">
+                      <h4 class="text-4xl font-black text-black lg:text-7xl">
+                        {e.title}
+                      </h4>
+                    </div>
+                    <div>
+                      <p class="font-normal lg:text-xl">{e.text}</p>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+            ))
+          }
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <script>
-    import gsap from "gsap";
+  import gsap from "gsap";
 
-    const wrapperRef = document.getElementById("funding2");
+  const wrapperRef = document.getElementById("funding2");
 
-    const wrapper = wrapperRef.querySelector(
-        ".scroller-section",
-    ) as HTMLElement;
-    const container = wrapperRef.querySelector(
-        ".scroller-section-container",
-    ) as HTMLElement;
-    const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
+  const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
+  const container = wrapperRef.querySelector(
+    ".scroller-section-container",
+  ) as HTMLElement;
+  const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
 
-    let mm = gsap.matchMedia();
+  let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1024px)", () => {
-        gsap.to(scroller, {
-            x: () =>
-                wrapper?.offsetWidth -
-                scroller?.offsetWidth -
-                container.offsetLeft -
-                (window.innerWidth < 1200 ? 100 : 200),
-            scrollTrigger: {
-                trigger: container,
-                pin: true,
-                invalidateOnRefresh: true,
-                start: "top 80px",
-                end: "bottom top",
-                // markers: true,
-                scrub: true,
-                // preventOverlaps: true
-            },
-        });
+  mm.add("(min-width: 1024px)", () => {
+    gsap.to(scroller, {
+      x: () =>
+        wrapper?.offsetWidth -
+        scroller?.offsetWidth -
+        container.offsetLeft -
+        (window.innerWidth < 1200 ? 100 : 200),
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        invalidateOnRefresh: true,
+        start: "top 80px",
+        end: "bottom top",
+        // markers: true,
+        scrub: true,
+        // preventOverlaps: true
+      },
     });
+  });
 </script>

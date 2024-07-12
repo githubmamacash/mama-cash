@@ -13,7 +13,7 @@ import Africa from "../assets/map/africa.png";
       <div class="grid gap-10 lg:grid-cols-2">
         <div
           id="image"
-          class="relative hidden min-h-[80svh] self-start overflow-hidden rounded-2xl bg-[pink] lg:block"
+          class="relative hidden aspect-[1] self-start overflow-hidden rounded-2xl bg-[pink] lg:block lg:aspect-[9/10]"
         >
           <img class="absolute h-full w-full" src={Africa.src} alt="" />
           <img
@@ -48,7 +48,9 @@ import Africa from "../assets/map/africa.png";
             data-color="#E91E78"
             data-image={Africa.src}
           >
-            <div class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78]">
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78] lg:hidden"
+            >
               <img src={Africa.src} alt="" />
             </div>
             <h4
