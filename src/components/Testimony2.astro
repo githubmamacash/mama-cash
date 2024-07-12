@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import BackgroundNotebook from "../assets/quote/bg.png";
+import Quote from "../assets/quote/red-quote.png";
+import Guide from "../assets/testimony-guide-2.svg";
+---
+
+<section
+  class="relative isolate mt-24 -z-10 flex w-full flex-col items-center font-display font-medium text-[#141392] lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-start lg:gap-x-20"
+>
+  <Image
+    class="absolute left-0 right-0 -z-10 mx-auto h-full object-cover"
+    alt=""
+    src={BackgroundNotebook}
+  />
+
+  <div
+    class="relative mt-20 flex aspect-square h-24 items-center justify-center rounded-full bg-[hsl(0,0%,95%)] lg:ml-auto"
+  >
+    <Image
+      class="invisible absolute -left-[200px] bottom-[60px] -z-20 h-[1979px] max-w-[2459px] lg:visible"
+      alt=""
+      src={Guide}
+    />
+    <Image alt="" class="aspect-[68/45] w-3/5" src={Quote} />
+  </div>
+
+  <p
+    class="mx-auto mt-20 max-w-[40ch] px-6 text-center text-2xl font-medium lg:mt-20 lg:text-4xl"
+  >
+    I am convinced that greater equality between men and women will mean fewer
+    wars. This requires women worldwide to gain control over their own lives.
+    Maybe it will take decades, but it’s the only way
+  </p>
+
+  <h3
+    class="col-start-2 mx-auto mt-9 text-center text-2xl font-semibold text-[#E91E78] lg:text-3xl"
+  >
+    Nico Spanjer
+  </h3>
+  <p class="col-start-2 mx-auto mb-20 text-center font-medium uppercase">
+    Mama Cash individual donor
+  </p>
+
+  <div
+    class="col-start-3 row-span-2 row-start-2 hidden aspect-square h-24 items-center justify-center rounded-full bg-[hsl(0,0%,95%)] lg:flex"
+  >
+    <Image class="aspect-[68/45] w-3/5 -scale-100" alt="" src={Quote} />
+  </div>
+</section>
