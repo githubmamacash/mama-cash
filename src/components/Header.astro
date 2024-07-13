@@ -19,7 +19,7 @@ import Logo from "../assets/logo.svg";
         <a href="" class="flex-1">
             <Image width={80} src={Logo} alt="Mama cash logo" loading="eager" />
         </a>
-        <button>
+        <button id="open">
             <svg
                 width="24"
                 height="24"
@@ -45,4 +45,165 @@ import Logo from "../assets/logo.svg";
             </svg>
         </button>
     </nav>
+    <nav
+        id="menu"
+        data-expanded={false}
+        class="fixed left-0 top-0 z-50 min-h-svh w-full bg-[#E91E78]"
+    >
+        <div class="flex items-center justify-end px-5 py-7">
+            <button id="close"
+                ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M6 18L18 6M6 6L18 18"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg></button
+            >
+        </div>
+        <div class="mt-10 px-5">
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a href="#" class="flex items-center px-2 py-5 text-white">
+                <span class="flex-1 text-2xl"> Impact</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a href="#" class="flex items-center px-2 py-5 text-white">
+                <span class="flex-1 text-2xl"> Grantee Partners</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+
+            <a href="#" class="flex items-center px-2 py-5 text-white">
+                <span class="flex-1 text-2xl"> Global Solidarity</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a href="#" class="flex items-center px-2 py-5 text-white">
+                <span class="flex-1 text-2xl"> The Mama Cash Effect</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+        </div>
+    </nav>
 </header>
+<style>
+    #menu {
+        clip-path: ellipse(0% 0%);
+    }
+</style>
+<script>
+    import gsap from "gsap";
+
+    const menu = document.getElementById("menu");
+    const open = document.querySelector("#open") as HTMLButtonElement;
+    const close = document.querySelector("#close") as HTMLButtonElement;
+
+    open.addEventListener("click", () => {
+        gsap.fromTo(
+            menu,
+            {
+                clipPath: "circle(0% at right top)",
+            },
+            {
+                clipPath: "circle(200% at right top)",
+                onComplete: () => {
+                    document.body.style.overflow = "hidden";
+                },
+            },
+        );
+    });
+
+    close.addEventListener("click", () => {
+        gsap.fromTo(
+            menu,
+            {
+                clipPath: "circle(200% at right top)",
+            },
+            {
+                clipPath: "circle(0% at right top)",
+                onComplete: () => {
+                    document.body.style.overflow = "auto";
+                },
+            },
+        );
+    });
+</script>

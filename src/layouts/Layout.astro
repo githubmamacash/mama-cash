@@ -9,6 +9,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 import Footer from "../components/Footer.astro";
 import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
+import Menu from "../components/Menu.astro";
 
 interface Props {
   title: string;
@@ -55,8 +56,10 @@ const { title } = Astro.props;
   </head>
   <body class="font-body">
     <Header />
+    <Menu />
     <slot />
     <Footer />
+
     <style is:global>
       html,
       body {

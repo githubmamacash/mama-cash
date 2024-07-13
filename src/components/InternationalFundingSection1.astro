@@ -7,6 +7,9 @@ const data = [
     id: 1,
     title: "Community Impact",
     color: "#E91E78",
+    textColor: "#ffffff",
+    buttonColor: "#FDB813",
+    buttonText: "#000000",
     points: [
       {
         title: "LBQTI",
@@ -38,27 +41,30 @@ const data = [
     id: 2,
     title: "Thematic Impact",
     color: "#1FAAAC",
+    textColor: "#000000",
+    buttonColor: "#FDB813",
+    buttonText: "#000000",
     points: [
       {
-        title: "LBQTI",
+        title: "Reproductive Justice",
         description:
           "Thanks to our support, people in over a dozen countries can now live a truer version of themselves.",
         url: "",
       },
       {
-        title: "Sex Worker Rights",
+        title: "Countering Gender-Based Violence",
         description:
           "Mama Cash knew it from day 1: sex workers’ rights are central to feminist issues.",
         url: "",
       },
       {
-        title: "Disability Justice",
+        title: "Economic Justice",
         description:
           "Mama Cash grantee-partners around the world are breaking down the stigma around disability.",
         url: "",
       },
       {
-        title: "Racial Justice",
+        title: "Environmental Justice",
         description:
           "We brought the powerful voices of racialised women, girls, and trans and intersex people to the forefront",
         url: "",
@@ -69,29 +75,20 @@ const data = [
     id: 3,
     title: "Funding for Change",
     color: "#FDB813",
+    textColor: "#000000",
+    buttonColor: "#E91E78",
+    buttonText: "#fafafa",
     points: [
       {
-        title: "LBQTI",
+        title: "Relationship to Money",
         description:
           "Thanks to our support, people in over a dozen countries can now live a truer version of themselves.",
         url: "",
       },
       {
-        title: "Sex Worker Rights",
+        title: "Feminist Funding Architecture",
         description:
           "Mama Cash knew it from day 1: sex workers’ rights are central to feminist issues.",
-        url: "",
-      },
-      {
-        title: "Disability Justice",
-        description:
-          "Mama Cash grantee-partners around the world are breaking down the stigma around disability.",
-        url: "",
-      },
-      {
-        title: "Racial Justice",
-        description:
-          "We brought the powerful voices of racialised women, girls, and trans and intersex people to the forefront",
         url: "",
       },
     ],
@@ -121,37 +118,42 @@ const data = [
             data.map((e) => (
               <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
                 <div
-                  style={`background: ${e.color}`}
+                  style={`background: ${e.color};color: ${e.textColor}`}
                   class="rounded-2xl p-5 lg:p-10"
                 >
                   <div class="grid gap-10 lg:grid-cols-2">
                     <div class="flex flex-col">
                       <div class="flex flex-1 items-center">
-                        <span class="mr-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1px] border-[#FDB813] text-3xl text-[#FDB813] lg:h-16 lg:w-16 lg:text-5xl">
+                        <span
+                          style={`border-color: ${e.buttonColor};color: ${e.buttonColor}`}
+                          class="mr-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1px] border-[#FDB813] text-3xl text-[#FDB813] lg:h-16 lg:w-16 lg:text-5xl"
+                        >
                           {e.id}
                         </span>
-                        <h4 class="text-3xl font-bold text-white lg:text-4xl">
+                        <h4 class="text-3xl font-bold lg:text-4xl">
                           {e.title}
                         </h4>
                       </div>
                       <Image class="mt-10" src={Overlayed} alt="" />
                     </div>
                     <div>
-                      <ul class="font-normal text-white">
-                        {e.points.map((e) => (
+                      <ul class="font-normal">
+                        {e.points.map((i) => (
                           <li class="flex flex-col items-start border-b-[1px] border-[#FDB813] py-4 text-sm first:border-t-[1px] last:border-b-0 lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:first:border-t-[0px]">
                             <div class="">
-                              <span class="text-xl">{e.title}</span>
-                              <p class="mt-2 text-sm">{e.description}</p>
+                              <span class="text-xl">{i.title}</span>
+                              <p class="mt-2 text-sm">{i.description}</p>
                             </div>
                             <a
+                              style={`background-color: ${e.buttonColor};color: ${e.buttonText}`}
                               href="#"
-                              class="mt-5 flex items-center gap-2 rounded-2xl bg-[#FDB813] py-1 pl-4 pr-2 text-black lg:mt-0"
+                              class="mt-5 flex items-center gap-2 rounded-2xl bg-[#FDB813] py-1 pl-4 pr-2 lg:mt-0"
                             >
                               <span class="flex-1 shrink-0 whitespace-nowrap text-xs font-medium">
                                 Read more
                               </span>
                               <svg
+                                fill={`${e.buttonText}`}
                                 width="24"
                                 height="24"
                                 xmlns="http://www.w3.org/2000/svg"
