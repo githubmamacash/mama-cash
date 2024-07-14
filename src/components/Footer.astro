@@ -9,54 +9,61 @@ import Instagram from "../assets/instagram.svg";
 import { Image } from "astro:assets";
 ---
 
-<footer
-  class="container relative isolate mx-auto flex flex-col lg:grid w-full items-center justify-center gap-y-8 px-5 pt-8 mt-24 lg:grid-cols-3 lg:px-0"
->
+<footer class="relative">
   <Image
-    class="absolute -z-10 h-full object-cover"
+    class="absolute h-full w-full object-cover"
     alt=""
     src={BackgroundNotebook}
   />
-  <figure class="relative mr-4 flex h-full w-fit items-center justify-self-end">
-    <img class="max-h-24 object-contain" src={ChangeThaLasts.src} alt="" />
-    <p
-      class="absolute bottom-3 right-1 font-display text-sm font-bold text-[#141392]"
-    >
-      40 years of impact
-    </p>
-  </figure>
-
   <div
-    class="flex h-full w-full items-center justify-center gap-2 lg:col-start-2 lg:justify-end lg:border-l-[0px] lg:py-0"
+    class="container isolate mx-auto mt-24 flex w-full flex-col items-center justify-center gap-y-8 px-5 pt-8 lg:grid lg:grid-cols-3 lg:px-0"
   >
-    <a class="ml-auto h-8 w-8" href=""><img src={Linkedin.src} alt="" /></a>
-    <a class="h-8 w-8" href=""><img src={Facebook.src} alt="" /></a>
-    <a class="h-8 w-8" href=""><img src={X.src} alt="" /></a>
-    <a class="mr-auto h-8 w-8" href=""><img src={Instagram.src} alt="" /></a>
-  </div>
+    <figure
+      class="relative mr-4 flex h-full w-fit items-center justify-self-end"
+    >
+      <img class="max-h-24 object-contain" src={ChangeThaLasts.src} alt="" />
+      <p
+        class="font-display absolute bottom-3 right-1 text-sm font-bold text-[#141392]"
+      >
+        40 years of impact
+      </p>
+    </figure>
 
-  <div class="flex flex-col justify-self-start leading-7">
-    <a
-      href=""
-      class="mb-4 flex w-full items-center gap-x-5 rounded-full bg-[#FDB813] p-1 pl-4 font-semibold text-[#141392]"
-      >Learn more about our history <ArrowSVG
-        className="ml-auto"
-        circleClassName="stroke-[#141392]"
-        arrowClassName="stroke-[#141392]"
-      /></a
+    <div
+      class="flex h-full w-full items-center justify-center gap-2 lg:col-start-2 lg:justify-end lg:border-l-[0px] lg:py-0"
     >
-    <a
-      href=""
-      class="flex w-full items-center rounded-full bg-[#141392] p-1 pl-4 font-semibold text-white"
-      >Visit our website <ArrowSVG
-        className="ml-auto"
-        circleClassName="stroke-white"
-        arrowClassName="stroke-white"
-      /></a
+      <a class="ml-auto h-8 w-8" href=""><img src={Linkedin.src} alt="" /></a>
+      <a class="h-8 w-8" href=""><img src={Facebook.src} alt="" /></a>
+      <a class="h-8 w-8" href=""><img src={X.src} alt="" /></a>
+      <a class="mr-auto h-8 w-8" href=""><img src={Instagram.src} alt="" /></a>
+    </div>
+
+    <div class="flex flex-col justify-self-start leading-7">
+      <a
+        href=""
+        class="mb-4 flex w-full items-center gap-x-5 rounded-full bg-[#FDB813] p-1 pl-4 font-semibold text-[#141392]"
+        >Learn more about our history <ArrowSVG
+          className="ml-auto"
+          circleClassName="stroke-[#141392]"
+          arrowClassName="stroke-[#141392]"
+        /></a
+      >
+      <a
+        href=""
+        class="flex w-full items-center rounded-full bg-[#141392] p-1 pl-4 font-semibold text-white"
+        >Visit our website <ArrowSVG
+          className="ml-auto"
+          circleClassName="stroke-white"
+          arrowClassName="stroke-white"
+        /></a
+      >
+    </div>
+  </div>
+  <div
+    class="relative z-10 mt-10 flex h-12 w-full items-center justify-center gap-x-2 bg-[#141392] text-sm font-light text-white lg:col-span-3"
+  >
+    Website designed and developed by <span class="text-[#FDB813]">
+      W.LAND</span
     >
   </div>
-  
-  <h4 class="flex justify-center gap-x-2 items-center lg:col-span-3 w-full h-16 text-white bg-[#141392]">
-    Website designed and developed by <span class="text-[#FDB813]"> W.LAND</span>
-  </h4>
 </footer>

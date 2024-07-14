@@ -137,11 +137,14 @@ const data = [
                       <Image class="mt-10" src={Overlayed} alt="" />
                     </div>
                     <div>
-                      <ul class="font-normal">
+                      <ul
+                        style={`--bg: ${e.buttonColor}`}
+                        class="relative font-normal before:absolute before:left-[-3px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)]"
+                      >
                         {e.points.map((i) => (
                           <li
-                            style={`border-color: ${e.buttonColor}`}
-                            class="flex flex-col items-start border-b-[1px] border-[#FDB813] py-4 text-sm first:border-t-[1px] last:border-b-0 lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:first:border-t-[0px]"
+                            style={`border-color: ${e.buttonColor};`}
+                            class="relative flex flex-col items-start border-b-[1px] border-[#FDB813] py-4 text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] first:border-t-[1px] last:border-b-0 last:before:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:first:border-t-[0px]"
                           >
                             <div class="">
                               <span class="text-xl">{i.title}</span>
