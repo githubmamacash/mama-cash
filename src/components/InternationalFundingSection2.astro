@@ -38,7 +38,7 @@ const data = [
               <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
                 <div
                   style={`background: ${e.color}`}
-                  class="rounded-2xl p-10 lg:min-h-[80svh] xl:min-h-[60svh]"
+                  class="rounded-2xl p-10 lg:min-h-[80svh] 2xl:min-h-[60svh]"
                 >
                   <div class="grid gap-5 lg:grid-cols-2 lg:gap-10">
                     <div class="flex flex-col">
@@ -69,16 +69,13 @@ const data = [
     ".scroller-section-container",
   ) as HTMLElement;
   const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
+  const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
 
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 1024px)", () => {
     gsap.to(scroller, {
-      x: () =>
-        wrapper?.offsetWidth -
-        scroller?.offsetWidth -
-        container.offsetLeft -
-        (window.innerWidth < 1200 ? 100 : 200),
+      x: -(scroller.offsetWidth - wrapper.offsetWidth + (window.innerWidth - item.offsetWidth)),
       scrollTrigger: {
         trigger: container,
         pin: true,
