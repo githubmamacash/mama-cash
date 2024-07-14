@@ -13,6 +13,9 @@ import InternationalFundingSection1 from "../components/InternationalFundingSect
 import InternationalFundingSection2 from "../components/InternationalFundingSection2.astro";
 import TestimoniesSection from "../components/TestimoniesSection.astro";
 import MapSection from "../components/MapSection.astro";
+import Testimony1 from "../components/Testimony1.astro";
+import Testimony2 from "../components/Testimony2.astro";
+import DonateSection from "../components/DonateSection.astro";
 ---
 
 <Layout title="Mama Cash">
@@ -33,9 +36,15 @@ import MapSection from "../components/MapSection.astro";
     <InternationalFundingSection1 />
     <TestimoniesSection />
     <VideoSection />
+    <Testimony1 />
+    <!-- <VideoSection /> -->
     <!-- <QuoteSection /> -->
 
-    <InternationalFundingSection2 />
+    <div class="isolate [&>*:nth-child(2)]:-z-10">
+      <InternationalFundingSection2 />
+      <Testimony2 />
+    </div>
+    <DonateSection />
 
     <MapSection />
 
