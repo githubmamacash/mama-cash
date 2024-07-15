@@ -22,6 +22,19 @@ const data = [
 ---
 
 <section id="" class="mt-10 lg:mt-20">
+  <svg
+    class="absolute hidden lg:block"
+    viewBox="0 0 1728 786"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1867.5 -737C3419 -321 17.0027 604.5 -151.617 871.5C-252.682 1031.53 -136.734 1085.31 202.384 1237.5"
+      stroke="#E91E78"
+      stroke-width="4"
+      stroke-linecap="round"></path>
+  </svg>
+
   <div class="mx-auto mb-12 max-w-5xl text-[#141392]">
     <h3 class="text-center text-3xl font-semibold lg:text-left lg:text-5xl">
       We Champion Intersectional <br /> Funding Worldwide
@@ -75,7 +88,11 @@ const data = [
 
   mm.add("(min-width: 1024px)", () => {
     gsap.to(scroller, {
-      x: -(scroller.offsetWidth - wrapper.offsetWidth + (window.innerWidth - item.offsetWidth)),
+      x: -(
+        scroller.offsetWidth -
+        wrapper.offsetWidth +
+        (window.innerWidth - item.offsetWidth)
+      ),
       scrollTrigger: {
         trigger: container,
         pin: true,
