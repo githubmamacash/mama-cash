@@ -1,14 +1,8 @@
 ---
-import Hero from "../components/HeroSection.astro";
 import VideoSection from "../components/VideoSection.astro";
-import IssuesSection from "../components/IssuesSection.astro";
-import PartnersSection from "../components/PartnersSection.astro";
-import ReportSection from "../components/ReportSection.astro";
 import Layout from "../layouts/Layout.astro";
-import TestimonialSection from "../components/TestimonialSection.astro";
 import HeroSection from "../components/HeroSection.astro";
 import GrantsSection from "../components/GrantsSection.astro";
-import QuoteSection from "../components/QuoteSection.astro";
 import InternationalFundingSection1 from "../components/InternationalFundingSection1.astro";
 import InternationalFundingSection2 from "../components/InternationalFundingSection2.astro";
 import TestimoniesSection from "../components/TestimoniesSection.astro";
@@ -35,10 +29,10 @@ import DonateSection from "../components/DonateSection.astro";
     <GrantsSection />
     <InternationalFundingSection1 />
     <TestimoniesSection />
-    <VideoSection />
+
     <Testimony1 />
-    <!-- <VideoSection /> -->
-    <!-- <QuoteSection /> -->
+
+    <VideoSection />
 
     <div class="isolate [&>*:nth-child(2)]:-z-10">
       <InternationalFundingSection2 />
@@ -47,18 +41,6 @@ import DonateSection from "../components/DonateSection.astro";
     <DonateSection />
 
     <MapSection />
-
-    <!-- Sections -->
-    <!-- <Hero />
-    <ReportSection />
-    <IssuesSection />
-    <PartnersSection />
-    <TestimonialSection />
-    <MapSection />
-
-    <ImpactVideoSection />
-
-    <KeyInternalSection /> -->
   </main>
 </Layout>
 <script>
