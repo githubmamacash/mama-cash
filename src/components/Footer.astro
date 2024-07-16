@@ -32,15 +32,33 @@ import { Image } from "astro:assets";
     <div
       class="flex h-full w-full items-center justify-center gap-2 lg:col-start-2 lg:justify-end lg:border-l-[0px] lg:py-0"
     >
-      <a class="ml-auto h-8 w-8" href=""><img src={Linkedin.src} alt="" /></a>
-      <a class="h-8 w-8" href=""><img src={Facebook.src} alt="" /></a>
-      <a class="h-8 w-8" href=""><img src={X.src} alt="" /></a>
-      <a class="mr-auto h-8 w-8" href=""><img src={Instagram.src} alt="" /></a>
+      <a
+        class="ml-auto h-8 w-8"
+        target="_blank"
+        href="https://www.linkedin.com/company/mama-cash/posts/?feedView=all"
+        ><img src={Linkedin.src} alt="" /></a
+      >
+      <a
+        class="h-8 w-8"
+        target="_blank"
+        href="https://www.facebook.com/mamacashfund/"
+        ><img src={Facebook.src} alt="" /></a
+      >
+      <a class="h-8 w-8" target="_blank" href="https://x.com/mamacash/"
+        ><img src={X.src} alt="" /></a
+      >
+      <a
+        class="mr-auto h-8 w-8"
+        target="_blank"
+        href="https://www.instagram.com/mamacashfund/"
+        ><img src={Instagram.src} alt="" /></a
+      >
     </div>
 
     <div class="flex flex-col justify-self-start leading-7">
       <a
-        href=""
+        href="https://history.mamacash.nl/"
+        target="_blank"
         class="mb-4 flex w-full items-center gap-x-5 rounded-full bg-[#FDB813] p-1 pl-4 font-semibold text-[#141392]"
         >Learn more about our history <ArrowSVG
           className="ml-auto"
@@ -49,7 +67,8 @@ import { Image } from "astro:assets";
         /></a
       >
       <a
-        href=""
+        href="https://www.mamacash.org/"
+        target="_blank"
         class="flex w-full items-center rounded-full bg-[#141392] p-1 pl-4 font-semibold text-white"
         >Visit our website <ArrowSVG
           className="ml-auto"
