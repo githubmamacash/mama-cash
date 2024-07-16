@@ -56,4 +56,12 @@ import DonateSection from "../components/DonateSection.astro";
   });
 
   obv.observe(body);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.to("#overlay", {
+      height: 0,
+      duration: 0.3,
+      ease: "sine.out",
+    });
+  });
 </script>
