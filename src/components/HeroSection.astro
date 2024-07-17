@@ -13,7 +13,7 @@ import Megaphone from "../assets/hero/megaphone.png";
 
 <section
   id="hero-section"
-  class="relative flex min-h-svh flex-col items-center"
+  class="relative mt-24 flex min-h-svh flex-col items-center"
 >
   <h1
     class="title font-display mt-5 text-center text-7xl font-bold text-[#141392] lg:text-8xl"
@@ -38,9 +38,11 @@ import Megaphone from "../assets/hero/megaphone.png";
 
     <div class="wrapper relative mx-auto max-w-[90%] lg:max-w-[80%]">
       <div
+        id="a1"
         class="absolute left-[-5%] top-[-30%] hidden h-[90px] w-[90px] rounded-full bg-[#E91E78] lg:block"
       >
         <Image
+          id="a11"
           width={70}
           height={123}
           loading="eager"
@@ -49,8 +51,12 @@ import Megaphone from "../assets/hero/megaphone.png";
           class="absolute bottom-0 left-0 w-[70px]"
         />
       </div>
-      <div class="absolute right-[-5%] top-0 z-20 hidden w-[100px] lg:block">
+      <div
+        id="a2"
+        class="absolute right-[-5%] top-0 z-20 hidden w-[100px] lg:block"
+      >
         <Image
+          id="a22"
           loading="eager"
           width={100}
           height={93}
@@ -192,27 +198,24 @@ import Megaphone from "../assets/hero/megaphone.png";
     yPercent: -10,
   });
 
-  const titles = document.querySelectorAll(".title");
-
-  titles.forEach((title) => {
-    const text = title.querySelectorAll("span");
-    gsap.fromTo(
-      text,
-      {
-        y: 50,
-        opacity: 0.6,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        delay: 0.2,
-        duration: 0.25,
-        stagger: 0.1,
-        ease: "sine",
-        scrollTrigger: {
-          trigger: title,
-        },
-      },
-    );
+  window.addEventListener("mousemove", (e) => {
+    const x = e.clientX * 0.05;
+    const y = e.clientY * 0.05;
+    gsap.to("#a1", {
+      x: x,
+      y: y,
+    });
+    gsap.to("#a11", {
+      x: -x / 3,
+      y: y,
+    });
+    gsap.to("#a2", {
+      x: -x,
+      y: -y,
+    });
+    gsap.to("#a22", {
+      x: x / 3,
+      y: y / 3,
+    });
   });
 </script>

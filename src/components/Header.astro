@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 import Logo from "../assets/logo.svg";
 ---
 
-<header>
+<header id="header" class="fixed z-[100] w-full">
+    <div class="bg-noise opacity-0"></div>
     <nav
-        class="nav mx-auto hidden max-w-5xl grid-cols-5 items-center gap-5 py-6 text-base font-normal text-[#141392] lg:grid"
+        class="nav relative mx-auto hidden max-w-5xl grid-cols-5 items-center gap-5 py-6 text-base font-normal text-[#141392] lg:grid"
     >
         <a class="nav-link justify-self-center" href="#intersectional"
             >Impact
@@ -23,7 +24,7 @@ import Logo from "../assets/logo.svg";
             The Mama Cash Effect
         </a>
     </nav>
-    <nav class="flex items-center px-5 py-4 lg:hidden">
+    <nav class="relative flex items-center px-5 py-4 lg:hidden">
         <a href="" class="flex-1">
             <Image width={80} src={Logo} alt="Mama cash logo" loading="eager" />
         </a>
@@ -193,6 +194,38 @@ import Logo from "../assets/logo.svg";
     import gsap from "gsap";
     import ScrollToPlugin from "gsap/ScrollToPlugin";
     gsap.registerPlugin(ScrollToPlugin);
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "body",
+            start: "50px top",
+            end: "200px top",
+
+            // markers: true,
+            scrub: true,
+        },
+    });
+
+    tl.to("#header .bg-noise", {
+        duration: 0.1,
+        opacity: 0.9,
+    });
+
+    tl.to(
+        "#header .nav",
+        {
+            padding: 10,
+        },
+        "<",
+    );
+
+    tl.to(
+        "#header .nav img",
+        {
+            width: 80,
+        },
+        "<",
+    );
 
     const menu = document.getElementById("menu");
     const open = document.querySelector("#open") as HTMLButtonElement;

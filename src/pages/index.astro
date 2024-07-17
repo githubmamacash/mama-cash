@@ -63,5 +63,42 @@ import DonateSection from "../components/DonateSection.astro";
       duration: 0.3,
       ease: "sine.out",
     });
+    gsap.fromTo(
+      body,
+      {
+        y: -50,
+      },
+      {
+        y: 1,
+        ease: "sine.out",
+        onComplete: () => {
+          body.style.transform = "none";
+        },
+      },
+    );
+  });
+
+  const titles = document.querySelectorAll(".title");
+
+  titles.forEach((title) => {
+    const text = title.querySelectorAll("span");
+    gsap.fromTo(
+      text,
+      {
+        y: 50,
+        opacity: 0.6,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        delay: 0.2,
+        duration: 0.25,
+        stagger: 0.1,
+        ease: "sine",
+        scrollTrigger: {
+          trigger: title,
+        },
+      },
+    );
   });
 </script>
