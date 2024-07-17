@@ -164,11 +164,11 @@ import { Image } from "astro:assets";
           </div>
           <div
             class="region flex flex-col pt-20 text-[#141392] first:pt-5"
-            data-color="#141392"
+            data-color="#1FAAAC"
             data-image="https://placehold.co/400x600"
           >
             <div
-              class="mb-6 overflow-hidden rounded-3xl bg-[#141392] lg:hidden"
+              class="mb-6 overflow-hidden rounded-3xl bg-[#1FAAAC] lg:hidden"
             >
               <Image src={SAmerica} alt="" />
             </div>
@@ -332,7 +332,8 @@ import { Image } from "astro:assets";
       const color = e.dataset.color;
       ScrollTrigger.create({
         trigger: e,
-        start: "top 25%",
+        start: "top 45%",
+        end: "bottom 85%",
         // markers: true,
         onEnter: () => {
           gsap.to(image, {

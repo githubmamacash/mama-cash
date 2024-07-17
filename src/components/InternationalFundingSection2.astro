@@ -47,25 +47,28 @@ const data = [
   </div>
   <div id="funding2">
     <div class="scroller-section">
-      <div class="scroller-section-container mx-auto max-w-5xl px-5 lg:px-0">
+      <div
+        class="scroller-section-container mx-auto max-w-5xl px-5 pt-5 lg:px-0"
+      >
         <div
           class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
         >
           {
-            data.map((e) => (
+            data.map((e, i) => (
               <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
                 <div
                   style={`background: ${e.color}`}
-                  class="rounded-2xl p-10 lg:min-h-[80svh] 2xl:min-h-[60svh]"
+                  class="h-full rounded-2xl p-10 lg:min-h-[70svh] lg:p-20 2xl:min-h-[60svh]"
                 >
-                  <div class="grid gap-5 lg:grid-cols-2 lg:gap-10">
-                    <div class="flex flex-col">
-                      <h4 class="text-4xl font-black text-black lg:text-7xl">
-                        {e.title}
-                      </h4>
+                  <div
+                    class="grid gap-5 lg:grid-cols-2 lg:gap-0"
+                    style={`color: ${i === data.length - 1 ? "#fafafa" : "#141392"}`}
+                  >
+                    <div class="mr-5 flex flex-col">
+                      <h4 class="text-4xl font-black lg:text-7xl">{e.title}</h4>
                     </div>
                     <div>
-                      <p class="font-normal lg:text-xl">{e.text}</p>
+                      <p class="font-light lg:text-xl">{e.text}</p>
                     </div>
                   </div>
                 </div>

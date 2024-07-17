@@ -2,7 +2,7 @@
 
 ---
 
-<section id="support" class="relative w-full pt-10">
+<section id="support" class="relative flex w-full flex-col items-center pt-10">
     <div class="mx-auto mb-10 max-w-5xl lg:mb-16">
         <h3
             class="title text-center text-3xl font-semibold text-[#141392] lg:text-5xl"
@@ -15,12 +15,16 @@
             </div>
         </h3>
     </div>
-    <video
-        playsinline
-        muted
-        id="videoElem"
-        class="mx-auto aspect-video max-w-full rounded-3xl object-contain px-5 lg:max-w-5xl lg:px-0"
-        src="/videoplayback.webm"></video>
+    <div
+        class="mx-5 aspect-video overflow-hidden rounded-3xl lg:mx-0 lg:max-w-5xl"
+    >
+        <video
+            playsinline
+            muted
+            id="videoElem"
+            class="mx-auto max-w-full object-cover"
+            src="/videoplayback.webm"></video>
+    </div>
 </section>
 
 <script>
