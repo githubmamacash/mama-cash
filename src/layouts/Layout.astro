@@ -89,16 +89,13 @@ const { title } = Astro.props;
       }
 
       .line-h1 {
-        overflow: hidden;
-        height: 6.5rem;
+        @apply h-auto overflow-hidden lg:h-[6.5rem];
       }
       .line-h2 {
-        overflow: hidden;
-        height: 5rem;
+        @apply h-auto overflow-hidden lg:h-[5rem];
       }
       .line-h3 {
-        overflow: hidden;
-        height: 3.5rem;
+        @apply h-auto overflow-hidden lg:h-[3.5rem];
       }
     </style>
   </body>
