@@ -139,7 +139,7 @@ const data = [
                   style={`background: ${e.color};color: ${e.textColor}`}
                   class="h-full rounded-2xl p-5 lg:p-10"
                 >
-                  <div class="grid h-full gap-5 lg:grid-cols-[40%_60%] lg:gap-10">
+                  <div class="grid h-full lg:grid-cols-[40%_60%] lg:gap-10">
                     <div class="flex flex-col">
                       <div class="flex flex-1 items-center">
                         <span
@@ -165,10 +165,14 @@ const data = [
                         style={`--bg: ${e.buttonColor}`}
                         class="relative mr-5 font-normal before:absolute before:left-[-3px] before:hidden before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] lg:mr-10 lg:before:block"
                       >
+                        <li
+                          style={`border-color: ${e.buttonColor};`}
+                          class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] last:border-b-0 last:before:hidden last:after:hidden lg:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:last:after:block"
+                        />
                         {e.points.map((i) => (
                           <li
                             style={`border-color: ${e.buttonColor};`}
-                            class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] py-4 text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] first:border-t-[0px] last:border-b-0 last:before:hidden last:after:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:first:border-t-[0px] lg:last:after:block"
+                            class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] py-4 text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] last:border-b-0 last:before:hidden last:after:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:last:after:block"
                           >
                             <div class="">
                               <span class="text-xl">{i.title}</span>
