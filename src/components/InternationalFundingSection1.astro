@@ -137,9 +137,9 @@ const data = [
               <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
                 <div
                   style={`background: ${e.color};color: ${e.textColor}`}
-                  class="h-full rounded-2xl px-5 pt-5 lg:px-10 lg:pt-10"
+                  class="h-full rounded-2xl p-5 lg:p-10"
                 >
-                  <div class="grid h-full gap-5 lg:grid-cols-2 lg:gap-10">
+                  <div class="grid h-full gap-5 lg:grid-cols-[40%_60%] lg:gap-10">
                     <div class="flex flex-col">
                       <div class="flex flex-1 items-center">
                         <span
@@ -160,10 +160,10 @@ const data = [
                         alt=""
                       />
                     </div>
-                    <div class="pb-5 lg:pb-10">
+                    <div class="flex flex-col items-center justify-center">
                       <ul
                         style={`--bg: ${e.buttonColor}`}
-                        class="relative font-normal before:absolute before:left-[-3px] before:hidden before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] lg:before:block"
+                        class="relative mr-5 font-normal before:absolute before:left-[-3px] before:hidden before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] lg:mr-10 lg:before:block"
                       >
                         {e.points.map((i) => (
                           <li
@@ -172,7 +172,7 @@ const data = [
                           >
                             <div class="">
                               <span class="text-xl">{i.title}</span>
-                              <p class="mt-2 text-xs">{i.description}</p>
+                              <p class="mt-2 text-sm">{i.description}</p>
                             </div>
                             <a
                               target="_blank"
@@ -180,8 +180,8 @@ const data = [
                               href={i.url}
                               class="flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-5"
                             >
-                              Read more
-                              <ArrowSVG />
+                              <span class="text-xs">Read more</span>
+                              <ArrowSVG width="24" height="24" />
                             </a>
                           </li>
                         ))}
@@ -223,7 +223,7 @@ const data = [
         trigger: container,
         pin: true,
         invalidateOnRefresh: true,
-        start: "top 80px",
+        start: "top 14%",
         end: "bottom top",
         // markers: true,
         scrub: true,
