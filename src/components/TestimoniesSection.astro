@@ -59,10 +59,12 @@ const testimonies: [ImageMetadata, string, string, string][] = [
     love and fighting for justice… that lasts!
   </p>
 
-  <div class="mt-20 max-w-5xl px-8 lg:grid lg:grid-cols-3 lg:gap-[60px]">
+  <div
+    class="mt-10 max-w-5xl px-8 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-[60px]"
+  >
     {
       testimonies.map(([img, name, role, video]) => (
-        <article class="mb-20 flex flex-col items-center last:mb-0 lg:mb-0">
+        <article class="mb-12 flex flex-col items-center last:mb-0 lg:mb-0">
           <Image alt="" src={img} />
           <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
           <p
