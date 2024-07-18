@@ -11,6 +11,7 @@ const data = [
     textColor: "#ffffff",
     buttonColor: "#FDB813",
     buttonText: "#000000",
+    image: "/MMC_collages_1.png",
     points: [
       {
         title: "LBQTI",
@@ -45,6 +46,7 @@ const data = [
     textColor: "#000000",
     buttonColor: "#FDB813",
     buttonText: "#000000",
+    image: "/MMC_collages_2.png",
     points: [
       {
         title: "Reproductive Justice",
@@ -79,6 +81,7 @@ const data = [
     textColor: "#000000",
     buttonColor: "#E91E78",
     buttonText: "#fafafa",
+    image: "/MMC_collages_3.png",
     points: [
       {
         title: "Relationship to Money",
@@ -149,7 +152,13 @@ const data = [
                           {e.title}
                         </h4>
                       </div>
-                      <Image class="mt-10" src={Overlayed} alt="" />
+                      <Image
+                        width={529}
+                        height={362}
+                        class="mt-10"
+                        src={e.image}
+                        alt=""
+                      />
                     </div>
                     <div class="pb-5 lg:pb-10">
                       <ul
