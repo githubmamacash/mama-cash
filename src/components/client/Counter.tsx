@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import SplitType from "split-type";
 
 export default function Counter({ children, trigger }) {
   const wrapper = useRef<HTMLDivElement | null>(null);
-  // const [count, setCount] = useState(start);
 
   function numberWithCommas(x: number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
