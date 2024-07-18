@@ -1,0 +1,88 @@
+---
+import ArrowSVG from "./ArrowSVG.astro";
+import BackgroundNotebook from "../assets/quote/bg.png";
+import ChangeThaLasts from "../assets/40years.png";
+import Linkedin from "../assets/linkedin.svg";
+import X from "../assets/x.svg";
+import Facebook from "../assets/facebook.svg";
+import Instagram from "../assets/instagram.svg";
+import { Image } from "astro:assets";
+---
+
+<footer class="relative">
+  <Image
+    class="absolute h-full w-full object-cover"
+    alt=""
+    src={BackgroundNotebook}
+  />
+  <div
+    class="container isolate mx-auto mt-24 flex w-full flex-col items-center justify-center gap-y-8 px-5 pt-8 lg:grid lg:grid-cols-3 lg:px-0"
+  >
+    <figure
+      class="relative mr-4 flex h-full w-fit items-center justify-self-end"
+    >
+      <img class="max-h-24 object-contain" src={ChangeThaLasts.src} alt="" />
+      <p
+        class="font-display absolute bottom-3 right-1 text-sm font-bold text-[#141392]"
+      >
+        40 years of impact
+      </p>
+    </figure>
+
+    <div
+      class="flex h-full w-full items-center justify-center gap-2 lg:col-start-2 lg:justify-end lg:border-l-[0px] lg:py-0"
+    >
+      <a
+        class="ml-auto h-8 w-8"
+        target="_blank"
+        href="https://www.linkedin.com/company/mama-cash/posts/?feedView=all"
+        ><img src={Linkedin.src} alt="" /></a
+      >
+      <a
+        class="h-8 w-8"
+        target="_blank"
+        href="https://www.facebook.com/mamacashfund/"
+        ><img src={Facebook.src} alt="" /></a
+      >
+      <a class="h-8 w-8" target="_blank" href="https://x.com/mamacash/"
+        ><img src={X.src} alt="" /></a
+      >
+      <a
+        class="mr-auto h-8 w-8"
+        target="_blank"
+        href="https://www.instagram.com/mamacashfund/"
+        ><img src={Instagram.src} alt="" /></a
+      >
+    </div>
+
+    <div class="flex flex-col justify-self-start leading-7">
+      <a
+        href="https://history.mamacash.nl/"
+        target="_blank"
+        class="mb-4 flex w-full items-center gap-x-5 rounded-full bg-[#FDB813] p-[4px] pl-4 text-[#141392] text-sm"
+        >Learn more about our history <ArrowSVG
+          className="ml-auto"
+          circleClassName="stroke-[#141392]"
+          arrowClassName="stroke-[#141392]"
+        /></a
+      >
+      <a
+        href="https://www.mamacash.org/"
+        target="_blank"
+        class="flex w-full items-center rounded-full bg-[#141392] p-[4px] pl-4 text-white text-sm"
+        >Visit our website <ArrowSVG
+          className="ml-auto"
+          circleClassName="stroke-white"
+          arrowClassName="stroke-white"
+        /></a
+      >
+    </div>
+  </div>
+  <div
+    class="relative z-10 mt-10 flex h-12 w-full items-center justify-center gap-x-2 bg-[#141392] text-sm font-light text-white lg:col-span-3"
+  >
+    Website designed and developed by <span class="text-[#FDB813]">
+      W.LAND</span
+    >
+  </div>
+</footer>

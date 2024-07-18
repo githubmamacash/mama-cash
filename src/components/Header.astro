@@ -1,0 +1,283 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.svg";
+---
+
+<header id="header" class="fixed z-[100] w-full">
+    <div class="bg-noise opacity-0"></div>
+    <nav
+        class="nav relative mx-auto hidden max-w-5xl grid-cols-5 items-center gap-5 py-6 text-base font-normal text-[#141392] lg:grid"
+    >
+        <a class="nav-link justify-self-center" href="#intersectional"
+            >Impact
+        </a>
+        <a class="nav-link justify-self-center" href="#testimonies"
+            >Grantee Partners</a
+        >
+        <a href="/" class="self-center justify-self-center">
+            <Image width={100} src={Logo} alt="Mama cash logo" />
+        </a>
+        <a class="nav-link justify-self-center" href="#global">
+            The Mama Cash Effect
+        </a>
+        <a class="nav-link justify-self-center" href="#worldwide">
+            Global Solidarity
+        </a>
+    </nav>
+    <nav class="relative flex items-center px-5 py-4 lg:hidden">
+        <a href="" class="flex-1">
+            <Image width={80} src={Logo} alt="Mama cash logo" loading="eager" />
+        </a>
+        <button id="open">
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 6.00005C3.60156 5.33731 4.13882 4.80005 4.80156 4.80005H19.2016C19.8643 4.80005 20.4016 5.33731 20.4016 6.00005C20.4016 6.66279 19.8643 7.20005 19.2016 7.20005H4.80156C4.13882 7.20005 3.60156 6.66279 3.60156 6.00005Z"
+                    fill="#141392"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 12C3.60156 11.3373 4.13882 10.8 4.80156 10.8H19.2016C19.8643 10.8 20.4016 11.3373 20.4016 12C20.4016 12.6628 19.8643 13.2 19.2016 13.2H4.80156C4.13882 13.2 3.60156 12.6628 3.60156 12Z"
+                    fill="#141392"></path>
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M3.60156 18C3.60156 17.3373 4.13882 16.8 4.80156 16.8H12.0016C12.6643 16.8 13.2016 17.3373 13.2016 18C13.2016 18.6628 12.6643 19.2 12.0016 19.2H4.80156C4.13882 19.2 3.60156 18.6628 3.60156 18Z"
+                    fill="#141392"></path>
+            </svg>
+        </button>
+    </nav>
+    <nav
+        id="menu"
+        data-expanded={false}
+        class="fixed left-0 top-0 z-50 min-h-svh w-full bg-[#E91E78]"
+    >
+        <div class="flex items-center justify-end px-5 py-7">
+            <button id="close"
+                ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M6 18L18 6M6 6L18 18"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg></button
+            >
+        </div>
+        <div class="nav mt-10 px-5">
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a
+                href="#intersectional"
+                class="nav-link flex items-center px-2 py-5 text-white"
+            >
+                <span class="flex-1 text-2xl"> Impact</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a
+                href="#testimonies"
+                class="nav-link flex items-center px-2 py-5 text-white"
+            >
+                <span class="flex-1 text-2xl"> Grantee Partners</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a
+                href="#global"
+                class="nav-link flex items-center px-2 py-5 text-white"
+            >
+                <span class="flex-1 text-2xl"> The Mama Cash Effect</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+            <a
+                href="#worldwide"
+                class="nav-link flex items-center px-2 py-5 text-white"
+            >
+                <span class="flex-1 text-2xl"> Global Solidarity</span>
+
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M9 5L16 12L9 19"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <div
+                class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
+            >
+            </div>
+        </div>
+    </nav>
+</header>
+<style>
+    #menu {
+        clip-path: ellipse(0% 0%);
+    }
+</style>
+<script>
+    import gsap from "gsap";
+    import ScrollToPlugin from "gsap/ScrollToPlugin";
+    gsap.registerPlugin(ScrollToPlugin);
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "body",
+            start: "50px top",
+            end: "200px top",
+
+            // markers: true,
+            scrub: true,
+        },
+    });
+
+    tl.to("#header .bg-noise", {
+        duration: 0.1,
+        opacity: 0.9,
+    });
+
+    tl.to(
+        "#header .nav",
+        {
+            padding: 10,
+        },
+        "<",
+    );
+
+    tl.to(
+        "#header .nav img",
+        {
+            width: 80,
+        },
+        "<",
+    );
+
+    const menu = document.getElementById("menu");
+    const open = document.querySelector("#open") as HTMLButtonElement;
+    const close = document.querySelector("#close") as HTMLButtonElement;
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((nav: HTMLLinkElement) => {
+        nav.addEventListener("click", (e) => {
+            e.preventDefault();
+            const href = nav.getAttribute("href");
+            if (window.innerWidth < 1024) {
+                close.dispatchEvent(new Event("click"));
+            }
+            gsap.to(window, {
+                scrollTo: {
+                    y: href,
+                    offsetY: 80,
+                },
+                duration: 0.7,
+            });
+        });
+    });
+
+    open.addEventListener("click", () => {
+        gsap.fromTo(
+            menu,
+            {
+                clipPath: "circle(0% at right top)",
+            },
+            {
+                clipPath: "circle(200% at right top)",
+                onComplete: () => {
+                    document.body.style.overflow = "hidden";
+                },
+            },
+        );
+    });
+
+    close.addEventListener("click", () => {
+        gsap.fromTo(
+            menu,
+            {
+                clipPath: "circle(200% at right top)",
+            },
+            {
+                clipPath: "circle(0% at right top)",
+                onComplete: () => {
+                    document.body.style.overflow = "auto";
+                },
+            },
+        );
+    });
+</script>

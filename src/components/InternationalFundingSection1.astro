@@ -1,0 +1,225 @@
+---
+import Overlayed from "../assets/overlayed.png";
+import { Image } from "astro:assets";
+import ArrowSVG from "./ArrowSVG.astro";
+
+const data = [
+  {
+    id: 1,
+    title: "Community Impact",
+    color: "#E91E78",
+    textColor: "#ffffff",
+    buttonColor: "#FDB813",
+    buttonText: "#000000",
+    points: [
+      {
+        title: "LBQTI",
+        description:
+          "Thanks to our support, people in over a dozen countries can now live a truer version of themselves.",
+        url: "/LBQ.pdf",
+      },
+      {
+        title: "Sex Worker Rights",
+        description:
+          "Mama Cash knew it from day 1: sex workers’ rights are central to feminist issues.",
+        url: "/Sex-Workers-Rights.pdf",
+      },
+      {
+        title: "Disability Justice",
+        description:
+          "Mama Cash grantee-partners around the world are breaking down the stigma around disability.",
+        url: "/Feminist-Disability-Justice.pdf",
+      },
+      {
+        title: "Racial Justice",
+        description:
+          "We brought the powerful voices of racialised women, girls, and trans and intersex people to the forefront",
+        url: "/Racial-Justice.pdf",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Thematic Impact",
+    color: "#1FAAAC",
+    textColor: "#000000",
+    buttonColor: "#FDB813",
+    buttonText: "#000000",
+    points: [
+      {
+        title: "Reproductive Justice",
+        description:
+          "Our grantee-partners brought abortion out of the shadows of criminalisation, and much more.",
+        url: "/Reproductive-Justice.pdf",
+      },
+      {
+        title: "Countering Gender-Based Violence",
+        description:
+          "With our support, hundreds of movements around the world secured government action against gender-based violence.",
+        url: "",
+      },
+      {
+        title: "Economic Justice",
+        description:
+          "We resourced thousands of feminist activists who have gone on to win labour protections and social security.",
+        url: "",
+      },
+      {
+        title: "Environmental Justice",
+        description:
+          "Mama Cash’s environmental justice grantmaking has moved resources to often-overlooked communities.",
+        url: "",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Funding for Change",
+    color: "#FDB813",
+    textColor: "#000000",
+    buttonColor: "#E91E78",
+    buttonText: "#fafafa",
+    points: [
+      {
+        title: "Relationship to Money",
+        description:
+          "We promoted a culture of joyful feminist individual giving and transformed the Dutch banking system.",
+        url: "",
+      },
+      {
+        title: "Feminist Funding Architecture",
+        description:
+          "We leveraged more and better funding to feminist movements and transformed the giving landscape.",
+        url: "",
+      },
+    ],
+  },
+];
+---
+
+<section id="intersectional" class="relative pt-20">
+  <svg
+    class="absolute top-[25%] hidden w-[10%] lg:block"
+    viewBox="0 0 236 310"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M608.306 -2304.09C609.36 -2304.42 609.945 -2305.55 609.613 -2306.6C609.28 -2307.65 608.157 -2308.24 607.104 -2307.91L608.306 -2304.09ZM-207.295 -1702.5L-209.128 -1701.7L-207.295 -1702.5ZM1856.5 -1122L1854.75 -1121.04L1856.5 -1122ZM212.333 295C212.333 300.891 217.109 305.667 223 305.667C228.891 305.667 233.667 300.891 233.667 295C233.667 289.109 228.891 284.333 223 284.333C217.109 284.333 212.333 289.109 212.333 295ZM607.104 -2307.91C505.684 -2275.93 391.82 -2250.39 280.967 -2223C170.18 -2195.61 62.4164 -2166.38 -26.5421 -2127.02C-115.472 -2087.67 -185.926 -2038.07 -221.715 -1969.78C-257.561 -1901.38 -258.409 -1814.68 -209.128 -1701.7L-205.462 -1703.3C-254.432 -1815.57 -253.28 -1900.93 -218.172 -1967.92C-183.009 -2035.02 -113.556 -2084.14 -24.9236 -2123.36C63.6807 -2162.56 171.136 -2191.73 281.927 -2219.11C392.653 -2246.48 506.727 -2272.07 608.306 -2304.09L607.104 -2307.91ZM-209.128 -1701.7C-189.81 -1657.41 -145.583 -1620.42 -83.1363 -1588.86C-20.6457 -1557.28 60.3829 -1531.01 153.755 -1508.31C340.5 -1462.93 577.025 -1431.8 814.247 -1401.41C1051.53 -1371.02 1289.52 -1341.39 1479.39 -1299.01C1574.33 -1277.82 1657.14 -1253.47 1721.78 -1224.29C1786.47 -1195.08 1832.66 -1161.16 1854.75 -1121.04L1858.25 -1122.96C1835.53 -1164.24 1788.37 -1198.61 1723.42 -1227.93C1658.42 -1257.28 1575.31 -1281.7 1480.26 -1302.92C1290.17 -1345.34 1051.97 -1375 814.755 -1405.38C577.477 -1435.77 341.186 -1466.88 154.699 -1512.2C61.4549 -1534.86 -19.2365 -1561.05 -81.3323 -1592.43C-143.472 -1623.83 -186.698 -1660.28 -205.462 -1703.3L-209.128 -1701.7ZM1854.75 -1121.04C1878.47 -1077.95 1883.39 -1035.02 1870.21 -994.842C1857.01 -954.614 1825.59 -916.88 1776.14 -884.422C1677.2 -819.481 1506.58 -776 1268 -776V-772C1506.92 -772 1678.45 -815.519 1778.33 -881.078C1828.29 -913.87 1860.45 -952.261 1874.01 -993.595C1887.58 -1034.98 1882.43 -1079.05 1858.25 -1122.96L1854.75 -1121.04ZM1268 -776C1208.35 -776 1129.03 -778.858 1038.09 -781.417C947.174 -783.976 844.689 -786.235 738.79 -785.031C527.038 -782.625 301.443 -766.376 127.268 -710.906C-46.8541 -655.452 -170.357 -560.505 -176.249 -400.292C-179.189 -320.348 -152.805 -224.426 -89.2072 -109.427C-25.6044 5.58276 75.285 139.795 221.538 296.365L224.462 293.635C78.34 137.205 -22.3175 3.26099 -85.7068 -111.363C-149.102 -225.996 -175.155 -321.184 -172.251 -400.145C-166.456 -557.745 -45.1459 -651.798 128.482 -707.094C302.057 -762.374 527.149 -778.625 738.835 -781.031C844.654 -782.234 947.076 -779.977 1037.98 -777.419C1128.86 -774.861 1208.28 -772 1268 -772V-776Z"
+      fill="#E91E78"></path>
+  </svg>
+
+  <div class="mx-auto mb-12 max-w-5xl px-10 text-[#141392] lg:px-0">
+    <h3
+      class="title text-center text-3xl font-semibold lg:text-left lg:text-5xl"
+    >
+      <div class="line-h3">
+        <span class="block">We Fund Feminist Activism</span>
+      </div>
+    </h3>
+    <p class="mt-5 max-w-prose text-center leading-tight lg:text-left">
+      Across borders, communities, issues, and identities, our grantee-partners
+      have transformed the world we live in today. From lesbian rights to
+      climate justice, our support has powered global change.
+    </p>
+  </div>
+  <div id="funding1">
+    <div class="scroller-section">
+      <div class="scroller-section-container mx-auto max-w-5xl px-5 lg:px-0">
+        <div
+          class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
+        >
+          {
+            data.map((e) => (
+              <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
+                <div
+                  style={`background: ${e.color};color: ${e.textColor}`}
+                  class="h-full rounded-2xl px-5 pt-5 lg:px-10 lg:pt-10"
+                >
+                  <div class="grid h-full gap-5 lg:grid-cols-2 lg:gap-10">
+                    <div class="flex flex-col">
+                      <div class="flex flex-1 items-center">
+                        <span
+                          style={`border-color: ${e.buttonColor};color: ${e.buttonColor}`}
+                          class="mr-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1px] border-[#FDB813] text-3xl text-[#FDB813] lg:h-16 lg:w-16 lg:text-5xl"
+                        >
+                          {e.id}
+                        </span>
+                        <h4 class="text-3xl font-bold lg:text-4xl">
+                          {e.title}
+                        </h4>
+                      </div>
+                      <Image class="mt-10" src={Overlayed} alt="" />
+                    </div>
+                    <div class="pb-5 lg:pb-10">
+                      <ul
+                        style={`--bg: ${e.buttonColor}`}
+                        class="relative font-normal before:absolute before:left-[-3px] before:hidden before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] lg:before:block"
+                      >
+                        {e.points.map((i) => (
+                          <li
+                            style={`border-color: ${e.buttonColor};`}
+                            class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] py-4 text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] first:border-t-[0px] last:border-b-0 last:before:hidden last:after:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:first:border-t-[0px] lg:last:after:block"
+                          >
+                            <div class="">
+                              <span class="text-xl">{i.title}</span>
+                              <p class="mt-2 text-xs">{i.description}</p>
+                            </div>
+                            <a
+                              target="_blank"
+                              style={`background-color: ${e.buttonColor};color: ${e.buttonText}`}
+                              href={i.url}
+                              class="flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-5"
+                            >
+                              Read more
+                              <ArrowSVG />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from "gsap";
+
+  const wrapperRef = document.getElementById("funding1");
+
+  const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
+  const container = wrapperRef.querySelector(
+    ".scroller-section-container",
+  ) as HTMLElement;
+  const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
+  const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px)", () => {
+    gsap.to(scroller, {
+      x: -(
+        scroller.offsetWidth -
+        wrapper.offsetWidth +
+        (window.innerWidth - item.offsetWidth)
+      ),
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        invalidateOnRefresh: true,
+        start: "top 80px",
+        end: "bottom top",
+        // markers: true,
+        scrub: true,
+        // preventOverlaps: true
+      },
+    });
+  });
+</script>

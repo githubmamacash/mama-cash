@@ -1,0 +1,52 @@
+---
+
+---
+
+<section id="support" class="relative flex w-full flex-col items-center pt-10">
+    <div class="mx-auto mb-10 max-w-5xl lg:mb-16">
+        <h3
+            class="title text-center text-3xl font-semibold text-[#141392] lg:text-5xl"
+        >
+            <div class="line-h3">
+                <span class="block">We back feminists</span>
+            </div>
+            <div class="line-h3">
+                <span class="block">fighting for change</span>
+            </div>
+        </h3>
+    </div>
+    <div
+        class="mx-5 aspect-video overflow-hidden rounded-3xl lg:mx-0 lg:max-w-5xl"
+    >
+        <video
+            playsinline
+            muted
+            id="videoElem"
+            class="mx-auto max-w-full object-cover"
+            src="/videoplayback.webm"></video>
+    </div>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    const video = document.getElementById("videoElem") as HTMLVideoElement;
+
+    video.addEventListener("loadeddata", () => {
+        ScrollTrigger.refresh(true);
+    });
+
+    gsap.to(video, {
+        scrollTrigger: {
+            refreshPriority: 0,
+            trigger: "#video-section",
+            start: "top 40%",
+        },
+        onComplete: () => {
+            video.play().catch(() => {
+                video.controls = true;
+            });
+        },
+    });
+</script>

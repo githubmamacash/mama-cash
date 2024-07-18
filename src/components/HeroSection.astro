@@ -1,0 +1,221 @@
+---
+import { Image } from "astro:assets";
+import Woman1 from "../assets/hero/woman1.png";
+import Woman2 from "../assets/hero/woman2.png";
+import Woman3 from "../assets/hero/woman3.png";
+import Group from "../assets/hero/group.png";
+import Layer1 from "../assets/hero/layer1.png";
+import Layer2 from "../assets/hero/layer2.png";
+import Hand from "../assets/hero/hand.png";
+import Escala from "../assets/hero/escala.png";
+import Megaphone from "../assets/hero/megaphone.png";
+---
+
+<section
+  id="hero-section"
+  class="relative mt-24 flex min-h-svh flex-col items-center"
+>
+  <h1
+    class="title font-display mt-5 text-center text-7xl font-bold text-[#141392] lg:text-8xl"
+  >
+    <div class="line-h1"><span class="block">Change</span></div>
+    <div class="line-h1"><span class="block">that lasts</span></div>
+  </h1>
+  <span class="font-display mt-5 text-xl text-[#E91E78]"
+    >40 YEARS OF IMPACT</span
+  >
+  <div class="mx-auto mt-20 w-full max-w-4xl px-10 lg:px-0">
+    <svg
+      class="absolute left-0 mt-32 hidden w-[40%] lg:block"
+      viewBox="0 0 607 194"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M608.306 7.90745C609.36 7.57532 609.945 6.45209 609.613 5.39864C609.28 4.34518 608.157 3.76043 607.104 4.09255L608.306 7.90745ZM-207.295 609.5L-209.128 610.3L-207.295 609.5ZM1856.5 1190L1854.75 1190.96L1856.5 1190ZM212.333 2607C212.333 2612.89 217.109 2617.67 223 2617.67C228.891 2617.67 233.667 2612.89 233.667 2607C233.667 2601.11 228.891 2596.33 223 2596.33C217.109 2596.33 212.333 2601.11 212.333 2607ZM607.104 4.09255C505.684 36.0674 391.82 61.6053 280.967 89.0037C170.18 116.386 62.4164 145.624 -26.5421 184.984C-115.472 224.331 -185.926 273.927 -221.715 342.22C-257.561 410.619 -258.409 497.319 -209.128 610.3L-205.462 608.7C-254.432 496.431 -253.28 411.068 -218.172 344.077C-183.009 276.979 -113.556 227.857 -24.9236 188.641C63.6807 149.439 171.136 120.27 281.927 92.8869C392.653 65.5197 506.727 39.9326 608.306 7.90745L607.104 4.09255ZM-209.128 610.3C-189.81 654.587 -145.583 691.583 -83.1363 723.138C-20.6457 754.716 60.3829 780.993 153.755 803.685C340.5 849.069 577.025 880.204 814.247 910.586C1051.53 940.975 1289.52 970.61 1479.39 1012.99C1574.33 1034.18 1657.14 1058.53 1721.78 1087.71C1786.47 1116.92 1832.66 1150.84 1854.75 1190.96L1858.25 1189.04C1835.53 1147.76 1788.37 1113.39 1723.42 1084.07C1658.42 1054.72 1575.31 1030.3 1480.26 1009.08C1290.17 966.657 1051.97 936.998 814.755 906.618C577.477 876.23 341.186 845.12 154.699 799.798C61.4549 777.138 -19.2365 750.947 -81.3323 719.568C-143.472 688.168 -186.698 651.719 -205.462 608.7L-209.128 610.3ZM1854.75 1190.96C1878.47 1234.05 1883.39 1276.98 1870.21 1317.16C1857.01 1357.39 1825.59 1395.12 1776.14 1427.58C1677.2 1492.52 1506.58 1536 1268 1536V1540C1506.92 1540 1678.45 1496.48 1778.33 1430.92C1828.29 1398.13 1860.45 1359.74 1874.01 1318.4C1887.58 1277.02 1882.43 1232.95 1858.25 1189.04L1854.75 1190.96ZM1268 1536C1208.35 1536 1129.03 1533.14 1038.09 1530.58C947.174 1528.02 844.689 1525.77 738.79 1526.97C527.038 1529.38 301.443 1545.62 127.268 1601.09C-46.8541 1656.55 -170.357 1751.49 -176.249 1911.71C-179.189 1991.65 -152.805 2087.57 -89.2072 2202.57C-25.6044 2317.58 75.285 2451.79 221.538 2608.37L224.462 2605.63C78.34 2449.21 -22.3175 2315.26 -85.7068 2200.64C-149.102 2086 -175.155 1990.82 -172.251 1911.85C-166.456 1754.26 -45.1459 1660.2 128.482 1604.91C302.057 1549.63 527.149 1533.37 738.835 1530.97C844.654 1529.77 947.076 1532.02 1037.98 1534.58C1128.86 1537.14 1208.28 1540 1268 1540V1536Z"
+        fill="#E91E78"></path>
+    </svg>
+
+    <div class="wrapper relative mx-auto max-w-[90%] lg:max-w-[80%]">
+      <div
+        id="a1"
+        class="absolute left-[-5%] top-[-30%] hidden h-[90px] w-[90px] rounded-full bg-[#E91E78] lg:block"
+      >
+        <Image
+          id="a11"
+          width={70}
+          height={123}
+          loading="eager"
+          src={Hand}
+          alt=""
+          class="absolute bottom-0 left-0 w-[70px]"
+        />
+      </div>
+      <div
+        id="a2"
+        class="absolute right-[-5%] top-0 z-20 hidden w-[100px] lg:block"
+      >
+        <Image
+          id="a22"
+          loading="eager"
+          width={100}
+          height={93}
+          src={Escala}
+          alt=""
+          class="absolute bottom-3"
+        />
+        <div class="mx-auto h-[80px] w-[80px] rounded-full bg-[#141392]"></div>
+      </div>
+      <svg
+        id="sun"
+        class="relative z-10"
+        viewBox="0 0 950 475"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M949.207 475C949.207 737.059 736.766 949.5 474.707 949.5C212.648 949.5 0.207031 737.059 0.207031 475C0.207031 212.941 212.648 0.5 474.707 0.5C736.766 0.5 949.207 212.941 949.207 475Z"
+          fill="#FDB813"></path>
+      </svg>
+      <svg
+        class="absolute bottom-[80%] right-[-15%] z-0 hidden w-[300px] lg:block"
+        viewBox="0 0 470 379"
+        fill="none"
+      >
+        <path
+          d="M2.40628 378.49C1.30719 378.6 0.326996 377.798 0.216949 376.699C0.106903 375.6 0.908661 374.62 2.00772 374.51L2.40628 378.49ZM149.874 11C149.874 16.891 145.098 21.6667 139.207 21.6667C133.316 21.6667 128.54 16.891 128.54 11C128.54 5.10896 133.316 0.333333 139.207 0.333333C145.098 0.333333 149.874 5.10896 149.874 11ZM2.00772 374.51C192.931 355.393 314.404 323.017 384.867 285.353C420.091 266.526 442.411 246.459 454.357 226.219C466.262 206.047 467.938 185.586 461.656 165.664C455.351 145.67 440.987 126.103 420.611 107.97C400.247 89.8476 373.976 73.2447 344.037 59.1613C284.15 30.9904 209.8 13 139.207 13V9C210.421 9 285.35 27.1346 345.74 55.5418C375.939 69.7475 402.555 86.5469 423.27 104.982C443.972 123.405 458.876 143.549 465.471 164.461C472.088 185.445 470.294 207.085 457.801 228.252C445.349 249.35 422.343 269.857 386.753 288.881C315.588 326.92 193.484 359.357 2.40628 378.49L2.00772 374.51Z"
+          fill="#E91E78"></path>
+      </svg>
+
+      <Image
+        widths={[100, 200]}
+        class="absolute left-[14%] top-[10px] z-10 w-[100px] lg:w-[200px]"
+        src={Layer1}
+        alt=""
+        loading="eager"
+      />
+      <Image
+        widths={[130, 300]}
+        class="absolute bottom-[15%] right-[18%] z-10 w-[130px] lg:w-[300px]"
+        src={Layer2}
+        alt=""
+        loading="eager"
+      />
+      <Image
+        widths={[370, 170]}
+        class="absolute bottom-0 right-[-25px] z-10 w-[170px] lg:right-[-50px] lg:w-[370px]"
+        src={Group}
+        loading="eager"
+        alt=""
+      />
+      <div
+        class="absolute bottom-[35%] left-3 z-10 hidden h-[80px] w-[80px] rounded-full bg-[#1FAAAC] lg:block"
+      >
+      </div>
+      <Image
+        widths={[250, 125]}
+        class="absolute bottom-[-4px] left-0 z-10 w-[125px] lg:bottom-[-9px] lg:w-[250px]"
+        src={Woman2}
+        alt=""
+        loading="eager"
+      />
+
+      <Image
+        widths={[400, 200]}
+        class="absolute bottom-0 left-0 right-0 z-10 mx-auto w-[200px] lg:w-[400px]"
+        src={Woman1}
+        alt=""
+        loading="eager"
+      />
+      <Image
+        widths={[220, 110]}
+        class="absolute bottom-[-30px] left-[25%] z-10 w-[110px] lg:bottom-[-60px] lg:w-[220px]"
+        src={Woman3}
+        alt=""
+        loading="eager"
+      />
+    </div>
+    <div
+      class="after::absolute relative h-[2px] w-full bg-[#141392] before:absolute before:top-[-3px] before:h-2 before:w-2 before:rounded-full before:bg-[#141392] after:absolute after:right-0 after:top-[-3px] after:h-2 after:w-2 after:rounded-full after:bg-[#141392]"
+    >
+    </div>
+    <div class="relative mt-20 flex flex-col items-center justify-center">
+      <div class="absolute bottom-[25%] left-[-50px] hidden lg:block">
+        <Image
+          src={Megaphone}
+          alt="Megaphone"
+          class="absolute bottom-[-20px] left-[10px] max-w-[150px]"
+        />
+        <div class="bottom-0 h-[100px] w-[100px] rounded-full bg-[#1FAAAC]">
+        </div>
+      </div>
+      <h2
+        class="title font-display text-center text-3xl font-bold text-[#141392] lg:text-7xl"
+      >
+        <div class="line-h2"><span class="block">Mama Cash began</span></div>
+        <div class="line-h2">
+          <span class="block">with a visionary idea</span>
+        </div>
+      </h2>
+      <span class="font-display mt-5 text-xl text-[#E91E78]">SOUND BOLD?</span>
+      <p
+        class="font-display mt-5 max-w-prose text-center leading-tight text-[#141392]"
+      >
+        In 1983, 5 lesbian feminist activists got together and launched <br />
+        Mama Cash - a pioneering force for resourcing feminist movements worldwide.
+      </p>
+      <p
+        class="font-display mt-2 max-w-prose text-center leading-tight text-[#141392]"
+      >
+        It wasn’t always easy, it wasn’t always popular. But here we are four
+        decades later, and Mama Cash is moving more resources than ever before -
+        to women, girls, and trans and intersex activists around the world.
+      </p>
+      <p
+        class="font-display mt-2 max-w-prose text-center leading-tight text-[#141392]"
+      >
+        We support them with the resources they need as they challenge power,
+        push for lasting change and clear the way for future generations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from "gsap";
+
+  const container = document.getElementById("hero-section");
+  const sun = container.querySelector("#sun");
+
+  gsap.to(sun, {
+    scrollTrigger: {
+      trigger: sun,
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    scale: 1.2,
+    yPercent: -10,
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    const x = e.clientX * 0.05;
+    const y = e.clientY * 0.05;
+    gsap.to("#a1", {
+      x: x,
+      y: y,
+    });
+    gsap.to("#a11", {
+      x: -x / 3,
+      y: y,
+    });
+    gsap.to("#a2", {
+      x: -x,
+      y: -y,
+    });
+    gsap.to("#a22", {
+      x: x / 3,
+      y: y / 3,
+    });
+  });
+</script>

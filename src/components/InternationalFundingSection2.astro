@@ -1,0 +1,116 @@
+---
+const data = [
+  {
+    id: 1,
+    title: "Money as activism",
+    color: "#1FAAAC",
+    text: "At a time when many feminists were wary of wealth's corrupting influence, Mama Cash played a pivotal role in reshaping attitudes towards money and power. By providing loan guarantees, building peer networks for women with inherited wealth, and fostering a culture of individual feminist giving, Mama Cash strengthened women's financial expertise and independence. In the 1980s and 1990s, Mama Cash’s loan guarantees led to the launch of 140 women-led businesses, influencing the Dutch banking sector to see women entrepreneurs as viable investments.",
+  },
+  {
+    id: 2,
+    title: "Shaping new futures",
+    color: "#FDB813",
+    text: "At Mama Cash, our strategic funding choices bring fresh, diverse voices to the forefront. We support self-led initiatives, prioritise historically excluded groups, and partner with women's and feminist funds around the globe. By sharing resources and empowering Global South feminist leaders, we partner with activists to build relationships, spark collaborations, and take on leadership roles, creating vibrant new networks and coalitions and a whole new healthy, flourishing feminist landscape.",
+  },
+  {
+    id: 3,
+    title: "Paying it forward",
+    color: "#E91E78",
+    text: "Mama Cash proudly fuels bold feminist activism by taking smart risks. Our long-term, core, and seed funding keeps movements thriving and growing. We empower grantee-partners from the start, helping them build coalitions and networks. They, in turn, pay it forward by uplifting excluded communities, creating unstoppable feminist movements for lasting change.",
+  },
+];
+---
+
+<section id="global" class="mt-10 lg:mt-20">
+  <svg
+    class="absolute hidden lg:block"
+    viewBox="0 0 1728 786"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1867.5 -737C3419 -321 17.0027 604.5 -151.617 871.5C-252.682 1031.53 -136.734 1085.31 202.384 1237.5"
+      stroke="#E91E78"
+      stroke-width="4"
+      stroke-linecap="round"></path>
+  </svg>
+
+  <div class="mx-auto max-w-5xl px-5 text-[#141392] lg:px-0">
+    <h3
+      class="title text-center text-3xl font-semibold lg:text-left lg:text-5xl"
+    >
+      <div class="line-h3">
+        <span class="block">We Champion Intersectional</span>
+      </div>
+      <div class="line-h3"><span class="block">Funding Worldwide</span></div>
+    </h3>
+  </div>
+  <div id="funding2">
+    <div class="scroller-section">
+      <div
+        class="scroller-section-container mx-auto max-w-5xl px-5 pt-12 lg:px-0"
+      >
+        <div
+          class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
+        >
+          {
+            data.map((e, i) => (
+              <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
+                <div
+                  style={`background: ${e.color}`}
+                  class="h-full rounded-2xl p-10 lg:min-h-[70svh] lg:p-20 2xl:min-h-[60svh]"
+                >
+                  <div
+                    class="grid gap-5 lg:grid-cols-2 lg:gap-0"
+                    style={`color: ${i === data.length - 1 ? "#fafafa" : "#141392"}`}
+                  >
+                    <div class="mr-5 flex flex-col">
+                      <h4 class="text-4xl font-black lg:text-7xl">{e.title}</h4>
+                    </div>
+                    <div>
+                      <p class="font-light lg:text-xl">{e.text}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import gsap from "gsap";
+
+  const wrapperRef = document.getElementById("funding2");
+
+  const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
+  const container = wrapperRef.querySelector(
+    ".scroller-section-container",
+  ) as HTMLElement;
+  const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
+  const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px)", () => {
+    gsap.to(scroller, {
+      x: -(
+        scroller.offsetWidth -
+        wrapper.offsetWidth +
+        (window.innerWidth - item.offsetWidth)
+      ),
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        invalidateOnRefresh: true,
+        start: "top 10%",
+        end: "bottom top",
+        // markers: true,
+        scrub: true,
+        // preventOverlaps: true
+      },
+    });
+  });
+</script>

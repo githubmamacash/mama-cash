@@ -1,0 +1,362 @@
+---
+import Africa from "../assets/map/africa.png";
+import NAmerica from "../assets/map/north_am.png";
+import SAmerica from "../assets/map/south_am.png";
+import Asia from "../assets/map/asia.png";
+import Europe from "../assets/map/europe.png";
+import World from "../assets/map/world.png";
+import { Image } from "astro:assets";
+---
+
+<section id="worldwide" class="pt-20">
+  <div class="mx-auto max-w-5xl px-5 text-[#141392] lg:px-0">
+    <h3
+      class="title mb-0 text-center text-3xl font-semibold lg:mb-12 lg:text-left lg:text-5xl"
+    >
+      <div class="line-h3">
+        <span class="block">We strengthen feminist causes</span>
+      </div>
+      <div class="line-h3"><span class="block">around the world</span></div>
+    </h3>
+    <div>
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div
+          id="image"
+          class="relative hidden aspect-[1] self-start overflow-hidden rounded-2xl bg-[#E91E78] lg:block lg:aspect-[9/10]"
+        >
+          <Image class="absolute h-full w-full" src={Africa} alt="" />
+          <Image
+            class="absolute h-full w-full object-cover opacity-0"
+            src={Asia}
+            alt=""
+          />
+          <Image
+            class="absolute h-full w-full object-cover opacity-0"
+            src={Europe}
+            alt=""
+          />
+          <Image
+            class="absolute h-full w-full object-cover opacity-0"
+            src={SAmerica}
+            alt=""
+          />
+          <Image
+            class="absolute h-full w-full object-cover opacity-0"
+            src={NAmerica}
+            alt=""
+          />
+          <Image
+            class="absolute h-full w-full object-cover opacity-0"
+            src={World}
+            alt=""
+          />
+        </div>
+        <div class="flex flex-col py-4 text-[#141392]">
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#E91E78"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78] lg:hidden"
+            >
+              <Image src={Africa} alt="" />
+            </div>
+            <h4
+              class="mb-5 text-3xl font-bold uppercase text-[#E91E78] lg:mb-8 lg:text-4xl"
+            >
+              Africa & <br class="hidden lg:inline" /> West Asia
+            </h4>
+            <p class="mb-2">
+              Mama Cash provided €23.8 million to feminist movements in 44
+              countries across Africa and West Asia.
+            </p>
+            <p class="mb-2">
+              Our grantee partners propelled social change in many fronts, like
+              expanding legal abortion rights in Africa through the
+              implementation of the 2003 Maputo Protocol  — Protocol to the
+              African Chapter of Human and Peoples’ Rights on the Rights of
+              Women in Africa.
+            </p>
+            <p>
+              Among the hundreds of organisations supported in the region, <strong
+                >Mauvan Liberation Fam</strong
+              >, in Mauritius, stands out for launching a campaign that played a
+              key role in decriminalising abortion in parts of the country in
+              2012.
+            </p>
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€24</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>56 </strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+          </div>
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#1FAAAC"
+            data-image="https://placehold.co/400x600"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#1FAAAC] lg:hidden"
+            >
+              <Image src={Asia} alt="" />
+            </div>
+            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
+              East, South & Southeast Asia & Oceania
+            </h4>
+            <p class="mb-2">
+              Mama Cash resourced activists from 29 countries in East, South &
+              Southeast Asia, and Oceania, with over €20 million.
+            </p>
+            <p class="mb-2">
+              We advocated for the strengthening of women’s funds — like Women’s
+              Fund Asia — and putting more and better money in the hands of
+              self-led movements.
+            </p>
+            <p>
+              Among our grantee-partners, <strong>Empower Foundation</strong>,
+              in Thailand, supported sex workers in the country to secure
+              protections under the social security system, which allowed them
+              free healthcare and paid sick and parental leave.
+            </p>
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€20</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>29</strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+          </div>
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#E91E78"
+            data-image="https://placehold.co/400x600"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78] lg:hidden"
+            >
+              <Image src={Europe} alt="" />
+            </div>
+            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
+              Europe, North & Central Asia
+            </h4>
+            <p class="mb-2">
+              In 40 years, we gave €23 million to feminist groups and activists
+              in 43 countries in Europe, North, and Central Asia.
+            </p>
+            <p class="mb-2">
+              Grantee-partners in the region gained ground in many human rights
+              causes, like catalysing the making, adoption and implementation of
+              the Istanbul Convention on Preventing and Combating Violence
+              Against Women and Domestic Violence. This allowed many others to
+              fight gender-based violence with improved national laws and
+              practices.
+            </p>
+            <p>
+              <strong>ŠKUC-LL</strong>, in Slovenia, was the first lesbian
+              organisation in the former Socialist Eastern European Bloc. They
+              received funding from Mama Cash, shortly  after their founding in
+              1987. We honour their contributions to Slovenia’s marriage
+              equality win in 2022.
+            </p>
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€23</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>43</strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+          </div>
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#1FAAAC"
+            data-image="https://placehold.co/400x600"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#1FAAAC] lg:hidden"
+            >
+              <Image src={SAmerica} alt="" />
+            </div>
+            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
+              Latin America & The Caribbean
+            </h4>
+            <p class="mb-2">
+              With €18 million across 40 years, Mama Cash supported hundreds of
+              feminist groups in 30 Latin American and Caribbean countries.
+            </p>
+            <p class="mb-2">
+              Beginning in 1987, Mama Cash supported LBQ activists'
+              participation in at least 11 regional Latin America and Caribbean
+              Feminist Encuentros and Lesbian Encuentros – vital spaces for
+              movement organising. Over time, LBQ movements in the region became
+              some of the strongest in the world, with clear impact.
+            </p>
+            <p>
+              <strong>IM-Defensoras</strong> is a network of Women Human Rights Defenders
+              (WHRD) in Mexico and Central America. Their  registry documenting violence
+              against WHRDs exemplifies the reach and impact of our fierce grantee-partners
+              in the region. Their pioneering work contributed to the passage of
+              the UN’s first-ever resolution on WHRDs.
+            </p>
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€18</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>30</strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+          </div>
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#E91E78"
+            data-image="https://placehold.co/400x600"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#E91E78] lg:hidden"
+            >
+              <Image src={NAmerica} alt="" />
+            </div>
+            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
+              North America
+            </h4>
+            <p class="mb-2">
+              Mama Cash contributed to feminist activism in Canada and the
+              United States with over €68 thousand.
+            </p>
+            <p class="mb-2">
+              <strong>The New Moon Fund</strong> in the United States received resources
+              from Mama Cash to create an advocacy and information hub on sex work.
+              They stand out among our grantee-partners in the region for providing
+              micro-grants to hundreds of American sex worker-led organisations.
+            </p>
+
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€68</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>2</strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+          </div>
+          <div
+            class="region flex flex-col pt-20 text-[#141392] first:pt-5"
+            data-color="#1FAAAC"
+            data-image="https://placehold.co/400x600"
+          >
+            <div
+              class="mb-6 overflow-hidden rounded-3xl bg-[#1FAAAC] lg:hidden"
+            >
+              <Image src={World} alt="" />
+            </div>
+            <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
+              Transnational and regional organisations
+            </h4>
+            <p class="mb-2">
+              Mama Cash provided €4 million to international and cross-regional
+              organisations.
+            </p>
+            <p class="mb-2">
+              We supported intersectional networks and women’s funds that worked
+              across regions as they deepened their inclusive, accessible, and
+              multilingual practices.
+            </p>
+            <p>
+              In 2011, we contributed to not only the launch of <strong
+                >FRIDA Young Feminists Fund</strong
+              > but also committed our support to a three-year Community of Practice
+              that brought together 11 women’s funds, including FRIDA, which supported
+              each other to mobilise more and better support for girls' organising.
+            </p>
+            <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <span class="my-5 text-3xl"><strong>€4</strong> million</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
+            <!-- <span class="my-5 text-3xl"><strong>56 </strong> countries</span>
+            <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-20 flex flex-col text-center">
+      <h3
+        class="title mb-5 text-center text-3xl font-semibold lg:mb-10 lg:text-5xl"
+      >
+        <div class="line-h3">
+          <span class="block">Celebrate four decades of transformative</span>
+        </div>
+        <div class="line-h3">
+          <span class="block">change with Mama Cash!</span>
+        </div>
+      </h3>
+      <p class="mx-auto mb-2 max-w-prose">
+        Since 1983, we've partnered with millions of women, girls, trans, and
+        intersex people to redefine norms, uphold rights, foster inclusion,
+        expand access, and inspire joy, healing, and liberation.
+      </p>
+      <p class="mx-auto max-w-prose">
+        Discover how feminist movements leveraged our support to create lasting
+        impact. Download our full report now.
+      </p>
+      <div class="mx-auto mt-10 flex flex-col items-center gap-5 lg:flex-row">
+        <a
+          href="/report.pdf"
+          target="_blank"
+          class="rounded-3xl bg-[#E91E78] px-5 py-2 text-sm text-white"
+          >Download full report</a
+        >
+        <a
+          href="/executive-summary.pdf"
+          target="_blank"
+          class="rounded-3xl bg-[#141392] px-5 py-2 text-sm text-white"
+          >Download Executive Summary</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  const container = document.getElementById("worldwide");
+  const image = container.querySelector("#image");
+  const images = image.querySelectorAll("img");
+  const regions = container.querySelectorAll(".region");
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1024px)", () => {
+    let regionsHeight = 0;
+    regions.forEach((region) => {
+      regionsHeight += region.clientHeight;
+    });
+
+    ScrollTrigger.create({
+      trigger: image,
+      start: "top 10%",
+      end: () => `+=${regionsHeight}px 80%`,
+      pin: true,
+    });
+
+    gsap.utils.toArray(regions).forEach((e: HTMLElement, index) => {
+      const color = e.dataset.color;
+      ScrollTrigger.create({
+        trigger: e,
+        start: "top 45%",
+        end: "bottom 85%",
+        // markers: true,
+        onEnter: () => {
+          gsap.to(image, {
+            backgroundColor: color,
+          });
+          gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
+            gsap.to(img, {
+              opacity: i == index ? 1 : 0,
+            });
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(image, {
+            backgroundColor: color,
+          });
+          gsap.utils.toArray(images).forEach((img: HTMLImageElement, i) => {
+            gsap.to(img, {
+              opacity: i == index ? 1 : 0,
+            });
+          });
+        },
+        scrub: 1,
+      });
+    });
+  });
+</script>
