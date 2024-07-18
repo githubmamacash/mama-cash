@@ -5,14 +5,25 @@ import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
 import ArrowSVG from "./ArrowSVG.astro";
 
-const testimonies: [ImageMetadata, string, string][] = [
+const testimonies: [ImageMetadata, string, string, string][] = [
   [
     TestimonyPicture1,
     "Ida LeBlanc",
     "National Union of Domestic Employees, Trinidad and Tobago",
+    "/testimonies/Ida-Leblanc.mp4",
   ],
-  [TestimonyPicture2, "Koyel Ghosh", "Sapho for Equality, India"],
-  [TestimonyPicture3, "Rajni Lallah", "Muvman Liberasyon Fam, Mauritius"],
+  [
+    TestimonyPicture2,
+    "Koyel Ghosh",
+    "Sapho for Equality, India",
+    "/testimonies/Koyel-Ghosh.mp4",
+  ],
+  [
+    TestimonyPicture3,
+    "Rajni Lallah",
+    "Muvman Liberasyon Fam, Mauritius",
+    "/testimonies/Rajni-Lallah.mp4",
+  ],
 ];
 ---
 
@@ -50,7 +61,7 @@ const testimonies: [ImageMetadata, string, string][] = [
 
   <div class="mt-20 max-w-5xl px-8 lg:grid lg:grid-cols-3 lg:gap-[60px]">
     {
-      testimonies.map(([img, name, role]) => (
+      testimonies.map(([img, name, role, video]) => (
         <article class="mb-20 flex flex-col items-center last:mb-0 lg:mb-0">
           <Image alt="" src={img} />
           <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
@@ -63,10 +74,10 @@ const testimonies: [ImageMetadata, string, string][] = [
 
           <a
             class="mt-4 flex items-center gap-4 rounded-full bg-[#FDB813] p-[6px] pl-4 text-sm text-black"
-            href="#"
+            href={video}
+            target="_blank"
           >
             Watch testimony
-
             <ArrowSVG className="w-[37px] h-[36px]" />
           </a>
         </article>

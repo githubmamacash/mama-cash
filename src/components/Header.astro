@@ -18,10 +18,10 @@ import Logo from "../assets/logo.svg";
             <Image width={100} src={Logo} alt="Mama cash logo" />
         </a>
         <a class="nav-link justify-self-center" href="#global">
-            Global Solidarity
+            The Mama Cash Effect
         </a>
         <a class="nav-link justify-self-center" href="#worldwide">
-            The Mama Cash Effect
+            Global Solidarity
         </a>
     </nav>
     <nav class="relative flex items-center px-5 py-4 lg:hidden">
@@ -136,7 +136,7 @@ import Logo from "../assets/logo.svg";
                 href="#global"
                 class="nav-link flex items-center px-2 py-5 text-white"
             >
-                <span class="flex-1 text-2xl"> Global Solidarity</span>
+                <span class="flex-1 text-2xl"> The Mama Cash Effect</span>
 
                 <svg
                     width="24"
@@ -153,6 +153,7 @@ import Logo from "../assets/logo.svg";
                         stroke-linejoin="round"></path>
                 </svg>
             </a>
+
             <div
                 class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
             >
@@ -161,7 +162,7 @@ import Logo from "../assets/logo.svg";
                 href="#worldwide"
                 class="nav-link flex items-center px-2 py-5 text-white"
             >
-                <span class="flex-1 text-2xl"> The Mama Cash Effect</span>
+                <span class="flex-1 text-2xl"> Global Solidarity</span>
 
                 <svg
                     width="24"
@@ -241,7 +242,10 @@ import Logo from "../assets/logo.svg";
                 close.dispatchEvent(new Event("click"));
             }
             gsap.to(window, {
-                scrollTo: href,
+                scrollTo: {
+                    y: href,
+                    offsetY: 80,
+                },
                 duration: 0.7,
             });
         });

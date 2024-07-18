@@ -16,25 +16,25 @@ const data = [
         title: "LBQTI",
         description:
           "Thanks to our support, people in over a dozen countries can now live a truer version of themselves.",
-        url: "",
+        url: "/LBQ.pdf",
       },
       {
         title: "Sex Worker Rights",
         description:
           "Mama Cash knew it from day 1: sex workers’ rights are central to feminist issues.",
-        url: "",
+        url: "/Sex-Workers-Rights.pdf",
       },
       {
         title: "Disability Justice",
         description:
           "Mama Cash grantee-partners around the world are breaking down the stigma around disability.",
-        url: "",
+        url: "/Feminist-Disability-Justice.pdf",
       },
       {
         title: "Racial Justice",
         description:
           "We brought the powerful voices of racialised women, girls, and trans and intersex people to the forefront",
-        url: "",
+        url: "/Racial-Justice.pdf",
       },
     ],
   },
@@ -50,7 +50,7 @@ const data = [
         title: "Reproductive Justice",
         description:
           "Our grantee-partners brought abortion out of the shadows of criminalisation, and much more.",
-        url: "",
+        url: "/Reproductive-Justice.pdf",
       },
       {
         title: "Countering Gender-Based Violence",
@@ -166,12 +166,12 @@ const data = [
                               <p class="mt-2 text-sm">{i.description}</p>
                             </div>
                             <a
+                              target="_blank"
                               style={`background-color: ${e.buttonColor};color: ${e.buttonText}`}
-                              href="#"
+                              href={i.url}
                               class="mt-5 flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-0"
                             >
                               Read more
-
                               <ArrowSVG />
                             </a>
                           </li>
@@ -196,7 +196,7 @@ const data = [
 
   const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
   const container = wrapperRef.querySelector(
-    ".scroller-section-container"
+    ".scroller-section-container",
   ) as HTMLElement;
   const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
   const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
