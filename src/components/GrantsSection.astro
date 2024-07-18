@@ -54,16 +54,8 @@ import ArrowSVG from "./ArrowSVG.astro";
             provided to feminist movements <br /> around the world</span
         >
         <div class="grid items-start lg:grid-cols-[1fr_200px_1fr]">
-            <div class="flex justify-center lg:hidden">
-                <a
-                    class="mt-10 flex items-center gap-3 rounded-3xl bg-[#141392] p-[4px] pl-4 text-sm text-white"
-                >
-                    More data
-                    <ArrowSVG />
-                </a>
-            </div>
             <div
-                class="relative mx-auto mt-16 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#E91E78] text-white lg:h-80 lg:w-80"
+                class="relative mx-auto mt-10 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#E91E78] text-white lg:mt-16 lg:h-80 lg:w-80"
             >
                 <Image
                     src={Mask1}
@@ -90,7 +82,7 @@ import ArrowSVG from "./ArrowSVG.astro";
                 </a>
             </div>
             <div
-                class="relative mx-auto mt-16 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#1FAAAC] text-white lg:h-80 lg:w-80"
+                class="relative mx-auto mt-10 flex h-60 w-60 items-center justify-center overflow-hidden rounded-full bg-[#1FAAAC] text-white lg:mt-16 lg:h-80 lg:w-80"
             >
                 <Image
                     src={Mask2}
@@ -106,6 +98,16 @@ import ArrowSVG from "./ArrowSVG.astro";
                         >direct grants</small
                     >
                 </h3>
+            </div>
+            <div class="flex justify-center lg:hidden">
+                <a
+                    target="_blank"
+                    href="/infografia-f.pdf"
+                    class="mt-16 flex items-center gap-3 rounded-3xl bg-[#141392] p-[4px] pl-4 text-sm text-white"
+                >
+                    More data
+                    <ArrowSVG />
+                </a>
             </div>
         </div>
     </div>
