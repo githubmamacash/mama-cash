@@ -11,6 +11,7 @@ const data = [
     textColor: "#ffffff",
     buttonColor: "#FDB813",
     buttonText: "#000000",
+    image: "/MMC_collages_1.png",
     points: [
       {
         title: "LBQTI",
@@ -45,6 +46,7 @@ const data = [
     textColor: "#000000",
     buttonColor: "#FDB813",
     buttonText: "#000000",
+    image: "/MMC_collages_2.png",
     points: [
       {
         title: "Reproductive Justice",
@@ -56,19 +58,19 @@ const data = [
         title: "Countering Gender-Based Violence",
         description:
           "With our support, hundreds of movements around the world secured government action against gender-based violence.",
-        url: "",
+        url: "/Gender-Based-Violence.pdf",
       },
       {
         title: "Economic Justice",
         description:
           "We resourced thousands of feminist activists who have gone on to win labour protections and social security.",
-        url: "",
+        url: "/Economic-Justice.pdf",
       },
       {
         title: "Environmental Justice",
         description:
           "Mama Cash’s environmental justice grantmaking has moved resources to often-overlooked communities.",
-        url: "",
+        url: "/Environmental-Justice.pdf",
       },
     ],
   },
@@ -79,18 +81,19 @@ const data = [
     textColor: "#000000",
     buttonColor: "#E91E78",
     buttonText: "#fafafa",
+    image: "/MMC_collages_3.png",
     points: [
       {
         title: "Relationship to Money",
         description:
           "We promoted a culture of joyful feminist individual giving and transformed the Dutch banking system.",
-        url: "",
+        url: "/relationship-with-money.pdf",
       },
       {
         title: "Feminist Funding Architecture",
         description:
           "We leveraged more and better funding to feminist movements and transformed the giving landscape.",
-        url: "",
+        url: "/feminist-funding-architectures.pdf",
       },
     ],
   },
@@ -149,7 +152,13 @@ const data = [
                           {e.title}
                         </h4>
                       </div>
-                      <Image class="mt-10" src={Overlayed} alt="" />
+                      <Image
+                        width={529}
+                        height={362}
+                        class="mt-10"
+                        src={e.image}
+                        alt=""
+                      />
                     </div>
                     <div class="pb-5 lg:pb-10">
                       <ul

@@ -9,6 +9,7 @@ import Layer2 from "../assets/hero/layer2.png";
 import Hand from "../assets/hero/hand.png";
 import Escala from "../assets/hero/escala.png";
 import Megaphone from "../assets/hero/megaphone.png";
+import Hands from "../assets/grants/hands.png";
 ---
 
 <section
@@ -140,14 +141,21 @@ import Megaphone from "../assets/hero/megaphone.png";
     >
     </div>
     <div class="relative mt-20 flex flex-col items-center justify-center">
-      <div class="absolute bottom-[25%] left-[-50px] hidden lg:block">
+      <div id="a3" class="absolute bottom-[25%] left-[-50px] hidden lg:block">
         <Image
+          id="a33"
           src={Megaphone}
           alt="Megaphone"
           class="absolute bottom-[-20px] left-[10px] max-w-[150px]"
         />
         <div class="bottom-0 h-[100px] w-[100px] rounded-full bg-[#1FAAAC]">
         </div>
+      </div>
+      <div
+        id="a4"
+        class="absolute bottom-[-120px] right-[-100px] hidden h-32 w-32 rounded-full bg-[#FDB813] lg:block"
+      >
+        <Image id="a44" src={Hands} alt="" class="absolute" />
       </div>
       <h2
         class="title font-display text-center text-3xl font-bold text-[#141392] lg:text-7xl"
@@ -214,6 +222,24 @@ import Megaphone from "../assets/hero/megaphone.png";
       y: -y,
     });
     gsap.to("#a22", {
+      x: x / 3,
+      y: y / 3,
+    });
+
+    gsap.to("#a3", {
+      x: -x,
+      y: -y,
+    });
+    gsap.to("#a33", {
+      x: x / 3,
+      y: y / 3,
+    });
+
+    gsap.to("#a4", {
+      x: -x,
+      y: -y,
+    });
+    gsap.to("#a44", {
       x: x / 3,
       y: y / 3,
     });
