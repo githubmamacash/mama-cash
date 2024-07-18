@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import TestimonyPicture1 from "../assets/testimony-1.png";
 import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
+import ArrowSVG from "./ArrowSVG.astro";
 
 const testimonies: [ImageMetadata, string, string][] = [
   [
@@ -61,37 +62,12 @@ const testimonies: [ImageMetadata, string, string][] = [
           </p>
 
           <a
-            class="mt-4 flex items-center gap-4 rounded-full bg-[#FDB813] py-[6px] pl-4 pr-[4px] text-xs font-semibold text-black"
+            class="mt-4 flex items-center gap-4 rounded-full bg-[#FDB813] p-[6px] pl-4 text-sm text-black"
             href="#"
           >
             Watch testimony
-            <svg
-              width="37"
-              height="36"
-              viewBox="0 0 37 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="18.207"
-                cy="18"
-                r="17"
-                stroke="black"
-                stroke-width="2"
-              />
-              <path
-                d="M9 18H25"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-              />
-              <path
-                d="M17.5 10.5L26.5 18L17.5 26"
-                stroke="black"
-                stroke-width="2"
-                stroke-miterlimit="10"
-              />
-            </svg>
+
+            <ArrowSVG className="w-[37px] h-[36px]" />
           </a>
         </article>
       ))

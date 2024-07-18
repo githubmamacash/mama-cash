@@ -1,6 +1,7 @@
 ---
 import Overlayed from "../assets/overlayed.png";
 import { Image } from "astro:assets";
+import ArrowSVG from "./ArrowSVG.astro";
 
 const data = [
   {
@@ -167,21 +168,11 @@ const data = [
                             <a
                               style={`background-color: ${e.buttonColor};color: ${e.buttonText}`}
                               href="#"
-                              class="mt-5 flex items-center gap-2 rounded-2xl bg-[#FDB813] py-1 pl-4 pr-2 lg:mt-0"
+                              class="mt-5 flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-0"
                             >
-                              <span class="flex-1 shrink-0 whitespace-nowrap text-xs font-medium">
-                                Read more
-                              </span>
-                              <svg
-                                fill={`${e.buttonText}`}
-                                width="24"
-                                height="24"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                              >
-                                <path d="M12 0c-6.623 0-12 5.377-12 12s5.377 12 12 12 12-5.377 12-12-5.377-12-12-12zm0 1c-6.071 0-11 4.929-11 11s4.929 11 11 11 11-4.929 11-11-4.929-11-11-11zm4.828 11.5l-4.608 3.763.679.737 6.101-5-6.112-5-.666.753 4.604 3.747h-11.826v1h11.828z" />
-                              </svg>
+                              Read more
+
+                              <ArrowSVG />
                             </a>
                           </li>
                         ))}
@@ -205,7 +196,7 @@ const data = [
 
   const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
   const container = wrapperRef.querySelector(
-    ".scroller-section-container",
+    ".scroller-section-container"
   ) as HTMLElement;
   const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
   const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
