@@ -1,5 +1,7 @@
 ---
 import SoundControl from "../components/client/SoundControl";
+import Cover from "../assets/video/cover.png";
+import { Image } from "astro:assets";
 ---
 
 <section id="support" class="relative flex w-full flex-col items-center pt-10">
@@ -27,40 +29,46 @@ import SoundControl from "../components/client/SoundControl";
             src="/Mama-Cash.webm"></video> -->
     </div>
     <div class="relative mx-auto w-full max-w-5xl">
-        <div class="video-block video-block_full-width w-full">
-            <div class="video-block__container">
-                <div class="absolute bottom-5 right-5 z-[2000] hidden lg:block">
+        <div
+            class="video-block video-block_full-width w-full overflow-hidden rounded-2xl"
+        >
+            <div class="video-block__container relative">
+                <!-- <div class="absolute bottom-5 right-5 z-[2000] hidden lg:block">
                     <SoundControl videoElem={"videoElem"} client:load />
-                </div>
+                </div> -->
                 <figure class="video">
-                    <!-- <div class="absolute bottom-2 right-2 z-[2000] lg:hidden">
-                        <div class="flex gap-3">
-                            <button
-                                id="fullscreen"
-                                class="rounded-full bg-white p-[2px] shadow-sm"
-                            >
+                    <div
+                        class="overlay-wrapper absolute z-10 hidden h-full w-full items-center justify-center lg:flex"
+                    >
+                        <Image
+                            src={Cover}
+                            alt="video_cover"
+                            class="absolute left-0 top-0"
+                        />
+                        <div
+                            class="overlay absolute flex h-full w-full items-center justify-center"
+                        >
+                            <button class="play_button">
+                                <div class="pulse"></div>
+                                <div class="circle"></div>
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    style="fill: rgb(0, 0, 0); --darkreader-inline-fill: #e8e6e3;"
-                                    data-darkreader-inline-fill=""
-                                    ><path
-                                        d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"
-                                    ></path></svg
+                                    class="relative"
+                                    width="50"
+                                    height="50"
+                                    viewBox="0 0 100 100"
                                 >
+                                    <polygon points="40,30 65,50 40,70"
+                                    ></polygon>
+                                </svg>
                             </button>
                         </div>
-                    </div> -->
+                    </div>
                     <video
-                        class="w-full"
+                        class="w-full cursor-pointer"
                         id="videoElem"
                         poster="/cover.png"
-                        loop
-                        muted
                         playsinline
-                        src="/Mama-Cash.webm#t=3"></video>
+                        src="/Mama-Cash.webm#t=0"></video>
                 </figure>
             </div>
         </div>
@@ -68,10 +76,211 @@ import SoundControl from "../components/client/SoundControl";
 </section>
 
 <style>
-    figure.video {
-        margin: 0;
+    .overlay-wrapper img,
+    .overlay-wrapper .overlay,
+    .overlay-wrapper .overlay .play_button {
+        @apply transition-all duration-500 ease-in-out;
+    }
+    .overlay-wrapper.playing img {
+        display: none;
+    }
+    /* .overlay-wrapper:hover img {
+        scale: 1.05;
+    } */
+    .overlay-wrapper:hover .overlay {
+        @apply bg-opacity-30;
+    }
+    .overlay-wrapper:hover .overlay .play_button {
+        scale: 1.1;
+    }
+    .overlay-wrapper .overlay {
+        @apply bg-[#212121] bg-opacity-10;
+    }
+    .overlay-wrapper .overlay .play_button {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .overlay-wrapper .overlay .play_button .circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 9999rem;
+        background-position:
+            0px 0px,
+            0px 0px,
+            0px 0px;
+        background-image: linear-gradient(
+                180deg,
+                hsla(0, 0%, 95.3%, 0.94),
+                hsla(0, 0%, 95.3%, 0.94)
+            ),
+            url("/635934446d2865655d814bb0_noise.webp"),
+            linear-gradient(180deg, #f3f3f3, #f3f3f3);
+        background-size: auto, 128px, auto;
+        overflow-x: hidden;
+    }
+    .overlay-wrapper .overlay .play_button .pulse {
+        width: 55px;
+        height: 55px;
+        background: #fafafa6a;
+        border-radius: 9999rem;
+        position: absolute;
+        filter: blur(2px);
+        animation-timing-function: ease;
+        animation: pulse 3s infinite;
+    }
+    .overlay-wrapper .overlay .play_button svg {
+        stroke-linejoin: round;
+        stroke-width: 5;
+        stroke: #141392;
+        fill: #141392;
+        transition: all 0.3s;
     }
 
+    @keyframes pulse {
+        0% {
+            transform: scale(1, 1);
+        }
+        25% {
+            transform: scale(1, 1);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+
+    const overlayWrapper = document.querySelector(".overlay-wrapper");
+    // const overlay = overlayWrapper.querySelector(".overlay");
+    const play = overlayWrapper.querySelector(
+        ".play_button",
+    ) as HTMLButtonElement;
+
+    const element = document.querySelector(".video-block");
+    const figure = document.querySelector(".video");
+
+    const video = document.getElementById("videoElem") as HTMLVideoElement;
+
+    const onVideoPlay = () => {
+        gsap.to(play, {
+            opacity: 0,
+            scale: 4,
+            onComplete: () => {
+                gsap.to(overlayWrapper, {
+                    opacity: 0,
+                    pointerEvents: "none",
+                });
+            },
+        });
+    };
+
+    const onVideoPause = (showCover = false) => {
+        if (showCover) overlayWrapper.classList.remove("playing");
+        else overlayWrapper.classList.add("playing");
+        let tl = gsap.timeline();
+        tl.fromTo(
+            play,
+            {
+                scale: 3,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.2,
+            },
+        );
+        tl.to(
+            overlayWrapper,
+            {
+                opacity: 1,
+                pointerEvents: "all",
+            },
+            "<",
+        );
+    };
+
+    video.addEventListener("ended", () => onVideoPause(true));
+
+    video.addEventListener("play", () => onVideoPlay());
+
+    video.addEventListener("pause", () => onVideoPause());
+
+    video.addEventListener("click", () => {
+        video.pause();
+    });
+
+    play.addEventListener("click", () => video.play());
+
+    gsap.fromTo(
+        figure,
+        {
+            y: "-50%",
+        },
+        {
+            scrollTrigger: {
+                trigger: element,
+                start: "top bottom",
+                end: "top top",
+                scrub: true,
+                // markers: true,
+                refreshPriority: 0,
+            },
+            y: "0%",
+            duration: 0.5,
+            onStart: () => {
+                // video.pause();
+            },
+        },
+    );
+
+    ///
+
+    let mm = gsap.matchMedia();
+    mm.add("(max-width: 1023px)", () => {
+        video.controls = true;
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#support",
+                start: "top 20%",
+                end: "bottom top",
+                // markers: true,
+                scrub: true,
+                pin: true,
+            },
+        });
+
+        tl.to("#support", {
+            yPercent: -10,
+        });
+
+        tl.fromTo(
+            element,
+            {
+                padding: "0 24px",
+                borderRadius: "18px",
+            },
+            {
+                padding: 0,
+                borderRadius: 0,
+            },
+        );
+    });
+</script>
+
+<!-- <style>
+    /* figure.video {
+        margin: 0;
+    } */
+    /* 
     .video-block__container {
         overflow: hidden;
         position: relative;
@@ -98,12 +307,11 @@ import SoundControl from "../components/client/SoundControl";
         margin-right: calc(50% - (var(--vw) * 50));
         width: auto;
         overflow: hidden;
-    }
-</style>
-
+    } */
+</style> -->
+<!-- 
 <script>
     import gsap from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
     const setVwVh = () => {
         let vw = document.documentElement.clientWidth / 100;
@@ -112,7 +320,7 @@ import SoundControl from "../components/client/SoundControl";
         document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
 
-    const expandableVideoBlock = () => {
+    const videoBlock = () => {
         const maxWidth = 1024;
         const gap = 0;
         const element = document.querySelector(".video-block");
@@ -159,97 +367,97 @@ import SoundControl from "../components/client/SoundControl";
         };
 
         // add parallax effect to the video before expanding
-        gsap.fromTo(
-            figure,
-            {
-                clipPath: getClipPath,
-                y: "-50%",
-            },
-            {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top bottom",
-                    end: "top top",
-                    scrub: true,
-                    //markers: true
-                },
-                y: "0%",
-                duration: 0.5,
-                onStart: () => {
-                    videoPause();
-                },
-            },
-        );
+        // gsap.fromTo(
+        //     figure,
+        //     {
+        //         clipPath: getClipPath,
+        //         y: "-50%",
+        //     },
+        //     {
+        //         scrollTrigger: {
+        //             trigger: element,
+        //             start: "top bottom",
+        //             end: "top top",
+        //             scrub: true,
+        //             //markers: true
+        //         },
+        //         y: "0%",
+        //         duration: 0.5,
+        //         onStart: () => {
+        //             videoPause();
+        //         },
+        //     },
+        // );
 
         // init timeline
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "top top",
-                // end: () => window.innerHeight * 4,
-                end: "bottom top",
-                scrub: true,
-                pin: container,
-                // markers: true,
-                refreshPriority: 0,
-            },
-        });
+        // let tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: container,
+        //         start: "top top",
+        //         // end: () => window.innerHeight * 4,
+        //         end: "bottom top",
+        //         scrub: true,
+        //         pin: container,
+        //         // markers: true,
+        //         refreshPriority: 0,
+        //     },
+        // });
 
         // expand the video block
-        tl.fromTo(
-            figure,
-            {
-                clipPath: getClipPath,
-            },
-            {
-                clipPath: `inset(0px 0px)`,
-                duration: 0.5,
-                onUpdate: () => {
-                    videoPause();
-                },
-                onComplete: () => {
-                    videoPlay();
-                },
-            },
-        );
+        // tl.fromTo(
+        //     figure,
+        //     {
+        //         clipPath: getClipPath,
+        //     },
+        //     {
+        //         clipPath: `inset(0px 0px)`,
+        //         duration: 0.5,
+        //         onUpdate: () => {
+        //             videoPause();
+        //         },
+        //         onComplete: () => {
+        //             videoPlay();
+        //         },
+        //     },
+        // );
 
         // keep the video block untouched on scrolling for a while
-        tl.fromTo(
-            figure,
-            {
-                opacity: 1,
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                onUpdate: () => {
-                    videoPlay();
-                },
-                onComplete: () => {
-                    videoPause();
-                },
-            },
-        );
+        // tl.fromTo(
+        //     figure,
+        //     {
+        //         opacity: 1,
+        //     },
+        //     {
+        //         opacity: 1,
+        //         duration: 1,
+        //         onUpdate: () => {
+        //             videoPlay();
+        //         },
+        //         onComplete: () => {
+        //             videoPause();
+        //         },
+        //     },
+        // );
 
         // shrink the video block to initial state
-        tl.fromTo(
-            figure,
-            {
-                clipPath: `inset(0px 0px)`,
-            },
-            {
-                clipPath: getClipPath,
-                duration: 0.5,
-            },
-        );
+        // tl.fromTo(
+        //     figure,
+        //     {
+        //         clipPath: `inset(0px 0px)`,
+        //     },
+        //     {
+        //         clipPath: getClipPath,
+        //         duration: 0.5,
+        //     },
+        // );
     };
 
+    addEventListener("DOMContentLoaded", setVwVh);
+    addEventListener("resize", setVwVh);
+    addEventListener("DOMContentLoaded", videoBlock);
+
     let mm = gsap.matchMedia();
-    mm.add("(min-width: 1024px)", () => {
-        addEventListener("DOMContentLoaded", setVwVh);
-        addEventListener("resize", setVwVh);
-        addEventListener("DOMContentLoaded", expandableVideoBlock);
-    });
+    mm.add("(min-width: 1024px)", () => {});
 
     mm.add("(max-width: 1023px)", () => {
         const element = document.querySelector(".video-block");
@@ -347,4 +555,4 @@ import SoundControl from "../components/client/SoundControl";
             },
         );
     });
-</script>
+</script> -->
