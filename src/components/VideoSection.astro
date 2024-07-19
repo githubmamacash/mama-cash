@@ -26,12 +26,12 @@ import SoundControl from "../components/client/SoundControl";
             class="mx-auto max-w-full object-cover"
             src="/Mama-Cash.webm"></video> -->
     </div>
-    <div class="max-w-5xl">
-        <div class="fixed bottom-5 right-5 z-[2000] hidden lg:block">
-            <SoundControl videoElem={"videoElem"} client:load />
-        </div>
-        <div class="video-block video-block_full-width">
+    <div class="relative mx-auto w-full max-w-5xl">
+        <div class="video-block video-block_full-width w-full">
             <div class="video-block__container">
+                <div class="absolute bottom-5 right-5 z-[2000] hidden lg:block">
+                    <SoundControl videoElem={"videoElem"} client:load />
+                </div>
                 <figure class="video">
                     <!-- <div class="absolute bottom-2 right-2 z-[2000] lg:hidden">
                         <div class="flex gap-3">
@@ -54,6 +54,7 @@ import SoundControl from "../components/client/SoundControl";
                         </div>
                     </div> -->
                     <video
+                        class="w-full"
                         id="videoElem"
                         poster="/cover.png"
                         loop
