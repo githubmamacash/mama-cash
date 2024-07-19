@@ -194,7 +194,20 @@ import Logo from "../assets/logo.svg";
 <script>
     import gsap from "gsap";
     import ScrollToPlugin from "gsap/ScrollToPlugin";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollToPlugin);
+
+    ScrollTrigger.create({
+        trigger: "body",
+        start: "top -20%",
+        onUpdate: (self) => {
+            if (self.direction == 1) {
+                gsap.to("header", { yPercent: -100 });
+            } else {
+                gsap.to("header", { yPercent: 0 });
+            }
+        },
+    });
 
     let tl = gsap.timeline({
         scrollTrigger: {

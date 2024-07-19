@@ -9,30 +9,33 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 import Footer from "../components/Footer.astro";
 import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <SEO
-      title="Mama Cash"
-      description="Some description"
+      title="MamaCash - 40 years of impact"
+      description={`Since 1983, we've partnered with millions of women, girls, trans, and
+        intersex people to redefine norms, uphold rights, foster inclusion,
+        expand access, and inspire joy, healing, and liberation.`}
       twitter={{
-        site: "",
-        title: "Mama Cash",
+        site: "https://fortyyearsimpact.mamacash.org/",
+        title: "MamaCash - 40 years of impact",
+        image: "/cover.png",
+        card: "summary_large_image",
       }}
       openGraph={{
+        optional: {
+          description: `Since 1983, we've partnered with millions of women, girls, trans, and
+        intersex people to redefine norms, uphold rights, foster inclusion,
+        expand access, and inspire joy, healing, and liberation.`,
+        },
         basic: {
-          title: "Mama Cash",
-          image: "",
+          title: "MamaCash - 40 years of impact",
+          image: "/cover.png",
           type: "Website",
-          url: "",
+          url: "https://fortyyearsimpact.mamacash.org/",
         },
       }}
     />
@@ -40,7 +43,6 @@ const { title } = Astro.props;
     <!-- <meta name="description" content="Astro description" /> -->
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -60,7 +62,12 @@ const { title } = Astro.props;
     >
     </div>
     <Header />
-    <slot />
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <slot />
+      </div>
+    </div>
     <Footer />
 
     <style is:global>

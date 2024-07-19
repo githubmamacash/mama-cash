@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import { useEffect, useState } from "react"
 
 export default function SoundControl({
@@ -12,13 +13,29 @@ export default function SoundControl({
         if (video) video.muted = muted;
     }, [muted])
 
+    useEffect(() => {
+        let video = document.getElementById(videoElem) as HTMLVideoElement;
+        const onPlaying = () => {
+            gsap.to("#sound", {
+                opacity: 1
+            })
+        }
+        const onPause = () => gsap.to("#sound", { opacity: 0 })
+        video.addEventListener('play', onPlaying);
+        video.addEventListener('pause', onPause);
+
+        return () => {
+            video.removeEventListener('play', onPlaying);
+            video.removeEventListener('pause', onPause);
+        }
+    }, []);
+
 
     return (
         <button
             onClick={() => setMuted(!muted)}
             id="sound"
-            data-muted
-            className="top-5 right-5 absolute bg-white shadow-sm p-[2px] rounded-full"
+            className="bg-white shadow-sm p-[2px] rounded-full"
         >
             {
                 muted ? <svg
