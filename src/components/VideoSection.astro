@@ -68,7 +68,10 @@ import { Image } from "astro:assets";
                         id="videoElem"
                         poster="/cover.png"
                         playsinline
-                        src="/Mama-Cash.webm#t=0"></video>
+                    >
+                        <source src="/Mama-Cash.webm#t=0" type="video/webm" />
+                        <source src="/Mama-Cash.mp4#t=0" type="video/mp4" />
+                    </video>
                 </figure>
             </div>
         </div>
@@ -214,9 +217,9 @@ import { Image } from "astro:assets";
 
     video.addEventListener("pause", () => onVideoPause());
 
-    video.addEventListener("click", () => {
-        video.pause();
-    });
+    // video.addEventListener("click", () => {
+    //     video.pause();
+    // });
 
     play.addEventListener("click", () => video.play());
 
@@ -245,6 +248,13 @@ import { Image } from "astro:assets";
     ///
 
     let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+        video.addEventListener("click", () => {
+            video.pause();
+        });
+    });
+
     mm.add("(max-width: 1023px)", () => {
         video.controls = true;
         let tl = gsap.timeline({
