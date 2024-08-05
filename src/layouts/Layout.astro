@@ -64,6 +64,28 @@ import Header from "../components/Header.astro";
       gtag("config", "AW-16580278605");
     </script>
     <!-- <SpeedInsights /> -->
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R1BLGYHN57"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 500,
+      });
+      gtag("js", new Date());
+
+      gtag("config", "G-R1BLGYHN57");
+    </script>
   </head>
   <body class="font-body">
     <div
@@ -88,6 +110,7 @@ import Header from "../components/Header.astro";
 
       html,
       body,
+      .consent,
       header .bg-noise {
         background-position:
           0px 0px,
