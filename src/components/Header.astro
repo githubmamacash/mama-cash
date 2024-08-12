@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import LangSelector from "./LangSelector.astro";
 import Logo from "../assets/logo.svg";
 ---
 
 <header id="header" class="fixed z-[100] w-full">
     <div class="bg-noise opacity-0"></div>
     <nav
-        class="nav relative mx-auto hidden max-w-5xl grid-cols-5 items-center gap-5 py-6 text-base font-normal text-[#141392] lg:grid"
+        class="nav relative mx-auto hidden max-w-5xl grid-cols-5 items-center py-6 text-base font-normal text-[#141392] lg:grid lg:gap-0 xl:gap-5"
     >
         <a class="nav-link justify-self-center" href="#intersectional"
             >Impact
@@ -23,6 +24,7 @@ import Logo from "../assets/logo.svg";
         <a class="nav-link justify-self-center" href="#worldwide">
             Global Solidarity
         </a>
+        <LangSelector />
     </nav>
     <nav class="relative flex items-center px-5 py-4 lg:hidden">
         <a href="" class="flex-1">
