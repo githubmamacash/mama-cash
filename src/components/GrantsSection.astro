@@ -5,6 +5,7 @@ import Mask1 from "../assets/grants/mask1.png";
 import Mask2 from "../assets/grants/mask2.png";
 import Counter from "./client/Counter";
 import ArrowSVG from "./ArrowSVG.astro";
+import { t } from "i18next";
 ---
 
 <section id="grants-section" class="relative mt-10 lg:mt-20">
@@ -42,12 +43,12 @@ import ArrowSVG from "./ArrowSVG.astro";
         <h3
             class="font-display text-[3.2rem] font-bold leading-none text-[#141392] lg:text-8xl"
         >
-            140 million
+            {t("grants.header")}
         </h3>
         <span
             class="font-display mt-2 text-center text-xl uppercase text-[#E91E78] lg:mt-5"
         >
-            provided to feminist movements <br /> around the world</span
+            {t("grants.subheader.first")} <br /> {t("grants.subheader.second")} </span
         >
         <div class="grid items-start lg:grid-cols-[1fr_200px_1fr]">
             <div
@@ -63,7 +64,7 @@ import ArrowSVG from "./ArrowSVG.astro";
                 >
                     <Counter trigger="#grants-section" client:load>160</Counter>
                     <small class="mt-2 text-xl font-normal uppercase"
-                        >countries</small
+                        >{t("grants.countries")}</small
                     >
                 </h3>
             </div>
@@ -73,7 +74,7 @@ import ArrowSVG from "./ArrowSVG.astro";
                     href="/infografia-f.pdf"
                     class="mt-10 flex items-center gap-3 rounded-3xl bg-[#141392] p-[4px] pl-4 text-sm text-white"
                 >
-                    More data
+                    {t("button.more-data")}
                     <ArrowSVG />
                 </a>
             </div>
@@ -91,7 +92,7 @@ import ArrowSVG from "./ArrowSVG.astro";
                     <Counter trigger="#grants-section" client:load>7460</Counter
                     >
                     <small class="mt-2 text-xl font-normal uppercase"
-                        >direct grants</small
+                        >{t("grants.direct-grants")}</small
                     >
                 </h3>
             </div>
