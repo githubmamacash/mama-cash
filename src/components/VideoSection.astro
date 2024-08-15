@@ -1,5 +1,4 @@
 ---
-import SoundControl from "../components/client/SoundControl";
 import Cover from "../assets/video/cover.png";
 import { Image } from "astro:assets";
 ---
@@ -161,6 +160,8 @@ import { Image } from "astro:assets";
 
 <script>
     import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
     const overlayWrapper = document.querySelector(".overlay-wrapper");
     // const overlay = overlayWrapper.querySelector(".overlay");
