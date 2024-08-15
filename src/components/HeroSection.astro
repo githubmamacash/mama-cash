@@ -10,6 +10,7 @@ import Hand from "../assets/hero/hand.png";
 import Escala from "../assets/hero/escala.png";
 import Megaphone from "../assets/hero/megaphone.png";
 import Hands from "../assets/grants/hands.png";
+import { t } from "i18next";
 ---
 
 <section
@@ -19,11 +20,15 @@ import Hands from "../assets/grants/hands.png";
   <h1
     class="title font-display mt-5 text-center text-7xl font-bold text-[#141392] lg:text-8xl"
   >
-    <div class="line-h1"><span class="block">Change</span></div>
-    <div class="line-h1"><span class="block">that lasts</span></div>
+    <div class="line-h1">
+      <span class="block">{t("hero.header.first")}</span>
+    </div>
+    <div class="line-h1">
+      <span class="block">{t("hero.header.second")}</span>
+    </div>
   </h1>
   <span class="font-display mt-5 text-xl text-[#E91E78]"
-    >40 YEARS OF IMPACT</span
+    >{t("hero.subheader")}</span
   >
   <div class="mx-auto mt-20 w-full max-w-4xl px-10 lg:px-0">
     <svg
@@ -160,32 +165,30 @@ import Hands from "../assets/grants/hands.png";
       <h2
         class="title font-display text-center text-3xl font-bold text-[#141392] lg:text-7xl"
       >
-        <div class="line-h2"><span class="block">Mama Cash began</span></div>
         <div class="line-h2">
-          <span class="block">with a visionary idea</span>
+          <span class="block">{t("hero.history.header.first")}</span>
+        </div>
+        <div class="line-h2">
+          <span class="block">{t("hero.history.header.second")}</span>
         </div>
       </h2>
       <!-- <span class="font-display mt-5 text-xl text-[#E91E78]">SOUND BOLD?</span> -->
       <p
         class="font-display mt-5 max-w-prose text-center leading-tight text-[#141392]"
       >
-        In 1983, 5 lesbian feminist activists got together and launched <br
-          class="hidden lg:inline"
-        />
-        Mama Cash - a pioneering force for resourcing feminist movements worldwide.
+        {t("hero.history.first")}
+        <br class="hidden lg:inline" />
+        {t("hero.history.second")}
       </p>
       <p
         class="font-display mt-2 max-w-prose text-center leading-tight text-[#141392]"
       >
-        It wasn’t always easy, it wasn’t always popular. But here we are four
-        decades later, and Mama Cash is moving more resources than ever before -
-        to women, girls, and trans and intersex activists around the world.
+        {t("hero.history.third")}
       </p>
       <p
         class="font-display mt-2 max-w-prose text-center leading-tight text-[#141392]"
       >
-        We support them with the resources they need as they challenge power,
-        push for lasting change and clear the way for future generations.
+        {t("hero.history.fourth")}
       </p>
     </div>
   </div>
