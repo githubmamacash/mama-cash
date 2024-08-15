@@ -1,22 +1,24 @@
 ---
+import { t } from "i18next";
+
 const data = [
   {
     id: 1,
-    title: "Money as activism",
+    title: t("funding.1.title"),
     color: "#1FAAAC",
-    text: "At a time when many feminists were wary of wealth's corrupting influence, Mama Cash played a pivotal role in reshaping attitudes towards money and power. By providing loan guarantees, building peer networks for women with inherited wealth, and fostering a culture of individual feminist giving, Mama Cash strengthened women's financial expertise and independence. In the 1980s and 1990s, Mama Cash’s loan guarantees led to the launch of 140 women-led businesses, influencing the Dutch banking sector to see women entrepreneurs as viable investments.",
+    text: t("funding.1.subtitle"),
   },
   {
     id: 2,
-    title: "Shaping new futures",
+    title: t("funding.2.title"),
     color: "#FDB813",
-    text: "At Mama Cash, our strategic funding choices bring fresh, diverse voices to the forefront. We support self-led initiatives, prioritise historically excluded groups, and partner with women's and feminist funds around the globe. By sharing resources and empowering Global South feminist leaders, we partner with activists to build relationships, spark collaborations, and take on leadership roles, creating vibrant new networks and coalitions and a whole new healthy, flourishing feminist landscape.",
+    text: t("funding.2.subtitle"),
   },
   {
     id: 3,
-    title: "Paying it forward",
+    title: t("funding.3.title"),
     color: "#E91E78",
-    text: "Mama Cash proudly fuels bold feminist activism by taking smart risks. Our long-term, core, and seed funding keeps movements thriving and growing. We empower grantee-partners from the start, helping them build coalitions and networks. They, in turn, pay it forward by uplifting excluded communities, creating unstoppable feminist movements for lasting change.",
+    text: t("funding.3.subtitle"),
   },
 ];
 ---
@@ -40,9 +42,11 @@ const data = [
       class="title text-center text-3xl font-semibold lg:text-left lg:text-5xl"
     >
       <div class="line-h3">
-        <span class="block">We Champion Intersectional</span>
+        <span class="block">{t("funding.title.1")}</span>
       </div>
-      <div class="line-h3"><span class="block">Funding Worldwide</span></div>
+      <div class="line-h3">
+        <span class="block">{t("funding.title.2")}</span>
+      </div>
     </h3>
   </div>
   <div id="funding2">
