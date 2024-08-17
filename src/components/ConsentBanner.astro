@@ -1,55 +1,57 @@
+---
+import { t } from "i18next";
+---
+
 <div
-    id="consent"
-    class="consent fixed bottom-5 z-[10000] mx-5 hidden rounded-xl p-5 shadow-xl lg:bottom-5 lg:right-5 lg:max-w-[500px]"
+  id="consent"
+  class="consent fixed bottom-5 z-[10000] mx-5 hidden rounded-xl p-5 shadow-xl lg:bottom-5 lg:right-5 lg:max-w-[500px]"
 >
-    <strong> We Value Your Privacy</strong>
+  <strong> {t("consent-banner.header")} </strong>
 
-    <p class="mt-1 text-xs">
-        We use cookies and similar technologies to ensure you get the best
-        experience on our website, to analyze our traffic, and to understand
-        where our visitors are coming from. By clicking "Accept", you consent to
-        our use of cookies and other tracking technologies. For more details,
-        please read our <a
-            class="underline"
-            target="_blank"
-            href="https://www.mamacash.org/privacy-statement/">Privacy Policy</a
-        >.
-    </p>
+  <p class="mt-1 text-xs">
+    {t("consent-banner.text")}
+    <a
+      class="underline"
+      target="_blank"
+      href="https://www.mamacash.org/privacy-statement/"
+      >{t("consent-banner.link")}</a
+    >.
+  </p>
 
-    <div class="mt-2 flex items-center gap-2 text-sm text-[#141392]">
-        <button id="accept">[Accept]</button>
-        <button id="reject">[Reject]</button>
-    </div>
+  <div class="mt-2 flex items-center gap-2 text-sm text-[#141392]">
+    <button id="accept">[{t("button.accept")}]</button>
+    <button id="reject">[{t("button.reject")}]</button>
+  </div>
 </div>
 
 <script is:inline>
-    const banner = document.getElementById("consent");
-    const accept = banner.querySelector("#accept");
-    const reject = banner.querySelector("#reject");
+  const banner = document.getElementById("consent");
+  const accept = banner.querySelector("#accept");
+  const reject = banner.querySelector("#reject");
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const consent = localStorage.getItem("consentGranted");
-        if (!consent) {
-            banner.style.display = "block";
-        }
-    });
+  document.addEventListener("DOMContentLoaded", () => {
+    const consent = localStorage.getItem("consentGranted");
+    if (!consent) {
+      banner.style.display = "block";
+    }
+  });
 
-    accept.addEventListener("click", () => {
-        localStorage.setItem("consentGranted", "true");
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("consent", "update", {
-            ad_user_data: "granted",
-            ad_personalization: "granted",
-            ad_storage: "granted",
-            analytics_storage: "granted",
-        });
-        banner.style.display = "none";
+  accept.addEventListener("click", () => {
+    localStorage.setItem("consentGranted", "true");
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("consent", "update", {
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
     });
+    banner.style.display = "none";
+  });
 
-    reject.addEventListener("click", () => {
-        // localStorage.setItem("consentGranted", "true");
-        banner.style.display = "none";
-    });
+  reject.addEventListener("click", () => {
+    // localStorage.setItem("consentGranted", "true");
+    banner.style.display = "none";
+  });
 </script>
