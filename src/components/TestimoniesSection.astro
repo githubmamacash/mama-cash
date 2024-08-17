@@ -4,6 +4,7 @@ import TestimonyPicture1 from "../assets/testimony-1.png";
 import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
 import ArrowSVG from "./ArrowSVG.astro";
+import { t } from "i18next";
 
 const testimonies: [ImageMetadata, string, string, string][] = [
   [
@@ -46,17 +47,14 @@ const testimonies: [ImageMetadata, string, string, string][] = [
     class="title max-w-5xl px-5 text-center text-4xl font-semibold lg:px-0 lg:text-left lg:text-5xl"
   >
     <div class="line-h3">
-      <span class="block">Shared Power, Global Impact</span>
+      <span class="block">{t("testimonials.header")}</span>
     </div>
   </h3>
   <p class="mt-10 max-w-prose px-5 text-center leading-tight lg:px-0">
-    Over 40 years, Mama Cash has partnered with thousands of feminist activists,
-    to channel over €91 million in direct grants to movements, their leaders and
-    self-led groups driving lasting change.
+    {t("testimonials.subheader.first")}
   </p>
   <p class="mt-2 max-w-prose px-5 text-center leading-tight lg:px-0">
-    Our grantee-partners are the feminist heroes securing change, preserving
-    love and fighting for justice… that lasts!
+    {t("testimonials.subheader.second")}
   </p>
 
   <div
@@ -79,7 +77,7 @@ const testimonies: [ImageMetadata, string, string, string][] = [
             href={video}
             target="_blank"
           >
-            Watch testimonial
+            {t("button.watch-testimonial")}
             <ArrowSVG className="w-[37px] h-[36px]" />
           </a>
         </article>

@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BackgroundNotebook from "../assets/quote/bg.png";
 import Quote from "../assets/quote/quote.png";
+import { t } from "i18next";
 ---
 
 <section class="relative isolate mt-12 lg:mt-24">
@@ -34,22 +35,18 @@ import Quote from "../assets/quote/quote.png";
     <p
       class="mx-auto mt-10 max-w-[41ch] px-6 text-center text-2xl font-medium lg:mt-20 lg:text-4xl"
     >
-      By leaving my inheritance to Mama Cash, I feel like I am sustaining our
-      family heritage, not through offspring, but by contributing to a better
-      world for women and girls. I have no doubt that my inheritance will
-      contribute to change for women and girls. I trust Mama Cash completely,
-      she puts her money where her mouth is.
+      {t("testimonials.quotes.1.text")}
     </p>
 
     <h3
       class="col-start-2 mx-auto mt-9 text-center text-2xl font-semibold text-[#E91E78] lg:text-3xl"
     >
-      Sandrine Ulenberg
+      {t("testimonials.quotes.1.attestant.name")}
     </h3>
     <p
       class="col-start-2 mx-auto mb-10 text-center font-medium uppercase lg:mb-20"
     >
-      Mama Cash individual donor
+      {t("testimonials.quotes.1.attestant.role")}
     </p>
 
     <div

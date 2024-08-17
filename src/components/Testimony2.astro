@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BackgroundNotebook from "../assets/quote/bg.png";
 import Quote from "../assets/quote/red-quote.png";
+import { t } from "i18next";
 ---
 
 <section class="relative isolate mt-12 lg:mt-24">
@@ -35,23 +36,18 @@ import Quote from "../assets/quote/red-quote.png";
     <p
       class="mx-auto mt-10 max-w-[40ch] px-6 text-center text-2xl font-medium lg:mt-20 lg:text-4xl"
     >
-      I used to go marching and protesting before I became a parent and I wish I
-      had more time to do activist work, but as a single working mom, I just
-      can’t be on the frontlines all the time. That’s why I donate to Mama Cash,
-      because I know they’re supporting the activists on the ground who are
-      doing amazing things in their communities and it feels like I’m part of
-      that by donating a small amount every month.
+      {t("testimonials.quotes.2.text")}
     </p>
 
     <h3
       class="col-start-2 mx-auto mt-9 text-center text-2xl font-semibold text-[#E91E78] lg:text-3xl"
     >
-      Anonymous
+      {t("testimonials.quotes.2.attestant.name")}
     </h3>
     <p
       class="col-start-2 mx-auto mb-10 text-center font-medium uppercase lg:mb-20"
     >
-      Mama Cash individual donor
+      {t("testimonials.quotes.2.attestant.role")}
     </p>
 
     <div
