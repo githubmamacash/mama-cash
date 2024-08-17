@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import ArrowSVG from "./ArrowSVG.astro";
+import { t } from "i18next";
 
 const data = [
   {
     id: 1,
-    title: "Community Impact",
+    title: t("funding.items.1.title"),
     color: "#E91E78",
     textColor: "#ffffff",
     buttonColor: "#FDB813",
@@ -13,34 +14,30 @@ const data = [
     image: "/MMC_collages_1.png",
     points: [
       {
-        title: "LBQTI",
-        description:
-          "Thanks to our support, people in over a dozen countries can now live a truer version of themselves.",
+        title: t("funding.items.1.points.1.title"),
+        description: t("funding.items.1.points.1.description"),
         url: "/LBQ.pdf",
       },
       {
-        title: "Sex Worker Rights",
-        description:
-          "Mama Cash knew it from day 1: sex workers’ rights are central to feminist issues.",
+        title: t("funding.items.1.points.2.title"),
+        description: t("funding.items.1.points.2.description"),
         url: "/Sex-Workers-Rights.pdf",
       },
       {
-        title: "Disability Justice",
-        description:
-          "Mama Cash grantee-partners around the world are breaking down the stigma around disability.",
+        title: t("funding.items.1.points.3.title"),
+        description: t("funding.items.1.points.3.description"),
         url: "/Feminist-Disability-Justice.pdf",
       },
       {
-        title: "Racial Justice",
-        description:
-          "We brought the powerful voices of racialised women, girls, and trans and intersex people to the forefront",
+        title: t("funding.items.1.points.4.title"),
+        description: t("funding.items.1.points.4.description"),
         url: "/Racial-Justice.pdf",
       },
     ],
   },
   {
     id: 2,
-    title: "Thematic Impact",
+    title: t("funding.items.2.title"),
     color: "#1FAAAC",
     textColor: "#000000",
     buttonColor: "#FDB813",
@@ -48,34 +45,30 @@ const data = [
     image: "/MMC_collages_2.png",
     points: [
       {
-        title: "Reproductive Justice",
-        description:
-          "Our grantee-partners brought abortion out of the shadows of criminalisation, and much more.",
+        title: t("funding.items.2.points.1.title"),
+        description: t("funding.items.2.points.1.description"),
         url: "/Reproductive-Justice.pdf",
       },
       {
-        title: "Countering Gender-Based Violence",
-        description:
-          "With our support, hundreds of movements around the world secured government action against gender-based violence.",
+        title: t("funding.items.2.points.2.title"),
+        description: t("funding.items.2.points.2.description"),
         url: "/Gender-Based-Violence.pdf",
       },
       {
-        title: "Economic Justice",
-        description:
-          "We resourced thousands of feminist activists who have gone on to win labour protections and social security.",
+        title: t("funding.items.2.points.3.title"),
+        description: t("funding.items.2.points.3.description"),
         url: "/Economic-Justice.pdf",
       },
       {
-        title: "Environmental Justice",
-        description:
-          "Mama Cash’s environmental justice grantmaking has moved resources to often-overlooked communities.",
+        title: t("funding.items.2.points.4.title"),
+        description: t("funding.items.2.points.4.description"),
         url: "/Environmental-Justice.pdf",
       },
     ],
   },
   {
     id: 3,
-    title: "Funding for Change",
+    title: t("funding.items.3.title"),
     color: "#FDB813",
     textColor: "#000000",
     buttonColor: "#E91E78",
@@ -83,15 +76,13 @@ const data = [
     image: "/MMC_collages_3.png",
     points: [
       {
-        title: "Relationship to Money",
-        description:
-          "We promoted a culture of joyful feminist individual giving and transformed the Dutch banking system.",
+        title: t("funding.items.3.points.1.title"),
+        description: t("funding.items.3.points.1.description"),
         url: "/relationship-with-money.pdf",
       },
       {
-        title: "Feminist Funding Architecture",
-        description:
-          "We leveraged more and better funding to feminist movements and transformed the giving landscape.",
+        title: t("funding.items.3.points.2.title"),
+        description: t("funding.items.3.points.2.description"),
         url: "/feminist-funding-architectures.pdf",
       },
     ],
@@ -116,13 +107,11 @@ const data = [
       class="title text-center text-3xl font-semibold lg:text-left lg:text-5xl"
     >
       <div class="line-h3">
-        <span class="block">We Fund Feminist Activism</span>
+        <span class="block">{t("funding.header")}</span>
       </div>
     </h3>
     <p class="mt-5 max-w-prose text-center leading-tight lg:text-left">
-      Across borders, communities, issues, and identities, our grantee-partners
-      have transformed the world we live in today. From lesbian rights to
-      climate justice, our support has powered global change.
+      {t("funding.subheader")}
     </p>
   </div>
   <div id="funding1">
@@ -183,7 +172,7 @@ const data = [
                               href={i.url}
                               class="flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-5"
                             >
-                              <span class="text-xs">Read more</span>
+                              <span class="text-xs">{t("button.read-more")}</span>
                               <ArrowSVG width="24" height="24" />
                             </a>
                           </li>
@@ -208,7 +197,7 @@ const data = [
 
   const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
   const container = wrapperRef.querySelector(
-    ".scroller-section-container",
+    ".scroller-section-container"
   ) as HTMLElement;
   const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
   const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
