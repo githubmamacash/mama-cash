@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import LangSelector from "./LangSelector.astro";
 import Logo from "../assets/logo.svg";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 ---
 
 <header id="header" class="fixed z-[100] w-full">
@@ -185,6 +185,20 @@ import { t } from "i18next";
             <div
                 class="relative h-[2px] w-full bg-[#FDB813] before:absolute before:bottom-[-3px] before:block before:h-2 before:w-2 before:rounded-full before:bg-[#FDB813] after:absolute after:bottom-[-3px] after:right-0 after:block after:h-2 after:w-2 after:rounded-full after:bg-[#FDB813]"
             >
+            </div>
+            <div class="mt-10 flex items-center gap-5 text-xl uppercase">
+                <a
+                    class={i18next.language == "en"
+                        ? "text-white underline"
+                        : "text-[#750F3C]"}
+                    href="/">{t("en")}</a
+                >
+                <a
+                    class={i18next.language == "nl"
+                        ? "text-white underline"
+                        : "text-[#750F3C]"}
+                    href="/nl">{t("nl")}</a
+                >
             </div>
         </div>
     </nav>
