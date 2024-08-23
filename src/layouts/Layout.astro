@@ -73,30 +73,28 @@ import Header from "../components/Header.astro";
 
       gtag("config", "G-R1BLGYHN57");
       gtag("config", "AW-16580278605");
+
+      gtag("event", "conversion", {
+        send_to: "AW-16580278605/c_2BCIiNmLQZEM3yi-I9",
+        value: 1.0,
+        currency: "USD",
+      });
     </script>
     <!-- Event snippet for Click on &quot;Donate&quot; conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script is:inline>
-      function gtag_report_conversion(url) {
+      function gtag_report_conversion(url, id) {
         var callback = function () {
           if (typeof url != "undefined") {
             window.location = url;
           }
         };
         gtag("event", "conversion", {
-          send_to: "AW-16580278605/qqgkCJyckMoZEM3yi-I9",
+          // send_to: "AW-16580278605/qqgkCJyckMoZEM3yi-I9",
+          send_to: `AW-16580278605/${id}`,
           event_callback: callback,
         });
         return false;
       }
-    </script>
-
-    <!-- Event snippet for Vista de una página conversion page -->
-    <script is:inline>
-      gtag("event", "conversion", {
-        send_to: "AW-16580278605/c_2BCIiNmLQZEM3yi-I9",
-        value: 1.0,
-        currency: "USD",
-      });
     </script>
   </head>
   <body class="font-body">
