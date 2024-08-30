@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import ArrowSVG from "./ArrowSVG.astro";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 
 const data = [
   {
@@ -16,22 +16,34 @@ const data = [
       {
         title: t("funding.items.1.points.1.title"),
         description: t("funding.items.1.points.1.description"),
-        url: "/LBQ.pdf",
+        url:
+          i18next.language == "en"
+            ? "/LBQ.pdf"
+            : "/nl/1_40_jaar_opkomen_voor_de_rechten_van_lesbische,_biseksuele_en_queer.pdf",
       },
       {
         title: t("funding.items.1.points.2.title"),
         description: t("funding.items.1.points.2.description"),
-        url: "/Sex-Workers-Rights.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Sex-Workers-Rights.pdf"
+            : "/nl/2.40_jaar_opkomen_voor_sekswerkersrechten.pdf",
       },
       {
         title: t("funding.items.1.points.3.title"),
         description: t("funding.items.1.points.3.description"),
-        url: "/Feminist-Disability-Justice.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Feminist-Disability-Justice.pdf"
+            : "/nl/3_40_jaar_steun_aan_feministisch_activisme_voor_mensen_met_een_beperking.pdf",
       },
       {
         title: t("funding.items.1.points.4.title"),
         description: t("funding.items.1.points.4.description"),
-        url: "/Racial-Justice.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Racial-Justice.pdf"
+            : "/nl/4.feministisch_activisme_voor_raciale_rechtvaardigheid.pdf",
       },
     ],
   },
@@ -47,17 +59,26 @@ const data = [
       {
         title: t("funding.items.2.points.1.title"),
         description: t("funding.items.2.points.1.description"),
-        url: "/Reproductive-Justice.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Reproductive-Justice.pdf"
+            : "/nl/5.activisme_voor_reproductieve_rechtvaardigheid.pdf",
       },
       {
         title: t("funding.items.2.points.2.title"),
         description: t("funding.items.2.points.2.description"),
-        url: "/Gender-Based-Violence.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Gender-Based-Violence.pdf"
+            : "/nl/6.tegen_gendergerelateerd_geweld.pdf",
       },
       {
         title: t("funding.items.2.points.3.title"),
         description: t("funding.items.2.points.3.description"),
-        url: "/Economic-Justice.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Economic-Justice.pdf"
+            : "/nl/7.opkomen_voor_economische_rechtvaardigheid.pdf",
       },
       {
         title: t("funding.items.2.points.4.title"),
@@ -172,7 +193,9 @@ const data = [
                               href={i.url}
                               class="flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-5"
                             >
-                              <span class="text-xs">{t("button.read-more")}</span>
+                              <span class="text-xs">
+                                {t("button.read-more")}
+                              </span>
                               <ArrowSVG width="24" height="24" />
                             </a>
                           </li>
@@ -197,7 +220,7 @@ const data = [
 
   const wrapper = wrapperRef.querySelector(".scroller-section") as HTMLElement;
   const container = wrapperRef.querySelector(
-    ".scroller-section-container"
+    ".scroller-section-container",
   ) as HTMLElement;
   const scroller = wrapperRef.querySelector(".scroller") as HTMLElement;
   const item = wrapperRef.querySelector(".scroller-item") as HTMLElement;
