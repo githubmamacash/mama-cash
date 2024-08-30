@@ -1,0 +1,99 @@
+---
+import { changeLanguage } from "i18next";
+import VideoSection from "../../components/VideoSection.astro";
+import Layout from "../../layouts/Layout.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import GrantsSection from "../../components/GrantsSection.astro";
+import InternationalFundingSection1 from "../../components/InternationalFundingSection1.astro";
+import InternationalFundingSection2 from "../../components/InternationalFundingSection2.astro";
+import TestimoniesSection from "../../components/TestimoniesSection.astro";
+import MapSection from "../../components/MapSection.astro";
+import Testimony1 from "../../components/Testimony1.astro";
+import Testimony2 from "../../components/Testimony2.astro";
+import DonateSection from "../../components/DonateSection.astro";
+import ConsentBanner from "../../components/ConsentBanner.astro";
+
+changeLanguage("nl");
+---
+
+<Layout>
+  <main class="min-h-svh">
+    <HeroSection />
+    <GrantsSection />
+    <InternationalFundingSection1 />
+    <TestimoniesSection />
+
+    <Testimony1 />
+
+    <VideoSection video="/nl/Mama-Cash.mp4" />
+
+    <div class="isolate [&>*:nth-child(2)]:-z-10">
+      <InternationalFundingSection2 />
+      <Testimony2 />
+    </div>
+    <DonateSection />
+
+    <MapSection />
+
+    <ConsentBanner />
+  </main>
+</Layout>
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const body = document.body;
+
+  const obv = new ResizeObserver(() => {
+    ScrollTrigger.refresh(true);
+    console.log("[ScrollTrigger] refresh");
+  });
+
+  obv.observe(body);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.to("#overlay", {
+      height: 0,
+      duration: 0.3,
+      ease: "sine.out",
+    });
+    gsap.fromTo(
+      body,
+      {
+        y: -50,
+      },
+      {
+        y: 1,
+        ease: "sine.out",
+        onComplete: () => {
+          body.style.transform = "none";
+        },
+      },
+    );
+  });
+
+  const titles = document.querySelectorAll(".title");
+
+  titles.forEach((title) => {
+    const text = title.querySelectorAll("span");
+    gsap.fromTo(
+      text,
+      {
+        y: 50,
+        opacity: 0.6,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        delay: 0.2,
+        duration: 0.25,
+        stagger: 0.1,
+        ease: "sine",
+        scrollTrigger: {
+          trigger: title,
+        },
+      },
+    );
+  });
+</script>

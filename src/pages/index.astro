@@ -1,4 +1,5 @@
 ---
+import { changeLanguage } from "i18next";
 import VideoSection from "../components/VideoSection.astro";
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
@@ -11,6 +12,8 @@ import Testimony1 from "../components/Testimony1.astro";
 import Testimony2 from "../components/Testimony2.astro";
 import DonateSection from "../components/DonateSection.astro";
 import ConsentBanner from "../components/ConsentBanner.astro";
+
+changeLanguage("en");
 ---
 
 <Layout>
@@ -22,7 +25,7 @@ import ConsentBanner from "../components/ConsentBanner.astro";
 
     <Testimony1 />
 
-    <VideoSection />
+    <VideoSection video="/Mama-Cash.mp4" />
 
     <div class="isolate [&>*:nth-child(2)]:-z-10">
       <InternationalFundingSection2 />

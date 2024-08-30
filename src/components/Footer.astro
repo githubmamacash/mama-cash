@@ -7,6 +7,7 @@ import X from "../assets/x.svg";
 import Facebook from "../assets/facebook.svg";
 import Instagram from "../assets/instagram.svg";
 import { Image } from "astro:assets";
+import { t } from "i18next";
 ---
 
 <footer class="relative">
@@ -60,7 +61,7 @@ import { Image } from "astro:assets";
         href="https://history.mamacash.nl/"
         target="_blank"
         class="mb-4 flex w-full items-center gap-x-5 rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm text-[#141392]"
-        >Learn more about our history <ArrowSVG
+        >{t("footer.button.1")}<ArrowSVG
           className="ml-auto"
           circleClassName="stroke-[#141392]"
           arrowClassName="stroke-[#141392]"
@@ -70,7 +71,7 @@ import { Image } from "astro:assets";
         href="https://www.mamacash.org/"
         target="_blank"
         class="flex w-full items-center rounded-full bg-[#141392] p-[4px] pl-4 text-sm text-white"
-        >Visit our website <ArrowSVG
+        >{t("footer.button.2")}<ArrowSVG
           className="ml-auto"
           circleClassName="stroke-white"
           arrowClassName="stroke-white"

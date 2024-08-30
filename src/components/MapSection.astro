@@ -6,6 +6,7 @@ import Asia from "../assets/map/asia.png";
 import Europe from "../assets/map/europe.png";
 import World from "../assets/map/world.png";
 import { Image } from "astro:assets";
+import { t } from "i18next";
 ---
 
 <section id="worldwide" class="mt-10 lg:pt-20">
@@ -14,9 +15,11 @@ import { Image } from "astro:assets";
       class="title mb-0 text-center text-3xl font-semibold lg:mb-12 lg:text-left lg:text-5xl"
     >
       <div class="line-h3">
-        <span class="block">We strengthen feminist causes</span>
+        <span class="block">{t("map.title.1")}</span>
       </div>
-      <div class="line-h3"><span class="block">around the world</span></div>
+      <div class="line-h3">
+        <span class="block">{t("map.title.2")}</span>
+      </div>
     </h3>
     <div>
       <div class="grid gap-10 lg:grid-cols-2">
@@ -64,32 +67,30 @@ import { Image } from "astro:assets";
             <h4
               class="mb-5 text-3xl font-bold uppercase text-[#E91E78] lg:mb-8 lg:text-4xl"
             >
-              Africa & <br class="hidden lg:inline" /> West Asia
+              {t("map.africa.title.1")}
+              <br class="hidden lg:inline" />
+              {t("map.africa.title.2")}
             </h4>
             <p class="mb-2">
-              Mama Cash provided €24 million to feminist movements in 56
-              countries across Africa and West Asia.
+              {t("map.africa.desc.1")}
             </p>
             <p class="mb-2">
-              Our grantee partners propelled social change in many fronts, like
-              expanding legal abortion rights in Africa through the
-              implementation of the 2003 Maputo Protocol  — Protocol to the
-              African Chapter of Human and Peoples’ Rights on the Rights of
-              Women in Africa.
+              {t("map.africa.desc.2")}
             </p>
 
             <p>
-              Among the hundreds of organisations supported in the region,
-              <strong>Muvman Liberasyon Fam</strong>, in Mauritius, launched a
-              campaign that played a key role in decriminalising abortion in
-              cases of risk to the physical and mental health, and life of the
-              pregnant person, and in cases of grave fetal anomalies, rape, and
-              incest - in partial compliance with the Maputo Protocol.
+              {t("map.africa.desc.3")}
+              <strong>{t("map.africa.desc.4")}</strong>
+              {t("map.africa.desc.5")}
             </p>
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€24</strong> million</span>
+            <span class="my-5 text-3xl"
+              ><strong>€24</strong> {t("million")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>56 </strong> countries</span>
+            <span class="my-5 text-3xl"
+              ><strong>56 </strong> {t("countries")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
           </div>
           <div
@@ -103,27 +104,27 @@ import { Image } from "astro:assets";
               <Image src={Asia} alt="" />
             </div>
             <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              East, South & Southeast Asia & Oceania
+              {t("map.asia.title")}
             </h4>
             <p class="mb-2">
-              Mama Cash resourced activists from 29 countries in East, South &
-              Southeast Asia, and Oceania, with over €20 million.
+              {t("map.asia.desc.1")}
             </p>
             <p class="mb-2">
-              We advocated for the strengthening of women’s funds — like Women’s
-              Fund Asia — and putting more and better money in the hands of
-              self-led movements.
+              {t("map.asia.desc.2")}
             </p>
             <p>
-              Among our grantee-partners, <strong>Empower Foundation</strong>,
-              in Thailand, supported sex workers in the country to secure
-              protections under the social security system, which allowed them
-              free healthcare and paid sick and parental leave.
+              {t("map.asia.desc.3")}
+              <strong>{t("map.asia.desc.4")}</strong>,
+              {t("map.asia.desc.5")}
             </p>
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€20</strong> million</span>
+            <span class="my-5 text-3xl"
+              ><strong>€20</strong> {t("million")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>29</strong> countries</span>
+            <span class="my-5 text-3xl"
+              ><strong>29</strong> {t("contries")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
           </div>
           <div
@@ -137,31 +138,26 @@ import { Image } from "astro:assets";
               <Image src={Europe} alt="" />
             </div>
             <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              Europe, North & Central Asia
+              {t("map.europe.title")}
             </h4>
             <p class="mb-2">
-              In 40 years, we gave €23 million to feminist groups and activists
-              in 43 countries in Europe, North, and Central Asia.
+              {t("map.europe.desc.1")}
             </p>
             <p class="mb-2">
-              Grantee-partners in the region gained ground in many human rights
-              causes, like catalysing the making, adoption and implementation of
-              the Istanbul Convention on Preventing and Combating Violence
-              Against Women and Domestic Violence. This allowed many others to
-              fight gender-based violence with improved national laws and
-              practices.
+              {t("map.europe.desc.2")}
             </p>
             <p>
-              <strong>ŠKUC-LL</strong>, in Slovenia, was the first lesbian
-              organisation in the former Socialist Eastern European Bloc. They
-              received funding from Mama Cash, shortly  after their founding in
-              1987. We honour their contributions to Slovenia’s marriage
-              equality win in 2022.
+              <strong>ŠKUC-LL</strong>
+              {t("map.europe.desc.3")}
             </p>
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€23</strong> million</span>
+            <span class="my-5 text-3xl"
+              ><strong>€23</strong> {t("million")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>43</strong> countries</span>
+            <span class="my-5 text-3xl"
+              ><strong>43</strong> {t("countries")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
           </div>
           <div
@@ -175,34 +171,26 @@ import { Image } from "astro:assets";
               <Image src={SAmerica} alt="" />
             </div>
             <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              Latin America & The Caribbean
+              {t("map.latam.title")}
             </h4>
             <p class="mb-2">
-              With €18 million across 40 years, Mama Cash supported hundreds of
-              feminist groups in 30 Latin American and Caribbean countries.
+              {t("map.latam.desc.1")}
             </p>
             <p class="mb-2">
-              Beginning in 1988, Mama Cash supported domestic workers in Latin
-              America to take part in the first regional encuentro of workers in
-              this sector, at which the first regional confederation was born.
-              In 2006, the confederation co-convened the first global conference
-              of domestic workers, which kicked off the movement for ILO
-              Convention189 to secure their labor rights, and instigated the
-              creation of the only women-led international labour union in the
-              world.
+              {t("map.latam.desc.2")}
             </p>
             <p>
-              <strong>NUDE</strong>, the union of domestic workers in Trinidad &
-              Tobago, helped form the international federation and negotiate the
-              ILO Convention 189. At home, their members now have access to a
-              minimum wage, maternity leave, paid holiday leave, sick leave,
-              overtime pay, a pension, and a permit to work in any of the 17
-              countries in the Caribbean region, thanks to NUDE's advocacy.
+              <strong>NUDE</strong>
+              {t("map.latam.desc.3")}
             </p>
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€18</strong> million</span>
+            <span class="my-5 text-3xl"
+              ><strong>€18</strong> {t("million")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>30</strong> countries</span>
+            <span class="my-5 text-3xl"
+              ><strong>30</strong> {t("countries")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
           </div>
           <div
@@ -216,24 +204,25 @@ import { Image } from "astro:assets";
               <Image src={NAmerica} alt="" />
             </div>
             <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              North America
+              {t("map.north.title")}
             </h4>
             <p class="mb-2">
-              Mama Cash contributed to feminist activism in Canada and the
-              United States with over €68 thousand.
+              {t("map.north.desc.1")}
             </p>
 
             <p class="mb-2">
-              <strong>The New Moon Fund</strong> in the United States received resources
-              from Mama Cash to create an advocacy and information hub on sex work.
-              In addition, they provide micro-grants to hundreds of American sex
-              worker-led organisations.
+              <strong>The New Moon Fund</strong>
+              {t("map.north.desc.2")}
             </p>
 
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€68</strong> thousand</span>
+            <span class="my-5 text-3xl"
+              ><strong>€68</strong> {t("thousand")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>2</strong> countries</span>
+            <span class="my-5 text-3xl"
+              ><strong>2</strong> {t("countries")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
           </div>
           <div
@@ -247,26 +236,22 @@ import { Image } from "astro:assets";
               <Image src={World} alt="" />
             </div>
             <h4 class="mb-8 text-4xl font-bold uppercase text-[#E91E78]">
-              Transnational and regional organisations
+              {t("map.trans.title")}
             </h4>
             <p class="mb-2">
-              Mama Cash provided €4 million to international and cross-regional
-              organisations.
+              {t("map.trans.desc.1")}
             </p>
             <p class="mb-2">
-              We supported intersectional networks and women’s funds that worked
-              across regions as they deepened their inclusive, accessible, and
-              multilingual practices.
+              {t("map.trans.desc.2")}
             </p>
             <p>
-              In 2011, we contributed to not only the launch of <strong
-                >FRIDA Young Feminists Fund</strong
-              > but also committed our support to a three-year Community of Practice
-              that brought together 11 women’s funds, including FRIDA, which supported
-              each other to mobilise more and better support for girls' organising.
+              {t("map.trans.desc.3")}
+              <strong>{t("map.trans.desc.4")}</strong>
+              {t("map.trans.desc.5")}
             </p>
             <div class="mt-10 h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
-            <span class="my-5 text-3xl"><strong>€4</strong> million</span>
+            <span class="my-5 text-3xl"><strong>€4</strong> {t("million")}</span
+            >
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div>
             <!-- <span class="my-5 text-3xl"><strong>56 </strong> countries</span>
             <div class="h-[1px] w-full bg-[#141392] bg-opacity-25"></div> -->
@@ -279,20 +264,17 @@ import { Image } from "astro:assets";
         class="title mb-5 text-center text-3xl font-semibold lg:mb-10 lg:text-5xl"
       >
         <div class="line-h3">
-          <span class="block">Celebrate four decades of transformative</span>
+          <span class="block">{t("celebrate.title.1")}</span>
         </div>
         <div class="line-h3">
-          <span class="block">change with Mama Cash!</span>
+          <span class="block">{t("celebrate.title.2")}</span>
         </div>
       </h3>
       <p class="mx-auto mb-2 max-w-prose">
-        Since 1983, we've partnered with millions of women, girls, trans, and
-        intersex people to redefine norms, uphold rights, foster inclusion,
-        expand access, and inspire joy, healing, and liberation.
+        {t("celebrate.subtitle.1")}
       </p>
       <p class="mx-auto max-w-prose">
-        Discover how feminist movements leveraged our support to create lasting
-        impact. Download our full report now.
+        {t("celebrate.subtitle.2")}
       </p>
       <div class="mx-auto mt-10 flex flex-col items-center gap-5 lg:flex-row">
         <a
@@ -300,14 +282,14 @@ import { Image } from "astro:assets";
           href="/report.pdf"
           target="_blank"
           class="rounded-3xl bg-[#E91E78] px-5 py-2 text-sm text-white"
-          >Download full report</a
+          >{t("celebrate.button.1")}</a
         >
         <a
           onclick={`return gtag_report_conversion('/executive-summary.pdf', 'RwwOCNP97MwZEM3yi-I9');`}
           href="/executive-summary.pdf"
           target="_blank"
           class="rounded-3xl bg-[#141392] px-5 py-2 text-sm text-white"
-          >Download Executive Summary</a
+          >{t("celebrate.button.2")}</a
         >
       </div>
     </div>

@@ -4,25 +4,30 @@ import TestimonyPicture1 from "../assets/testimony-1.png";
 import TestimonyPicture2 from "../assets/testimony-2.png";
 import TestimonyPicture3 from "../assets/testimony-3.png";
 import ArrowSVG from "./ArrowSVG.astro";
+import { t } from "i18next";
+import i18next from "i18next";
 
-const testimonies: [ImageMetadata, string, string, string][] = [
+const testimonies: any[] = [
   [
     TestimonyPicture1,
     "Ida LeBlanc",
     "National Union of Domestic Employees, Trinidad and Tobago",
     "/testimonies/Ida-Leblanc.mp4",
+    "/testimonies/Ida-Leblanc-nl.mp4",
   ],
   [
     TestimonyPicture2,
     "Koyel Ghosh",
     "Sappho for Equality, India",
     "/testimonies/Koyel-Ghosh.mp4",
+    "/testimonies/Koyel-Ghosh-nl.mp4",
   ],
   [
     TestimonyPicture3,
     "Rajni Lallah",
     "Muvman Liberasyon Fam, Mauritius",
     "/testimonies/Rajni-Lallah.mp4",
+    "/testimonies/Rajni-Lallah-nl.mp4",
   ],
 ];
 ---
@@ -46,24 +51,21 @@ const testimonies: [ImageMetadata, string, string, string][] = [
     class="title max-w-5xl px-5 text-center text-4xl font-semibold lg:px-0 lg:text-left lg:text-5xl"
   >
     <div class="line-h3">
-      <span class="block">Shared Power, Global Impact</span>
+      <span class="block">{t("testimonials.header")}</span>
     </div>
   </h3>
   <p class="mt-10 max-w-prose px-5 text-center leading-tight lg:px-0">
-    Over 40 years, Mama Cash has partnered with thousands of feminist activists,
-    to channel over €91 million in direct grants to movements, their leaders and
-    self-led groups driving lasting change.
+    {t("testimonials.subheader.first")}
   </p>
   <p class="mt-2 max-w-prose px-5 text-center leading-tight lg:px-0">
-    Our grantee-partners are the feminist heroes securing change, preserving
-    love and fighting for justice… that lasts!
+    {t("testimonials.subheader.second")}
   </p>
 
   <div
     class="mt-10 max-w-5xl px-8 lg:mt-20 lg:grid lg:grid-cols-3 lg:gap-[60px]"
   >
     {
-      testimonies.map(([img, name, role, video]) => (
+      testimonies.map(([img, name, role, video, videoNl]) => (
         <article class="mb-12 flex flex-col items-center last:mb-0 lg:mb-0">
           <Image alt="" src={img} />
           <h3 class="mt-8 text-3xl font-semibold text-[#E91E78]">{name}</h3>
@@ -76,10 +78,10 @@ const testimonies: [ImageMetadata, string, string, string][] = [
 
           <a
             class="mt-4 flex items-center gap-4 rounded-full bg-[#FDB813] p-[6px] pl-4 text-sm text-black"
-            href={video}
+            href={i18next.language == "en" ? video : videoNl}
             target="_blank"
           >
-            Watch testimonial
+            {t("button.watch-testimonial")}
             <ArrowSVG className="w-[37px] h-[36px]" />
           </a>
         </article>
