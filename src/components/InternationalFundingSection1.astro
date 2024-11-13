@@ -83,7 +83,10 @@ const data = [
       {
         title: t("funding.items.2.points.4.title"),
         description: t("funding.items.2.points.4.description"),
-        url: "/Environmental-Justice.pdf",
+        url:
+          i18next.language == "en"
+            ? "/Environmental-Justice.pdf"
+            : "/nl/08_Millieurechtvaardigheid-NL.pdf",
       },
     ],
   },
@@ -99,12 +102,18 @@ const data = [
       {
         title: t("funding.items.3.points.1.title"),
         description: t("funding.items.3.points.1.description"),
-        url: "/relationship-with-money.pdf",
+        url:
+          i18next.language == "en"
+            ? "/relationship-with-money.pdf"
+            : "/nl/09_Relaties_met_geld_veranderen-NL.pdf",
       },
       {
         title: t("funding.items.3.points.2.title"),
         description: t("funding.items.3.points.2.description"),
-        url: "/feminist-funding-architectures.pdf",
+        url:
+          i18next.language == "en"
+            ? "/feminist-funding-architectures.pdf"
+            : "/nl/10_Versterken_van_feministische_subsidieringsstructuren-NL.pdf",
       },
     ],
   },
@@ -113,7 +122,7 @@ const data = [
 
 <section id="intersectional" class="relative pt-10 lg:pt-20">
   <svg
-    class="absolute top-[25%] hidden w-[10%] lg:block"
+    class="lg:block top-[25%] absolute hidden w-[10%]"
     viewBox="0 0 236 310"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -123,41 +132,41 @@ const data = [
       fill="#E91E78"></path>
   </svg>
 
-  <div class="mx-auto mb-12 max-w-5xl px-10 text-[#141392] lg:px-0">
+  <div class="mx-auto mb-12 px-10 lg:px-0 max-w-5xl text-[#141392]">
     <h3
-      class="title text-center text-3xl font-semibold lg:text-left lg:text-5xl"
+      class="font-semibold text-3xl text-center lg:text-left lg:text-5xl title"
     >
       <div class="line-h3">
         <span class="block">{t("funding.header")}</span>
       </div>
     </h3>
-    <p class="mt-5 max-w-prose text-center leading-tight lg:text-left">
+    <p class="mt-5 max-w-prose text-center lg:text-left leading-tight">
       {t("funding.subheader")}
     </p>
   </div>
   <div id="funding1">
     <div class="scroller-section">
-      <div class="scroller-section-container mx-auto max-w-5xl px-5 lg:px-0">
+      <div class="mx-auto px-5 lg:px-0 max-w-5xl scroller-section-container">
         <div
-          class="scroller grid gap-12 lg:w-[max-content] lg:auto-cols-auto lg:grid-flow-col"
+          class="gap-12 grid lg:grid-flow-col lg:auto-cols-auto lg:w-[max-content] scroller"
         >
           {
             data.map((e) => (
-              <div class="scroller-item font-display container mx-auto max-w-4xl lg:max-w-5xl">
+              <div class="mx-auto max-w-4xl lg:max-w-5xl font-display container scroller-item">
                 <div
                   style={`background: ${e.color};color: ${e.textColor}`}
-                  class="h-full rounded-2xl p-5 lg:p-10"
+                  class="p-5 lg:p-10 rounded-2xl h-full"
                 >
-                  <div class="grid h-full lg:grid-cols-[40%_60%] lg:gap-10">
+                  <div class="lg:gap-10 grid lg:grid-cols-[40%_60%] h-full">
                     <div class="flex flex-col">
                       <div class="flex flex-1 items-center">
                         <span
                           style={`border-color: ${e.buttonColor};color: ${e.buttonColor}`}
-                          class="mr-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1px] border-[#FDB813] text-3xl text-[#FDB813] lg:h-16 lg:w-16 lg:text-5xl"
+                          class="flex justify-center items-center border-[#FDB813] border-[1px] mr-5 rounded-full w-12 lg:w-16 h-12 lg:h-16 text-[#FDB813] text-3xl lg:text-5xl shrink-0"
                         >
                           {e.id}
                         </span>
-                        <h4 class="text-3xl font-bold lg:text-4xl">
+                        <h4 class="font-bold text-3xl lg:text-4xl">
                           {e.title}
                         </h4>
                       </div>
@@ -169,19 +178,19 @@ const data = [
                         alt=""
                       />
                     </div>
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col justify-center items-center">
                       <ul
                         style={`--bg: ${e.buttonColor}`}
-                        class="relative mr-5 font-normal before:absolute before:left-[-3px] before:hidden before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] lg:mr-10 lg:before:block"
+                        class="lg:before:block relative before:left-[-3px] before:absolute before:hidden before:bg-[var(--bg)] mr-5 lg:mr-10 before:rounded-full before:w-2 before:h-2 font-normal"
                       >
                         <li
                           style={`border-color: ${e.buttonColor};`}
-                          class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] last:border-b-0 last:before:hidden last:after:hidden lg:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:last:after:block"
+                          class="lg:last:after:block relative before:right-[-4px] before:bottom-[-4px] after:bottom-[-4px] after:left-[-4px] before:absolute after:absolute flex lg:flex-row flex-col items-start lg:items-end gap-5 border-[#FDB813] lg:hidden last:before:hidden last:after:hidden before:bg-[var(--bg)] after:bg-[var(--bg)] lg:px-5 border-b-[1px] last:border-b-0 lg:border-l-[1px] before:rounded-full after:rounded-full before:w-2 after:w-2 before:h-2 after:h-2 text-sm"
                         />
                         {e.points.map((i) => (
                           <li
                             style={`border-color: ${e.buttonColor};`}
-                            class="relative flex flex-col items-start gap-5 border-b-[1px] border-[#FDB813] py-4 text-sm before:absolute before:bottom-[-4px] before:right-[-4px] before:h-2 before:w-2 before:rounded-full before:bg-[var(--bg)] after:absolute after:bottom-[-4px] after:left-[-4px] after:h-2 after:w-2 after:rounded-full after:bg-[var(--bg)] last:border-b-0 last:before:hidden last:after:hidden lg:flex-row lg:items-end lg:border-l-[1px] lg:px-5 lg:last:after:block"
+                            class="lg:last:after:block relative before:right-[-4px] before:bottom-[-4px] after:bottom-[-4px] after:left-[-4px] before:absolute after:absolute flex lg:flex-row flex-col items-start lg:items-end gap-5 border-[#FDB813] last:before:hidden last:after:hidden before:bg-[var(--bg)] after:bg-[var(--bg)] lg:px-5 py-4 border-b-[1px] last:border-b-0 lg:border-l-[1px] before:rounded-full after:rounded-full before:w-2 after:w-2 before:h-2 after:h-2 text-sm"
                           >
                             <div class="">
                               <span class="text-xl">{i.title}</span>
@@ -191,7 +200,7 @@ const data = [
                               target="_blank"
                               style={`background-color: ${e.buttonColor};color: ${e.buttonText}`}
                               href={i.url}
-                              class="flex items-center gap-2 whitespace-nowrap rounded-full bg-[#FDB813] p-[4px] pl-4 text-sm lg:mt-5"
+                              class="flex items-center gap-2 bg-[#FDB813] lg:mt-5 p-[4px] pl-4 rounded-full text-sm whitespace-nowrap"
                             >
                               <span class="text-xs">
                                 {t("button.read-more")}
